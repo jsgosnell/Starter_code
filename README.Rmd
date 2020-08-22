@@ -13,6 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 At this point I’m assuming you received the invitation to view the assignment on
 github classroom and accepted it. You now have a private repository of these files. 
+
+
 To start working on the assignment, open RStudio (on your desktop or cloudserver). 
 Select file, new project, Version control. On the next screen select git. Next 
 you’ll need to enter the url for your repository. Look for the Code button 
