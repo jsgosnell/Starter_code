@@ -4,6 +4,7 @@ author: "NAME"
 date: "8/21/2020"
 output:
   github_document
+  
 ---
 Before doing this, review the **Welcome** and **Git** lecture set slides from 
 https://sites.google.com/view/biostats/bioenv-2100/welcome and
@@ -103,7 +104,7 @@ The : means FILL THIS IN.
 INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS.  Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*. Then state what
 each of these does.
 
-3.  Is -1:2 the same as (-1):2 or -(1:2)? INSERT AN R CHUNK HERE AND RUN EACH OF 
+3.  Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND RUN EACH OF 
 THESE COMMANDS. Then state what each of these does.
 
 ## Data input, plotting, and tests
@@ -118,28 +119,36 @@ Run this chunk and note it has added an object named `sleep` to the environment.
 
 Info on the dataset is viewable @ http://www.statsci.org/data/general/sleep.html.
 
-4. How many rows does the sleep data set have (hint: ?dim)?  What kind of data is stored in each variable?
+4. How many rows does the **sleep** data set have (hint: `?dim`)?  What kind of data is stored in each variable?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
-5.  Change the column named “BodyWt” to “Body_weight” in the sleep dataset.
+5.  Change the column named *BodyWt* to *Body_weight*”* in the sleep dataset.
 
 ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
 
-6.  Produce a plot of how TotalSleep differs between primates and other species. What is this plot showing?
+6.  Produce a plot of how *TotalSleep* differs between primates and other species. What is this plot showing?
 
 NOTE YOU CAN ADD A PLOT TO THE DOCUMENT TOO! AMEND THE BELOW AS NEEDED.  
 ```{r}
 plot(cars)
 ```
 
-7.  The sleep dataset begs to have a linear model fit for it. Let’s consider. First plot how TotalSleep is explained by BrainWt. Are there any issues with the data? Exclude any outlier and fit a linear model to obtain the p-value for the model (hint: summary()).  What does this imply?  
+7.  The **sleep** dataset begs to have a linear model fit for it. Let’s consider. First plot how *TotalSleep* is explained by *BrainWt*. Are there any issues with the data? Exclude any outlier and fit a linear model to obtain the p-value for the model (hint: summary()).  What does this imply?  
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
 **EXTRA QUESTIONS** *not required*
 
-8.  Sometimes data doesn’t have headers (column names),so you have to add them.  Download the alcids (birds like puffins and auklets)  dataset from  http://csivc.csi.cuny.edu/Lisa.Manne/files/classes/biol78002/alcids55.csv.  You’ll need to modify the read.csv function by specifying header = False, then using the names function to name the columns ["year", "a1_abund", "NAO", "a2_abund", "a3_abund", "a4_abund", "a5_abund", "a6_abund"]. Try it and check your input using the head() command.
+![alt text](https://upload.wikimedia.org/wikipedia/commons/9/94/Puffin_Mrkoww.jpg)
+**Dow Puffin** *Matthew Zalewski / CC BY (https://creativecommons.org/licenses/by/3.0)*
+
+8.  Sometimes data doesn’t have headers (column names),so you have to add them.
+Download a dataset on alcids (birds like puffins and auklets)  from 
+http://csivc.csi.cuny.edu/Lisa.Manne/files/classes/biol78002/alcids55.csv. 
+You’ll need to modify the read.csv function by specifying `header = False`, 
+then use the `names` function to name the columns ["year", "a1_abund", "NAO", "a2_abund", "a3_abund", "a4_abund", "a5_abund", "a6_abund"]. 
+Try it and check your input using the `head` command.
 
 9.  Here’s a sample dataset:
 
