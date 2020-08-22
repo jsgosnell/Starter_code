@@ -1,13 +1,13 @@
 ---
 title: "Getting Used to R, Rstudio, Rmd...."
-author: "jsg"
+author: "NAME"
 date: "8/21/2020"
 output:
-  html_notebook
+  github_document
 ---
 Before doing this, review the 1. Welcome and Intro lecture set slides and
 the  1_intro_data_lecture.R script in the lectures folder of CUNY-BioStats
-github repository
+github repository.
 
 ## Getting your first repository
 At this point I'm assuming you received the invitation to view the assignment
