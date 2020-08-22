@@ -15,8 +15,9 @@ At this point I’m assuming you received the invitation to view the assignment 
 github classroom and accepted it. You now have a private repository of these files. 
 To start working on the assignment, open RStudio (on your desktop or cloudserver). 
 Select file, new project, Version control. On the next screen select git. Next 
-you’ll need to enter the url for your repository. Navigate to the web home of 
-your github repository and for the green Code button. Click it, then copy the 
+you’ll need to enter the url for your repository. Look for the Code button 
+(usually green) in your githbub repository (where you may be reading this...).  
+Click it, then copy the 
 web url (or click the copy icon). Input that into the Rstudio Repository URL 
 space. Then name the project (maybe Assignment 1,2, etc?). The Create project… 
 field can be left blank to just save all projects into the main directory.
