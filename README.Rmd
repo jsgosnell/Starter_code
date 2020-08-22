@@ -1,0 +1,15 @@
+---
+title: "README"
+author: "jsg"
+date: "8/21/2020"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Getting started
+
+To view instructions, click on the .md file associated with the assignment you 
+want. Just try it.
