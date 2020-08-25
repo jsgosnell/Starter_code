@@ -17,7 +17,13 @@ on github classroom and accepted it. You now have a private repository of these
 files.  In addition to working on R, we'll have you connect your first
 project on Rstudio to this repository and work on some basic git skills.
 
-To start working on the assignment, open RStudio (on your desktop or cloudserver). 
+### If you are using RStudio on your desktop, QUBES, or anywhere that looks like an RStudio screen
+
+To start working on an assignment, open RStudio (on your desktop or cloudserver 
+where you actually see the main Rstudio screen). 
+
+![alt text](https://lh3.googleusercontent.com/pw/ACtC-3ddyHNvzmRICUa_CmWQmzbz5jr9aTdo_bs9yH9ZbfUPe2LjS46TYj1FsD7CjhKL3rknFZkui-YecWokRGY03cj8occR5HJN56P5N8KJTCUPgciKCAwD8YHJEKXXOOjH-LI8k1G8p88MGB7d_6ov4EJtQQ=w879-h664-no)
+
 Select file, new project, Version control. On the next screen select git. Next 
 you’ll need to enter the url for your repository. Look for the Code button 
 (usually green) in your githbub repository (where you may be reading this...). 
@@ -32,18 +38,45 @@ Alternatively you can click Browse and make an Assignments folder if you want.
 Whatever you choose, the project will be saved in new folder in that location 
 using the name you chose.
 
+Go to the next section (**Now we can actually work in R**) to get started
+
+### If you are using Rstudio cloud...
+
+You'll instead see something like this:
+
+![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dVAm8XnMQH9ebnayG0SgBgSewlPFWyJmubIbASefCQ0NKiuZHsQO6eUbzy-Y0LZ6U7KbPkmHCi91tJ4lm7xPs4xf0A3fyMXyMKuzfJ6B2tADIq_NX9GmYRrZS5OuZ6Y1DcCxyzMmmEsV-_DyV9XrLLJA=w1320-h581-no?authuser=0)
+
+To start working on an assignment, select **New Project**, **New Project from Github repo**, 
+then enter the url 
+for your repository. Look for the Code button 
+(usually green) in your githbub repository (where you may be reading this...). 
+
+![alt text](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
+
+Click it, then copy the 
+web url (or click the copy icon). Input that into the field asking for the URL
+of your github repository. 
+
+The next screen will bring you to a "normal" RStudio screen.  Continue to the next
+section (**Now we can actually work in R**) to get started
+
+## Now we can actually work in R
+
 Now you can start working on the assignment in Rstudio.  To view instructions, 
-open the .Rmd file you want on IN RSTUDIO! It will be in the folder for the assignment
-you are focusing on.  Then **Knit** the file. 
+open the .Rmd file you want to work on IN RSTUDIO! It will be in the folder for the assignment
+you are focusing on. From inside thep project space, go to **File**, **Open File**
+and find it, or look in the Files window to find and open the file. 
+
+![alt text](https://lh3.googleusercontent.com/pw/ACtC-3esT_YVFqbmcul63AzkXBGrjK5J6kPBMRZW_mT_JNTG7UstxeT9hInq7dA91xV8-e6DbO77u8YepXb6sO6beUo0OlSWg2fXEBbxwgYTHWo7KkZlSAsVfzgpYiL7QbveqRLjctmUYb3RJninK9jMK4DP9A=w800-h452-no?authuser=0)
+
+Then **Knit** the file. 
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
 
 The **Knit** button saves the file and 
-shows you a rendered copy of the contents of the editor.  You should see your
-name in the preview in the **Viewer** tab (typically lower right window area)!
-Presto! You will see instructions. 
+shows you a rendered copy of the contents of the editor.  
 
-Now we'll start changing the file.  
+Now we'll start changing the file.
 First, amend the file by replacing the **NAME** spot in the header (top of the
 file between the --- markers) with your name.  
 
