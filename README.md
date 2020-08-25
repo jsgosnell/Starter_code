@@ -32,7 +32,8 @@ Assignment 1,2, etc?). The Create project… field can be left blank to
 just save all projects into the main directory. Alternatively you can
 click Browse and make an Assignments folder if you want. Whatever you
 choose, the project will be saved in new folder in that location using
-the name you chose.
+the name you chose. Note you may need to enter your github username and
+password to create the repository.
 
 Go to the next section (**Now we can actually work in R**) to get
 started
@@ -55,6 +56,9 @@ text](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjf
 Click it, then copy the web url (or click the copy icon). Input that
 into the field asking for the URL of your github repository.
 
+Note you may need to enter your github username and password to create
+the repository.
+
 The next screen will bring you to a “normal” RStudio screen.
 
 ## Now we can actually work in R
@@ -68,7 +72,9 @@ look in the Files window to find and open the file.
 ![alt
 text](https://lh3.googleusercontent.com/pw/ACtC-3esT_YVFqbmcul63AzkXBGrjK5J6kPBMRZW_mT_JNTG7UstxeT9hInq7dA91xV8-e6DbO77u8YepXb6sO6beUo0OlSWg2fXEBbxwgYTHWo7KkZlSAsVfzgpYiL7QbveqRLjctmUYb3RJninK9jMK4DP9A=w800-h452-no?authuser=0)
 
-Then **Knit** the file.
+Then **Knit** the file. Note the first time you do this in a project you
+may be prompted to install a number of packages\! If you are using a
+webservice you may also need to allow pop-ups in your browser.
 
 ![alt
 text](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
