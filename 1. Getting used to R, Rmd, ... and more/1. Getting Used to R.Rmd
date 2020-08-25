@@ -1,7 +1,7 @@
 ---
-title: "Getting Used to R, Rstudio, Rmd...and more"
+title: "1. Getting Used to R (and Rstudio, Rmd...and more)"
 author: "NAME"
-date: "8/21/2020"
+date: "DATE"
 output:
   github_document
   
@@ -81,7 +81,8 @@ The **Knit** button saves the file and
 shows you a rendered copy of the contents of the editor.  
 
 Now we'll start changing the file.
-First, amend the file by replacing the **NAME** spot in the header (top of the
+First, amend the file by replacing the **NAME** and **DATE** spots in the header
+(top of the
 file between the --- markers) with your name.  
 
 Now click the **Knit** button again.  Now you should see your
