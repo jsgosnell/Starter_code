@@ -78,7 +78,6 @@ also need to allow pop-ups in your browser.
 The **Knit** button saves the file and 
 shows you a rendered copy of the contents of the editor.  
 
-
 Now you can start working on the assignment in Rstudio.  To view instructions, 
 open the .Rmd file you want to workon IN RSTUDIO! It will be in the folder for the assignment
 you are focusing on.  Then **Knit** the file. 
