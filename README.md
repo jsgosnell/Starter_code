@@ -19,8 +19,11 @@ cloudserver where you actually see the main Rstudio screen).
 text](https://lh3.googleusercontent.com/pw/ACtC-3ddyHNvzmRICUa_CmWQmzbz5jr9aTdo_bs9yH9ZbfUPe2LjS46TYj1FsD7CjhKL3rknFZkui-YecWokRGY03cj8occR5HJN56P5N8KJTCUPgciKCAwD8YHJEKXXOOjH-LI8k1G8p88MGB7d_6ov4EJtQQ=w879-h664-no)
 
 Select file, new project, Version control. On the next screen select
-git. Next you’ll need to enter the url for your repository. Look for the
-Code button (usually green) in your githbub repository (where you may be
+git. If this isn’t available, you may need to install git (free) on your
+system. You can download it at <https://git-scm.com/download/>.
+
+Next you’ll need to enter the url for your repository. Look for the Code
+button (usually green) in your githbub repository (where you may be
 reading this…).
 
 ![alt
