@@ -214,6 +214,28 @@ ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
 
 6.  Produce a plot of how *TotalSleep* differs between primates and other species. What is this plot showing?
 
+Note, as of early 2020 R no longer reads in strings as factors! This means the 
+Primate column, which is full of "Yes"s and "No"s, reads in as words and R doesn't
+know how to plot them. There are many ways to handle this. You can modify the 
+read.csv command (add  stringsAsFactors = T option), eg
+```{r, eval=F}
+sleep <- read.csv("http://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/sleep.csv", stringsAsFactors = T)
+```
+
+or modify the column for the 
+actual object 
+
+```{r, eval = F}
+sleep$Primate <- factor (sleep$Primate)
+```
+
+or for a single command, eg (plot not actually shown!)
+
+```{r, eval = F}
+plot(BodyWt ~ factor(Primate), data = sleep)
+```
+
+
 NOTE YOU CAN ADD A PLOT TO THE DOCUMENT TOO! AMEND THE BELOW AS NEEDED.  
 ```{r}
 plot(cars)
@@ -230,7 +252,7 @@ ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
 8.  Sometimes data doesn’t have headers (column names),so you have to add them.
 Download a dataset on alcids (birds like puffins and auklets)  from 
-http://csivc.csi.cuny.edu/Lisa.Manne/files/classes/biol78002/alcids55.csv. 
+https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/alcids55.csv.  
 You’ll need to modify the read.csv function by specifying `header = False`, 
 then use the `names` function to name the columns ["year", "a1_abund", "NAO", "a2_abund", "a3_abund", "a4_abund", "a5_abund", "a6_abund"]. 
 Try it and check your input using the `head` command.
