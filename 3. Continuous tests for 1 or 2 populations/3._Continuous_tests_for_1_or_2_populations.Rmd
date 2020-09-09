@@ -4,30 +4,163 @@ author: "jsg"
 date: "9/8/2020"
 output: github_document
 ---
-Before doing this, go through the **week 3.R script in the grad files 2020 folder 
-of the CUNY-BioStats github repository. You’ll also use the qqplot_example.R and
-central_limit_theorem.R script from the code_examples folder.
+Before doing this, review the **Week 3** lecture set slides from 
+https://sites.google.com/view/biostats/bio-7800178002/week-3 and
+the  **Week_3.R** script in the grad_files_2020 folder of the
+[CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
+You’ll also use the qqplot_example.R and
+central_limit_theorem.R script from the 
+[code_examples folder](https://github.com/jsgosnell/CUNY-BioStats/tree/master/code_examples).
 
-##Recognizing and assessing normality 
+Remember you should
+* add code chunks by clicking the *Insert Chunk* button on the toolbar or by
+pressing *Ctrl+Alt+I* to answer the questions!
+* **knit** your file to produce a markdown version that you can see!
+* save your work often 
+  * **commit** it via git!
+  **push** updates to github
 
-Using the qqplot_example.R (download here) code, examine the following distributions and, for the continuous distributions (marked with a “*”), observe how a normal probability plot (qqplot) can be used to visually test for approximate normality.
-*Normal ( u= 0; σ2= 10, 100) 
-*Student's t (df = 1, 10, 30, & 100) 
-*Chi-square (df= 1, 2, 5, 30, 50)
-Bernoulli (P=0.1, 0.5, & 0.9) 
-Binomial (P=0.05; N= 2, 5, 25, & 50); (P=0.25; N= 2, 5, 25, & 50); (P=0.50; N= 2, 5, 25, & 50); (P=0.75; N= 2, 5, 25, & 50); (P=0.95; N= 2, 5, 25, & 50) 
-Poisson ( u= 2, 5, 10, 30, & 50)
+## Recognizing and assessing normality 
 
-Review the central_limit_theorem.R code (download here) if you need to convince/remind yourself how common normality of means is for even non-normal data.
-Just for practice (note some sample sizes may be too small for these to all be good ideas!)
-Seven observers were shown, for a brief period, a grill with 161 flies impaled and were asked to estimate the number. The results are given by Cochran (1954). Based on five estimates, they were 183.2, 149.0, 154.0, 167.2, 187.2, 158.0, and 143.0. Test the null hypothesis that the mean of the population is 161 flies, A) Assuming variance = 275, B) Estimating the variance from the data, C) using rank transform analysis, D) Using binary transform analysis, E) Using a Bayesian approach
-Yields of 10 strawberry plants in a uniformity trial are given by Baker and Baker (1953) as 239, 176, 235, 217, 234, 216, 318, 190, 181, and 225 g. Test the hypothesis that µ = 205, A) Assuming variance = 1500, B) Estimating the variance from the data, C) using rank transform analysis, D) Using binary transform analysis, E) Using a Bayesian approach
- Evolutionary geneticists predicts the family sex ratio will be 80% female in broods of eagles that successfully fledge >3 young. Nests that fledge 3 or more chicks are very rare but a sample of 30 chicks are obtained from such nests and they yield 25 females and 5 males. Test the hypotheses that that: a) the sex ratio is 50% females, and b) the sex ratio is 80% females.
-Studies of flying snakes have led researchers to posit the mean undulation rate is 1.4 Hz.  You wish to test this hypothesis using the small sample of undulation rates shown below.  Create a small dataset of the paradise tree snake undulation rates and choose and justify a test you can use to assess the data.  
+1. Using the qqplot_example.R code, examine the following distributions and, for 
+the continuous distributions (marked with a “*”), observe how a normal probability
+plot (qqplot) can be used to visually test for approximate normality.
+
+* *Normal (u= 0; σ2= 10, 100) 
+* *Student's t (df = 1, 10, 30, & 100) 
+* *Chi-square (df= 1, 2, 5, 30, 50)
+* Bernoulli (P=0.1, 0.5, & 0.9) 
+* Binomial (P=0.05; N= 2, 5, 25, & 50); (P=0.25; N= 2, 5, 25, & 50); (P=0.50; 
+N= 2, 5, 25, & 50); (P=0.75; N= 2, 5, 25, & 50); (P=0.95; N= 2, 5, 25, & 50) 
+* Poisson ( u= 2, 5, 10, 30, & 50)
+
+2. Review the central_limit_theorem.R code if you need to convince/remind yourself how common normality of means is for even non-normal data.
+
+## Just for practice (note some sample sizes may be too small for these to all be good ideas!)
+
+3. Seven observers were shown, for a brief period, a grill with 161 flies impaled and were asked to estimate the number. The results are given by Cochran (1954). Based on five estimates, they were 183.2, 149.0, 154.0, 167.2, 187.2, 158.0, and 143.0. Test the null hypothesis that the mean of the population is 161 flies
+* Assuming variance = 275
+*  Estimating the variance from the data 
+* Using rank transform analysis 
+* Using binary transform analysis
+
+4. Yields of 10 strawberry plants in a uniformity trial are given by Baker and Baker (1953) as 239, 176, 235, 217, 234, 216, 318, 190, 181, and 225 g. Test the hypothesis that µ = 205
+* Assuming variance = 275
+*  Estimating the variance from the data 
+* Using rank transform analysis 
+* Using binary transform analysis
+
+5. Studies of flying snakes have led researchers to posit the mean undulation rate is 1.4 Hz.  You wish to test this hypothesis using the small sample of undulation rates shown below.  Create a small dataset of the paradise tree snake undulation rates and choose and justify a test you can use to assess the data.  
 Undulation rates (in Hz):  0.9, 1.4, 1.2, 1.2, 1.3, 2.0, 1.4, 1.6
 
-Download http://csivc.csi.cuny.edu/Lisa.Manne/files/classes/biol78002/Parmesan_by_family.csv.  Open it (in excel) and have a look.  It shows data from a 1999 paper by Camille Parmesan, which documents range changes for butterfly species that were undergoing climate warming.  This data has been compiled by butterfly family, and you can see how many species in each family changed their ranges in different ways (northern range boundary moving northward, etc.).  The last column shows the number of species in the family that were considered here (i.e., it is a sum of the previous columns).
-Other researchers theorize that the number of species of butterfly that will extend their ranges northwards under a warming climate is half of the total number.  Test this in R.  First:  choose appropriate null and alternate hypotheses.  If any manipulations of the data are necessary, do those (note: tests can be used on proportional data if you have a number of these!).  Read in (or input) your data.  Run the test.
-
-Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html for details), determine if the average male training at the Australian Institute of Sport differs in weight from the average Australian male (85.9 kg) using bootstrapping techniques. Data at 
+6.  Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html 
+for details), determine if the average male training at the Australian Institute 
+of Sport differs in weight from the average Australian male (85.9 kg) using
+bootstrapping techniques. Data at 
 sport <- read.table("http://www.statsci.org/data/oz/ais.txt", header = T)
+
+7. The following data are human blood clotting times (in minutes) of individuals
+given one of two different drugs. Test the hypothesis that the mean clotting times
+are equal for the two groups
+*  Estimating the variance from the data 
+* Using rank transform analysis 
+* Using a permutation test 
+* Using a bootstrap test 
+
+|Drug B | Drug G
+|------ |-------
+|8.8 | 9.9
+|8.4 | 9.0
+|7.9 | 11.1
+|8.7 | 9.6
+|9.1 | 8.7
+|9.6 | 10.4 
+|    | 9.5
+
+8. Data on plant heights (in cm) for plants grown with a new and old formulation 
+of fertilizer can be found at
+https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/fertilizer.csv . 
+Use the data to test the hypothesis that there is no difference in mean plant
+heights for the two groups 
+
+*  Estimating the variance from the data 
+* Using rank transform analysis 
+* Using a permutation test 
+* Using a bootstrap test 
+
+Note you'll need to cast this dataframe into a dataframe with a column for 
+old and new outcomes.  You’ll have to add a unique identifier. Try something like
+
+```{r, eval=FALSE}
+fertilizer$ID <- 1:nrow(fertilizer)
+fertilizer_wide <- dcast(fertilizer, ID~fertilizer, value.var = "height")
+```
+
+
+10. Metabolic rates were measured before and after administering a drug. Data is
+available at 
+
+https://raw.github.com/jsgosnell/CUNY-BioStats/blob/master/datasets/metabolic_rates.csv
+
+Test the hypothesis that the drug has no effect on metabolic rate with using 
+
+*  a Student's t test
+* a rank test
+* a binary test
+* bootstrapping
+
+
+Note you'll need to melt this dataframe into one with a single “time” 
+column (should have old or new as a value) and a “rate” column.
+
+12. Endurance of the above animals was also measured. Data is available at
+
+https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/endurance.csv
+
+Test the hypothesis that the drug has no effect on using 
+*  a Student's t test
+* a rank test
+* a binary test
+* bootstrapping
+
+## For the following problems, make sure you can justify the test you choose to use and carry it out
+
+14. Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html 
+for details), determine if the average male training at the Australian Institute 
+of Sport differs in from the average female training at the site in mercury
+concentration (Hg). 
+
+15. Laureysens et al. (2004) measured metal content in the wood of 13 poplar 
+clones growing in a polluted area, once in August and once in November.
+Concentrations of aluminum (in micrograms of Al per gram of wood) are shown 
+below. (From Handbook of Biological Statistics). Has metal content changed over
+time?
+
+| Clone | August | November
+|------| ---|---
+|Columbia River | 18.3 |12.7
+|Fritiz Pauley | 13.3 |11.1
+|Hazendas | 16.5 |15.3
+|Primo | 12.6 | 12.7
+|Raspalje | 9.5 |10.5
+|Hoogvorst |13.6 |15.6
+|Balsam Spire | 8.1 |11.2
+|Gibecq   |8.9 |14.2
+|Beaupre | 10.0 |16.3
+|Unal |8.3 |15.5
+|Trichobel |7.9 | 19.9
+|Gaver | 8.1 | 20.4
+|Wolterson | 13.4 |36.8
+
+16. Data was collected on cholesterol levels following heart attacks.  Data
+available at 
+http://www.statsci.org/data/general/cholestg.txt 
+
+Note to read a .txt file you use,
+read.table("http://www.statsci.org/data/general/cholestg.txt", header = T)
+Check the defaults to understand the argument.  
+More info on the data is @
+http://www.statsci.org/data/general/cholest.html
+Is there evidence cholesterol levels changed between day 2 and day 14?  
+**THINK ABOUT RELABELLING DAY AS A FACTOR (WHY?)?**
+
