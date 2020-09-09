@@ -1,0 +1,33 @@
+---
+title: "3. Continuous tests for 1 or 2 populations"
+author: "jsg"
+date: "9/8/2020"
+output: github_document
+---
+Before doing this, go through the **week 3.R script in the grad files 2020 folder 
+of the CUNY-BioStats github repository. You’ll also use the qqplot_example.R and
+central_limit_theorem.R script from the code_examples folder.
+
+##Recognizing and assessing normality 
+
+Using the qqplot_example.R (download here) code, examine the following distributions and, for the continuous distributions (marked with a “*”), observe how a normal probability plot (qqplot) can be used to visually test for approximate normality.
+*Normal ( u= 0; σ2= 10, 100) 
+*Student's t (df = 1, 10, 30, & 100) 
+*Chi-square (df= 1, 2, 5, 30, 50)
+Bernoulli (P=0.1, 0.5, & 0.9) 
+Binomial (P=0.05; N= 2, 5, 25, & 50); (P=0.25; N= 2, 5, 25, & 50); (P=0.50; N= 2, 5, 25, & 50); (P=0.75; N= 2, 5, 25, & 50); (P=0.95; N= 2, 5, 25, & 50) 
+Poisson ( u= 2, 5, 10, 30, & 50)
+
+Review the central_limit_theorem.R code (download here) if you need to convince/remind yourself how common normality of means is for even non-normal data.
+Just for practice (note some sample sizes may be too small for these to all be good ideas!)
+Seven observers were shown, for a brief period, a grill with 161 flies impaled and were asked to estimate the number. The results are given by Cochran (1954). Based on five estimates, they were 183.2, 149.0, 154.0, 167.2, 187.2, 158.0, and 143.0. Test the null hypothesis that the mean of the population is 161 flies, A) Assuming variance = 275, B) Estimating the variance from the data, C) using rank transform analysis, D) Using binary transform analysis, E) Using a Bayesian approach
+Yields of 10 strawberry plants in a uniformity trial are given by Baker and Baker (1953) as 239, 176, 235, 217, 234, 216, 318, 190, 181, and 225 g. Test the hypothesis that µ = 205, A) Assuming variance = 1500, B) Estimating the variance from the data, C) using rank transform analysis, D) Using binary transform analysis, E) Using a Bayesian approach
+ Evolutionary geneticists predicts the family sex ratio will be 80% female in broods of eagles that successfully fledge >3 young. Nests that fledge 3 or more chicks are very rare but a sample of 30 chicks are obtained from such nests and they yield 25 females and 5 males. Test the hypotheses that that: a) the sex ratio is 50% females, and b) the sex ratio is 80% females.
+Studies of flying snakes have led researchers to posit the mean undulation rate is 1.4 Hz.  You wish to test this hypothesis using the small sample of undulation rates shown below.  Create a small dataset of the paradise tree snake undulation rates and choose and justify a test you can use to assess the data.  
+Undulation rates (in Hz):  0.9, 1.4, 1.2, 1.2, 1.3, 2.0, 1.4, 1.6
+
+Download http://csivc.csi.cuny.edu/Lisa.Manne/files/classes/biol78002/Parmesan_by_family.csv.  Open it (in excel) and have a look.  It shows data from a 1999 paper by Camille Parmesan, which documents range changes for butterfly species that were undergoing climate warming.  This data has been compiled by butterfly family, and you can see how many species in each family changed their ranges in different ways (northern range boundary moving northward, etc.).  The last column shows the number of species in the family that were considered here (i.e., it is a sum of the previous columns).
+Other researchers theorize that the number of species of butterfly that will extend their ranges northwards under a warming climate is half of the total number.  Test this in R.  First:  choose appropriate null and alternate hypotheses.  If any manipulations of the data are necessary, do those (note: tests can be used on proportional data if you have a number of these!).  Read in (or input) your data.  Run the test.
+
+Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html for details), determine if the average male training at the Australian Institute of Sport differs in weight from the average Australian male (85.9 kg) using bootstrapping techniques. Data at 
+sport <- read.table("http://www.statsci.org/data/oz/ais.txt", header = T)
