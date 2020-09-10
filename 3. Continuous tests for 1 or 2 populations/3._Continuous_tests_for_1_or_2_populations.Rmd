@@ -45,7 +45,7 @@ N= 2, 5, 25, & 50); (P=0.75; N= 2, 5, 25, & 50); (P=0.95; N= 2, 5, 25, & 50)
 * Using binary transform analysis
 
 4. Yields of 10 strawberry plants in a uniformity trial are given by Baker and Baker (1953) as 239, 176, 235, 217, 234, 216, 318, 190, 181, and 225 g. Test the hypothesis that µ = 205
-* Assuming variance = 275
+* Assuming variance = 1500
 *  Estimating the variance from the data 
 * Using rank transform analysis 
 * Using binary transform analysis
@@ -57,7 +57,9 @@ Undulation rates (in Hz):  0.9, 1.4, 1.2, 1.2, 1.3, 2.0, 1.4, 1.6
 for details), determine if the average male training at the Australian Institute 
 of Sport differs in weight from the average Australian male (85.9 kg) using
 bootstrapping techniques. Data at 
+```{r}
 sport <- read.table("http://www.statsci.org/data/oz/ais.txt", header = T)
+```
 
 7. The following data are human blood clotting times (in minutes) of individuals
 given one of two different drugs. Test the hypothesis that the mean clotting times
@@ -97,7 +99,7 @@ fertilizer_wide <- dcast(fertilizer, ID~fertilizer, value.var = "height")
 ```
 
 
-10. Metabolic rates were measured before and after administering a drug. Data is
+9. Metabolic rates were measured before and after administering a drug. Data is
 available at 
 
 https://raw.github.com/jsgosnell/CUNY-BioStats/blob/master/datasets/metabolic_rates.csv
@@ -113,7 +115,7 @@ Test the hypothesis that the drug has no effect on metabolic rate with using
 Note you'll need to melt this dataframe into one with a single “time” 
 column (should have old or new as a value) and a “rate” column.
 
-12. Endurance of the above animals was also measured. Data is available at
+10. Endurance of the above animals was also measured. Data is available at
 
 https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/endurance.csv
 
@@ -125,12 +127,12 @@ Test the hypothesis that the drug has no effect on using
 
 ## For the following problems, make sure you can justify the test you choose to use and carry it out
 
-14. Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html 
+11. Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html 
 for details), determine if the average male training at the Australian Institute 
 of Sport differs in from the average female training at the site in mercury
 concentration (Hg). 
 
-15. Laureysens et al. (2004) measured metal content in the wood of 13 poplar 
+12. Laureysens et al. (2004) measured metal content in the wood of 13 poplar 
 clones growing in a polluted area, once in August and once in November.
 Concentrations of aluminum (in micrograms of Al per gram of wood) are shown 
 below. (From Handbook of Biological Statistics). Has metal content changed over
@@ -152,7 +154,7 @@ time?
 |Gaver | 8.1 | 20.4
 |Wolterson | 13.4 |36.8
 
-16. Data was collected on cholesterol levels following heart attacks.  Data
+13. Data was collected on cholesterol levels following heart attacks.  Data
 available at 
 http://www.statsci.org/data/general/cholestg.txt 
 
@@ -175,15 +177,15 @@ sleep <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/mas
 Last time you used the built-in plot functions to do some plots. Let’s replace 
 those with ggplot2 and do some more.
 
-17. First plot how TotalSleep is explained by BrainWt (remember the issues with 
+14. First plot how TotalSleep is explained by BrainWt (remember the issues with 
 the data).  Use ggplot2 to plot the relationship.
 
-18. Next color code each plot point by whether or not its a primate.  In order 
+15. Next color code each plot point by whether or not its a primate.  In order 
 to do this you can use the Primate column or (following class code) make a new 
 column called Taxa to represent the information (hint:search for “ revalue”). 
 Make sure axes are well-labeled.
 
-19. Let’s work with histograms.
+16. Let’s work with histograms.
 * What type of variation do we see in total time spent sleeping? Create a 
 histogram to explore this issue.
 * Facet the graph you created based on whether or not the animal is a primate 
