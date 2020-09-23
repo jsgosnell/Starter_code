@@ -4,20 +4,20 @@ author: "jsg"
 date: "9/23/2020"
 output: github_document
 ---
-Before doing this, review the **Introduction To Hypothesis Testing Via Binomial Tests
-** lecture set slides from 
+Before doing this, review the **Introduction To Hypothesis Testing Via Binomial Tests** lecture set slides from 
 https://sites.google.com/view/biostats/bioenv-2100/hypothesis-testing-with-the-binomial-distribution and
 the  **3_hypothesis_testing_and_binomial.R** script in the lecture_files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
 
 
 Remember you should
+
 * add code chunks by clicking the *Insert Chunk* button on the toolbar or by
 pressing *Ctrl+Alt+I* to answer the questions!
 * **knit** your file to produce a markdown version that you can see!
 * save your work often 
   * **commit** it via git!
-  **push** updates to github
+  * **push** updates to github
 
 ## Hypothesis Testing and the Binomial Distribution
 
