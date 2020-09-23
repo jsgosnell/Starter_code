@@ -52,7 +52,7 @@ MAKE SURE TO THINK ABOUT YOUR TEST OPTIONS
 * https://www.youtube.com/watch?v=mhlc7peGlGg
 * https://www.youtube.com/watch?v=o_djTy3G0pg
 
-4. I've produced a script in R that lets you test the Monty Hall idea (like in 
+4. I've shared a script in R that lets you test the Monty Hall idea (like in 
 the video!).  It's the chivers_monty_hall_script from the 
 [code_examples folder](https://github.com/jsgosnell/CUNY-BioStats/tree/master/code_examples)code_examples  
 on github.  For this question, its easiest to just source the main file and see what happens.
