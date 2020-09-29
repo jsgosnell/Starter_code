@@ -26,14 +26,14 @@ while in conversation in a nightclub, 19 turned their right ear to the speaker
 and 6 turn their left ear to the speaker.  How strong is the evidence for 
 eared-ness given this data (adapted from Analysis of Biological Data)?
 * state a null and alternative hypothesis
-* calculate a test statistic for this data
+* calculate a test statistic (signal) for this data
 * Make you understand how to construct a null distribution
-  + using sampling/simulation
-  + by using an appropriate distribution
+  + using sampling/simulation (code or written explanation)
+  + by using an appropriate distribution (code or written explanation)
 *Calculate and compare p-values obtained using 
-  + simulation (calculation won’t be required on test, but make sure you understand!)
-  + equations for binomial distribution 
-  + R functions
+  + simulation (calculation won’t be required on test, but make sure you understand!) (code or written explanation)
+  + equations for binomial distribution (code or written explanation) 
+  + R functions (required)(code)
 * Calculate a 95% confidence interval for the proportion of people who are right-eared
 * How do your 95% confidence interval and hypothesis test compare?
 
@@ -46,7 +46,7 @@ is this to happen, and is there evidence the students helped the dog?
 
 MAKE SURE TO THINK ABOUT YOUR TEST OPTIONS 
 
-##Distribution and Bayes
+## Distribution and Bayes
 
 3. Review the videos we watched in class
 * https://www.youtube.com/watch?v=mhlc7peGlGg
@@ -61,9 +61,9 @@ When you source a script, it is run in R without showing any console output
 *source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/chivers_monty_hall_script.R")*
 , then test out the idea here using the following functions which calculate outcomes
 under each strategy.
-* monty(strat="stay")
-* monty(strat="switch")
-* monty(strat="random")
+* monty(strat="stay", print_games=F)
+* monty(strat="switch", print_games=F)
+* monty(strat="random", print_games=F)
 
 5. Setup the Monty Hall problem as probabilities and convince yourself how it works.
 You may want to remember to think about prior and new information (likelihoods).
