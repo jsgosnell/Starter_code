@@ -37,7 +37,7 @@ N= 2, 5, 25, & 50); (P=0.75; N= 2, 5, 25, & 50); (P=0.95; N= 2, 5, 25, & 50)
 
 For this question, its easiest to just source the main file and see what happens.
 When you source a script, it is run in R without showing any console output
-(but graphs and objects are still produced!).  Try *source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R*
+(but graphs and objects are still produced!).  Try *source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R)*
 
 2. Review the central_limit_theorem.R code if you need to convince/remind yourself how common normality of means is for even non-normal data. You can source the code
 using the same approach noted in Question 1.
@@ -66,7 +66,7 @@ for details), determine if the average male training at the Australian Institute
 of Sport differs in weight from the average Australian male (85.9 kg) using
 bootstrapping techniques. Data at 
 ```{r}
-sport <- read.table("http://www.statsci.org/data/oz/ais.txt", header = T)
+sport <- read.table("http://www.statsci.org/data/oz/ais.txt", header = T, stringsAsFactors = T)
 ```
 
 Remember you can source the bootstrapjsg function using
