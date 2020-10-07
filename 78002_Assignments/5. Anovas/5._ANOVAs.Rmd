@@ -20,7 +20,10 @@ pressing *Ctrl+Alt+I* to answer the questions!
   * **commit** it via git!
   * **push** updates to github
   
-## Just for practice. Do this problems using ANOVA, Kruskal-Wallis, and bootstrapping methods.  Make sure you can plot the data and carry out multiple comparison methods as needed. Also be sure to understand the use of coefficients and adjusted R^2^ values and where to find them. 
+## Just for practice. Do this problems using ANOVA, Kruskal-Wallis, and 
+bootstrapping methods.  Make sure you can plot the data and carry out multiple 
+comparison methods as needed. Also be sure to understand the use of coefficients 
+and adjusted R^2^ values and where to find them. 
 
 1. Use the iris dataset in R to determine if petal length differs among species.  
 

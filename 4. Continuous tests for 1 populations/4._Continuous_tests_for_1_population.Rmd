@@ -45,6 +45,9 @@ using the same approach noted in Question 1.
 
 ## Just for practice (note some sample sizes may be too small for these to all be good ideas!)
 
+Make sure you are comfortable with null and alternative hypotheses for all examples. 
+You should also feel comfortable graphing the data.
+
 3. Seven observers were shown, for a brief period, a grill with 161 flies impaled 
 and were asked to estimate the number. The results are given by Cochran (1954). 
 Based on five estimates, they were 183.2, 149.0, 154.0, 167.2, 187.2, 158.0, and 143.0. Test the null hypothesis that the mean of the estimates is 161 flies.
