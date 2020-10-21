@@ -5,7 +5,7 @@ jsg
 
 -----
 
-\#ZOMBIES\!
+# ZOMBIES\!
 
 You wake up one morning and find that zombies have taken over your
 neighborhood (bummer). One idea is to use biocontrol to reduce zombie

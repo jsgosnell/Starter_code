@@ -29,5 +29,4 @@ Make sure your answer includes
   - explanation for test you will use
   - results from statistical test
   - clear explanation of how results relate to your stated hypotheses
-  - confidence interval for your estimate of left-handedness in the
-    tribe
+  - confidence interval for your estimate

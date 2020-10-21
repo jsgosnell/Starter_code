@@ -10,7 +10,7 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#ZOMBIES!
+# ZOMBIES!
 
 You wake up one morning and find that zombies have taken over your neighborhood (bummer).
 One idea is to use biocontrol to reduce zombie attacks. A zombie parasite is 
