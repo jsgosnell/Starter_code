@@ -4,10 +4,11 @@ author: "jsg"
 date: "9/8/2020"
 output: github_document
 ---
-Before doing this, review the **Week 3** lecture set slides from 
-https://sites.google.com/view/biostats/bio-7800178002/week-3 and
-the  **Week_3.R** script in the grad_files_2020 folder of the
+Before doing this, review the **Introduction to normality and one-sample tests for continous data** lecture set slides from 
+https://sites.google.com/view/biostats/bioenv-2100/introduction-to-normality-and-one-sample-tests and
+the  **4_normality.R** script in the lecture_files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
+
 You’ll also use the qqplot_example.R and
 central_limit_theorem.R script from the 
 [code_examples folder](https://github.com/jsgosnell/CUNY-BioStats/tree/master/code_examples).
