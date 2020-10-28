@@ -4,7 +4,6 @@ author: "jsg"
 date: "10/21/2020"
 output: github_document
 ---
----
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

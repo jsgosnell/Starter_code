@@ -3,8 +3,6 @@ Quiz 3
 jsg
 10/21/2020
 
------
-
 # ZOMBIES\!
 
 You wake up one morning and find that zombies have taken over your
