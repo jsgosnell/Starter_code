@@ -90,7 +90,7 @@ Make sure your answers include (if applicable)
 <!-- end list -->
 
 6.  The investigator is confused. He found an average temerature of
-    55.8, which is less than 53. He thinks that should confirm the
+    55.8, which is less than 56. He thinks that should confirm the
     existence of ghosts. Explain any issues you see with his rationale
     in plain English. Also explain to him what a p-value means as part
     of your answer (3 pts).
