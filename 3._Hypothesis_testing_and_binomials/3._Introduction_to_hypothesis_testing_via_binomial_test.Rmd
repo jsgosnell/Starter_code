@@ -50,9 +50,10 @@ MAKE SURE TO THINK ABOUT YOUR TEST OPTIONS
 
 ## Distribution and Bayes
 
-3. Review the videos we watched in class
+3. Review the video we watched in class to make sure you understand the Bayesian 
+connection. You can also read a related post @ https://brilliant.org/wiki/monty-hall-problem/.
 * https://www.youtube.com/watch?v=mhlc7peGlGg
-* https://www.youtube.com/watch?v=o_djTy3G0pg
+
 
 4. I've shared a script in R that lets you test the Monty Hall idea (like in 
 the video!).  It's the chivers_monty_hall_script from the 
