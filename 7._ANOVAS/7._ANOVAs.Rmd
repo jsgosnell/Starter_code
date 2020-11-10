@@ -1,0 +1,72 @@
+---
+title: "5. ANOVAs"
+author: "jsg"
+date: "9/22/2020"
+output: github_document
+---
+Before doing this, review the **Week 5** lecture set slides from 
+https://sites.google.com/view/biostats/bio-7800178002/week-5 and
+the  **7_ANOVAs.R** and **8_Blocking_and_interactions.R** script in the lecture files folder of the
+[CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
+Make sure you are comfortable with null and alternative hypotheses for all examples.
+
+
+Remember you should
+
+* add code chunks by clicking the *Insert Chunk* button on the toolbar or by
+pressing *Ctrl+Alt+I* to answer the questions!
+* **knit** your file to produce a markdown version that you can see!
+* save your work often 
+  * **commit** it via git!
+  * **push** updates to github
+  
+## Just for practice 
+*Do this problems using ANOVA, Kruskal-Wallis, and 
+bootstrapping methods.  Make sure you can plot the data and carry out multiple 
+comparison methods as needed. Also be sure to understand the use of coefficients 
+and adjusted R^2^ values and where to find them.* 
+
+1. Use the iris dataset in R to determine if petal length differs among species.  
+
+## t-tests are special cases of ANOVAs, which are special cases of linear models!
+
+2. Data on plant heights (in cm) for plants grown with a new and old formulation 
+of fertilizer can be found at
+
+https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/fertilizer.csv.
+
+Analyze this data using the t.test function and the lm function to convince yourself the outcome is the same.
+
+
+## For the following questions, pick the appropriate method for analyzing the question.  Use a plot of the data and/or model analysis to justify your decision.  Make sure you can carry out multiple comparison methods as needed. Also be sure to understand the use of coefficients and adjusted R^2^ values and where to find them.
+
+3. Data on sugar cane yield for multiple fields is available using 
+
+read.table("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/cane.txt", 
+header = T, stringsAsFactors = T)
+
+More info on the data can be found at 
+http://www.statsci.org/data/oz/cane.html.
+Is there evidence that location (DistrictPosition column) impacts yield 
+(Tonn.Hect column)?  If so, which areas are driving this distance?
+
+4. Data on FEV (forced expiratory volume), a measure of lung function, can be 
+found at 
+http://www.statsci.org/data/general/fev.txt
+More information on the dataset is available at 
+http://www.statsci.org/data/general/fev.html.
+Is there evidence that FEV depends on gender? If so, which gender has the higher
+FEV score?  How much variance does gender explain? 
+
+5. A professor carried out a long-term study to see how various factors impacted
+pulse rate before and after exercise.  Data can be found at 
+http://www.statsci.org/data/oz/ms212.txt
+With more info at 
+http://www.statsci.org/data/oz/ms212.html.
+Is there evidence that frequency of exercise (Exercise column) impacts resting
+pulse rate (Pulse1 column)?
+
+6. Continuing with the pulse dataset, is there evidence frequency of exercise
+impacts change in pulse rate?  Note we should only consider change for students 
+who ran between the first and second pulse measures (Ran column = 1).
+

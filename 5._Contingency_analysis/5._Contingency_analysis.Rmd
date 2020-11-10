@@ -37,7 +37,7 @@ We want to again test if heart attacks occur equally across genders.
 
 ## Dolphins
 
-Data on dolphin behavior was collected off the coast of Iceland. Data is @
+4. Data on dolphin behavior was collected off the coast of Iceland. Data is @
 
 http://www.statsci.org/data/general/dolpacti.txt
 
@@ -57,7 +57,7 @@ in each period.  Carry out post-hoc tests if needed.
 
 ## Smoking
 
-3. Use data on smoking and exercise from
+5. Use data on smoking and exercise from
 
 http://www.r-tutor.com/elementary-statistics/goodness-fit/chi-squared-test-independence
 
