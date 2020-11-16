@@ -4,9 +4,9 @@ author: "jsg"
 date: "9/22/2020"
 output: github_document
 ---
-Before doing this, review the **Week 5** lecture set slides from 
-https://sites.google.com/view/biostats/bio-7800178002/week-5 and
-the  **7_ANOVAs.R** and **8_Blocking_and_interactions.R** script in the lecture files folder of the
+Before doing this, review the **7. ANOVA and multiple comparisons** lecture set slides from 
+https://sites.google.com/view/biostats/bioenv-2100/anova-and-multiple-comparisons and
+the  **7_ANOVAs.R** script in the lecture files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
 Make sure you are comfortable with null and alternative hypotheses for all examples.
 
