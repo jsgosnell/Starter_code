@@ -3,11 +3,11 @@
 jsg
 11/18/2020
 
-Before doing this, review the **Week 6** lecture set slides from
-<https://sites.google.com/view/biostats/bio-7800178002/week-6> and the
-**9\_Regression\_and\_correlation.R** and
-**10\_ANCOVA\_and\_Regression.R** (up to line 248) script in the lecture
-files folder of the [CUNY-BioStats github
+Before doing this, review the \*\* Combining Multiple Explanatory
+Variables in Linear Models\*\* lecture set slides from
+<https://sites.google.com/view/biostats/bioenv-2100/ancova-and-multiple-regression>
+and the **10\_ANCOVA\_and\_Regression.R** script in the lecture files
+folder of the [CUNY-BioStats github
 repository](https://github.com/jsgosnell/CUNY-BioStats). Make sure you
 are comfortable with null and alternative hypotheses for all examples
 and understand correlation vs regression.
