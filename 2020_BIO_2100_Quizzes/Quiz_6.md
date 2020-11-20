@@ -28,7 +28,7 @@ considering if the usefulness of 2 different predators in controlling
 herbivory by an invasive species aphid. Scientists measure the number of
 damaged leaves along 10 m surveys in fields that have had no biocontrol
 (control) and those where parasitic wasps (Figure 1) or predatory
-ladybugs (Figure 2). Data is available using
+ladybugs (Figure 2) have been released. Data is available using
 
 ``` r
 damage <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/damage.csv", header = T, stringsAsFactors = T)
