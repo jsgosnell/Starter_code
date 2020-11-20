@@ -36,9 +36,7 @@ Make sure your answers include
 * a graph that clearly displays the data
 
 In case it helps (it may not, but I want you to know how to melt data into long format)
-library(reshape2)
-feather_color_long <- melt(feather_color, variable.name = "Feather_type",
-                           value.name = "Brightness")
+
 ```{r}
 library(reshape2)
 aphid_density_long <- melt(aphid_density, id.vars = "field", variable.name = "before_after",
