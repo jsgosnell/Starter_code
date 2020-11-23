@@ -14,8 +14,7 @@ later they visit the same plots and sample for aphids again. Data is
 available using
 
 ``` r
-aphid_density <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/aphid_density.csv",
-                          stringsAsFactors = T)
+aphid_density <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vR7IAJjpKonpJLjENw9GQ7tiZm63YZZq5ed7es0OFceWvEqvPSiqpYrEnnKiCsNGIspUhn3YDry_ChF/pub?gid=552866496&single=true&output=csv", stringsAsFactors = T)
 ```
 
 How would you evaluate the data?
