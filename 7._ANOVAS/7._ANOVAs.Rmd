@@ -1,5 +1,5 @@
 ---
-title: "5. ANOVAs"
+title: "7. ANOVAs"
 author: "jsg"
 date: "9/22/2020"
 output: github_document

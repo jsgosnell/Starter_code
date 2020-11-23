@@ -30,9 +30,7 @@ Make sure your answers include
   - a graph that clearly displays the data
 
 In case it helps (it may not, but I want you to know how to melt data
-into long format) library(reshape2) feather\_color\_long \<-
-melt(feather\_color, variable.name = “Feather\_type”, value.name =
-“Brightness”)
+into long format)
 
 ``` r
 library(reshape2)
