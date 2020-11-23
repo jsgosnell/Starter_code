@@ -32,7 +32,7 @@ ladybugs (Figure 2) have been released. Data is available using
 
 
 ```{r}
-damage <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/damage.csv", header = T, stringsAsFactors = T)
+damage <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRHZzd1CivJEUGnZetFnou_pEgyJD93G2-GHs2wNMMb2p-uXAN9sybg7sPfRcd7i_nUF65bGHwbQ8ph/pub?gid=976089384&single=true&output=csv", header = T, stringsAsFactors = T)
 ```
 
 
