@@ -33,7 +33,7 @@ of the aphid competitor.  Data is available using
 
 
 ```{r}
-damage_competitor <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/damage_competitor.csv", header = T, stringsAsFactors = T)
+damage_competitor <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTRtyKuFbpcwdBZISTxSI4Eyl7V9fdtH0TyB-Pgwum2YS676Okhu9TtB1n3HlOcXIuYSh--faebX9Gb/pub?gid=1533136727&single=true&output=csv", stringsAsFactors = T)
 ```
 
 
