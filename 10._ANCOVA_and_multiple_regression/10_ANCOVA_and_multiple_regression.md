@@ -76,7 +76,7 @@ Use the data to justify an optimal model.
 
 Using the available data (available at
 
-<https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/pulse_class_copy.csv>
+<https://docs.google.com/spreadsheets/d/e/2PACX-1vToN77M80enimQglwpFroooLzDtcQMh4qKbOuhbu-eVmU9buczh7nVV1BdI4T_ma-PfWUnQYmq-60RZ/pub?gid=942311716&single=true&output=csv>
 )
 
 determine the optimal subset of explanatory variables that should be
