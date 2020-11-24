@@ -33,7 +33,7 @@ and adjusted R^2^ values and where to find them.*
 2. Data on plant heights (in cm) for plants grown with a new and old formulation 
 of fertilizer can be found at
 
-https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/fertilizer.csv.
+https://docs.google.com/spreadsheets/d/e/2PACX-1vSUVowOKlmTic4ekL7LSbwDcqrsDSXv5K_c4Qyfcvz1lLE1_iINmGzy0zMGxY7z5DImlUErK4S2wY7Y/pub?gid=0&single=true&output=csv.
 
 Analyze this data using the t.test function and the lm function to convince yourself the outcome is the same.
 
@@ -42,7 +42,7 @@ Analyze this data using the t.test function and the lm function to convince your
 
 3. Data on sugar cane yield for multiple fields is available using 
 
-read.table("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/cane.txt", 
+read.table("https://docs.google.com/spreadsheets/d/e/2PACX-1vRjstKreIM6UknyKFQCtw2_Q6itY9iOAVWO1hUNZkBFL8mwVssvTevqgzV22YDKCUeJq0HBDrsBrf5O/pub?gid=971470377&single=true&output=tsv", 
 header = T, stringsAsFactors = T)
 
 More info on the data can be found at 
@@ -52,17 +52,25 @@ Is there evidence that location (DistrictPosition column) impacts yield
 
 4. Data on FEV (forced expiratory volume), a measure of lung function, can be 
 found at 
+
 http://www.statsci.org/data/general/fev.txt
+
 More information on the dataset is available at 
+
 http://www.statsci.org/data/general/fev.html.
+
 Is there evidence that FEV depends on gender? If so, which gender has the higher
 FEV score?  How much variance does gender explain? 
 
 5. A professor carried out a long-term study to see how various factors impacted
-pulse rate before and after exercise.  Data can be found at 
+pulse rate before and after exercise.  Data can be found at
+
 http://www.statsci.org/data/oz/ms212.txt
+
 With more info at 
+
 http://www.statsci.org/data/oz/ms212.html.
+
 Is there evidence that frequency of exercise (Exercise column) impacts resting
 pulse rate (Pulse1 column)?
 
