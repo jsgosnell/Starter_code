@@ -25,8 +25,8 @@ septempunctata*) eating mealybugs/aphids. Zeynel Cebeci, CC BY-SA 4.0
 
 Building on earlier experiments (Quiz 5\!), a group of scientists is now
 considering if the usefulness of 2 different predators in controlling
-herbivory by an invasive species aphid. Scientists measure the number of
-damaged leaves along 10 m surveys in fields that have had no biocontrol
+herbivory by an invasive aphid. Scientists measure the number of damaged
+leaves along 10 m surveys in fields that have had no biocontrol
 (control) and those where parasitic wasps (Figure 1) or predatory
 ladybugs (Figure 2) have been released. Data is available using
 
