@@ -9,9 +9,8 @@ https://sites.google.com/view/biostats/bioenv-2100/ancova-and-multiple-regressio
 the  **10_ANCOVA_and_Regression.R**
 script in the lecture files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats). 
-Make sure you are comfortable with null and alternative hypotheses for all
-examples and understand correlation vs regression.
-
+Make sure you are comfortable with null and alternative hypotheses and appropriate plots
+for all examples.
 
 Remember you should
 

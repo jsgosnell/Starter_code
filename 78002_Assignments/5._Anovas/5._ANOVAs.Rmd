@@ -8,7 +8,8 @@ Before doing this, review the **Week 5** lecture set slides from
 https://sites.google.com/view/biostats/bio-7800178002/week-5 and
 the  **7_ANOVAs.R** and **8_Blocking_and_interactions.R** script in the lecture files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
-Make sure you are comfortable with null and alternative hypotheses for all examples.
+Make sure you are comfortable with null and alternative hypotheses and appropriate plots
+for all examples.
 
 
 Remember you should
@@ -41,7 +42,7 @@ Analyze this data using the t.test function and the lm function to convince your
 
 3. Data on sugar cane yield for multiple fields is available using 
 
-read.table("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/cane.txt", 
+read.table("https://docs.google.com/spreadsheets/d/e/2PACX-1vRjstKreIM6UknyKFQCtw2_Q6itY9iOAVWO1hUNZkBFL8mwVssvTevqgzV22YDKCUeJq0HBDrsBrf5O/pub?gid=971470377&single=true&output=tsv", 
 header = T, stringsAsFactors = T)
 
 More info on the data can be found at 
@@ -72,7 +73,7 @@ who ran between the first and second pulse measures (Ran column = 1).
 7. A survey was conducted to see if athletes and non-athletes deal with anger in
 the same way.  Data is @
 
-angry <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/angry_moods.csv", stringsAsFactors = T)
+angry <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSaawG37o1ZUEs1B4keIJpZAY2c5tuljf29dWnzqQ0tHNCzfbz85AlWobYzBQ3nPPXJBLP-FWe4BNZB/pub?gid=1784556512&single=true&output=csv", stringsAsFactors = T)
 
 and more information is at 
 

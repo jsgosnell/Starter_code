@@ -9,8 +9,8 @@ Variables in Linear Models\*\* lecture set slides from
 and the **10\_ANCOVA\_and\_Regression.R** script in the lecture files
 folder of the [CUNY-BioStats github
 repository](https://github.com/jsgosnell/CUNY-BioStats). Make sure you
-are comfortable with null and alternative hypotheses for all examples
-and understand correlation vs regression.
+are comfortable with null and alternative hypotheses and appropriate
+plots for all examples.
 
 Remember you should
 
