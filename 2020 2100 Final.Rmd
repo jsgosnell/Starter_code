@@ -117,6 +117,7 @@ and fluoride levels from multiple towns (this part is made up!).  Data is availa
 ```{r}
 fluoride <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vS7VvJ5WyzEIMyj-HGArfu_ZIT5cneHI5RiqmDIW_TaDDKgFTtBgcPXCPA00TLO4ax-xJlknn2bWfBi/pub?gid=1554561003&single=true&output=csv", stringsAsFactors = T)
 ```
+What does the data suggest? Make sure to include
 
   - null hypothesis (1 pt)
   - alternative hypothesis (1 pt)

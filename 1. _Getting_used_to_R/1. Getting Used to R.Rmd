@@ -69,7 +69,7 @@ section (**Now we can actually work in R**) to get started
 
 Now you can start working on the assignment in Rstudio.  To view instructions, 
 open the .Rmd file you want to work on IN RSTUDIO! It will be in the folder for the assignment
-you are focusing on. From inside thep project space, go to **File**, **Open File**
+you are focusing on. From inside the project space, go to **File**, **Open File**
 and find it, or look in the Files window to find and open the file. 
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3esT_YVFqbmcul63AzkXBGrjK5J6kPBMRZW_mT_JNTG7UstxeT9hInq7dA91xV8-e6DbO77u8YepXb6sO6beUo0OlSWg2fXEBbxwgYTHWo7KkZlSAsVfzgpYiL7QbveqRLjctmUYb3RJninK9jMK4DP9A=w800-h452-no?authuser=0)
@@ -91,7 +91,19 @@ file between the --- markers) with your name.
 Now click the **Knit** button again.  Now you should see your
 name in the preview in the **Viewer** tab. 
 
-Now lets make our first commit.
+Now lets make our first commit.  Before doing this we'll need to get a git 
+token. To do this we'll use our first R chunk (in markdown) and our first
+functions.
+
+```{r}
+library(usethis)
+usethis::create_github_token()
+library(gitcreds)
+gitcreds_set()
+```
+
+
+
 If you look in the upper right windows, you should see a *Git* tab.  Select it. 
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3cew_BrIh1yE8pXRHanoR8pkhTqwPig8u0_jAgldEbZ2mBpE87uUsToH9HYvOsCCCYYJAfY1vVVAOW5evyBIW7NHpWxiS60QZH-2dM9WZnp96r9x3JcBejVWqRxR7tQP81WuDxzk5nRyzLVWDfRD86fiA=w533-h108-no)
