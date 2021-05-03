@@ -65,7 +65,7 @@ Note you may need to enter your github username and password to create the repos
 The next screen will bring you to a "normal" RStudio screen.  Continue to the next
 section (**Now we can actually work in R**) to get started
 
-## Now we can actually work in R
+## Now we can actually work in R and markdown
 
 Now you can start working on the assignment in Rstudio.  To view instructions, 
 open the .Rmd file you want to work on IN RSTUDIO! It will be in the folder for the assignment
@@ -93,16 +93,33 @@ name in the preview in the **Viewer** tab.
 
 Now lets make our first commit.  Before doing this we'll need to get a git 
 token. To do this we'll use our first R chunk (in markdown) and our first
-functions.
+functions. To run this chunk interactively, select the green triangle button (play
+icon) to run the current chunk.  
 
-```{r}
+```{r, eval=F}
 library(usethis)
 usethis::create_github_token()
+```
+
+This will launch a browser pointed to github. You may need to log in. Then it will
+have you name a PAT (personal access token). You can, for example, name it Rstudio.
+Then scroll to the bottom, and select **Generate Token**. Save (copy and paste) 
+the resulting token.  Then run the next code chunk.  Select 3, then paste in the 
+token you just generated.
+
+```{r, eval=FALSE}
 library(gitcreds)
 gitcreds_set()
 ```
 
+This process is letting your computer and github communicate and should only need 
+to be done once, but *save you PAT somewhere just in case*. 
 
+You've also just used your first 2 R chunks in markdown format. This format allows
+you to send code to the console just like we saw in the R example, but also can take
+the combination of code and prose you see here and auto-generate documents (what you 
+just did by hitting knit!).  Since these are all text-based, they are easy to share
+with others. We'll be doing that using github classroom.
 
 If you look in the upper right windows, you should see a *Git* tab.  Select it. 
 
