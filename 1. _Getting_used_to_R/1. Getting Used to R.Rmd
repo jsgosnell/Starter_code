@@ -1,17 +1,23 @@
 ---
 title: "1. Getting Used to R (and Rstudio, Rmd...and more)"
-author: "NAME"
-date: "DATE"
+author: "jsg"
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
 output:
-  github_document
-  
+  html_document:
+    toc: true
+    toc_float: true
+    keep_md: true
+    self_contained: true
+
 ---
+
 Before doing this, review the **Welcome** and **Git** lecture set slides from 
 https://sites.google.com/view/biostats/bioenv-2100/welcome and
 the  **1_intro_data_lecture.R** script in the lecture_files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
 
 ## Getting your first repository
+
 At this point I'm assuming you received an invitation to view the assignment
 on github classroom and accepted it. You now have a private repository of these 
 files.  In addition to working on R, we'll have you connect your first
@@ -28,8 +34,11 @@ Select file, new project, Version control. On the next screen select git. If thi
 isn't available, you may need to install git (free) on your system.  You can 
 download it at https://git-scm.com/download/.  
 
-Next you’ll need to enter the url for your repository. Look for the Code button 
-(usually green) in your githbub repository (where you may be reading this...). 
+Next you’ll need to enter the url for your repository. Open a browser, go to 
+https://github.com/ and sign in to your account. Look under your repositories for 
+the correct one and open it. Then look for the Code button 
+(usually green) in the githbub repository (where you may be reading this...). 
+
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
 
@@ -49,10 +58,10 @@ You'll instead see something like this:
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dVAm8XnMQH9ebnayG0SgBgSewlPFWyJmubIbASefCQ0NKiuZHsQO6eUbzy-Y0LZ6U7KbPkmHCi91tJ4lm7xPs4xf0A3fyMXyMKuzfJ6B2tADIq_NX9GmYRrZS5OuZ6Y1DcCxyzMmmEsV-_DyV9XrLLJA=w1320-h581-no?authuser=0)
 
-To start working on an assignment, select **New Project**, **New Project from Github repo**, 
-then enter the url 
-for your repository. Look for the Code button 
-(usually green) in your githbub repository (where you may be reading this...). 
+To start working on an assignment, select **New Project**, **New Project from Github repo**. Next you’ll need to enter the url for your repository. Open a browser, go to 
+https://github.com/ and sign in to your account. Look under your repositories for 
+the correct one and open it. Then look for the Code button 
+(usually green) in the githbub repository (where you may be reading this...). 
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
 
@@ -60,16 +69,23 @@ Click it, then copy the
 web url (or click the copy icon). Input that into the field asking for the URL
 of your github repository. 
 
-Note you may need to enter your github username and password to create the repository. 
+Note you may need to enter your github username and password to create the repository.
+If you receive other errors, you may need handle the github token authorization 
+first (more info below in the 
+**Github 2-factor authentication (required as of Fall 2021)** section!)
 
 The next screen will bring you to a "normal" RStudio screen.  Continue to the next
 section (**Now we can actually work in R**) to get started
 
 ## Now we can actually work in R and markdown
 
-Now you can start working on the assignment in Rstudio.  To view instructions, 
-open the .Rmd file you want to work on IN RSTUDIO! It will be in the folder for the assignment
-you are focusing on. From inside the project space, go to **File**, **Open File**
+Now you can start working on the files in the repository in
+Rstudio.  To view the files, make sure 
+you are in the right repository.  You should see whatever you named the project in the
+upper right hand corner of Rstudio. If you don't go to File > Open Project and 
+navigate to where you placed the repository.  
+
+Once you are in the right project, open the file you want to work on.   From inside the project space, go to **File**, **Open File**
 and find it, or look in the Files window to find and open the file. 
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3esT_YVFqbmcul63AzkXBGrjK5J6kPBMRZW_mT_JNTG7UstxeT9hInq7dA91xV8-e6DbO77u8YepXb6sO6beUo0OlSWg2fXEBbxwgYTHWo7KkZlSAsVfzgpYiL7QbveqRLjctmUYb3RJninK9jMK4DP9A=w800-h452-no?authuser=0)
@@ -80,21 +96,34 @@ also need to allow pop-ups in your browser.
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
 
-The **Knit** button saves the file and 
-shows you a rendered copy of the contents of the editor.  
+Then **Knit** the file. Note the first time you do this in a project you may be
+prompted to install a number of packages!  If you are using a webservice you may
+also need to allow pop-ups in your browser. Don't be surprised if a new window 
+pops up (it should). 
 
-Now we'll start changing the file.
+![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
+
+### STOP HERE (IF YOU GET THIS FAR) BEFORE THE SESSION
+
+The **Knit** button saves the .Rmd file and renders a new version whose output 
+depends on what you selected in the header. Here we have html_document,
+so if everything works a preview of a webpage like document should appear. The file
+also produces a github friendly .md file. 
+
+Now we'll start changing the file to show you how rmarkdown works.
 First, amend the file by replacing the **NAME** and **DATE** spots in the header
 (top of the
-file between the --- markers) with your name.  
+file between the --- markers) with your name and the real date.  Then **Knit** the
+file again. You should see your name in the new preview. 
 
-Now click the **Knit** button again.  Now you should see your
-name in the preview in the **Viewer** tab. 
+Now lets make our first commit.  
 
-Now lets make our first commit.  Before doing this we'll need to get a git 
+### Github 2-factor authentication (required as of Fall 2021)
+
+Before doing this we'll need to get a git 
 token. To do this we'll use our first R chunk (in markdown) and our first
 functions. To run this chunk interactively, select the green triangle button (play
-icon) to run the current chunk.  
+icon) to run the current chunk. You may also need to install the usethis library. 
 
 ```{r, eval=F}
 library(usethis)
@@ -105,7 +134,7 @@ This will launch a browser pointed to github. You may need to log in. Then it wi
 have you name a PAT (personal access token). You can, for example, name it Rstudio.
 Then scroll to the bottom, and select **Generate Token**. Save (copy and paste) 
 the resulting token.  Then run the next code chunk.  Select 3, then paste in the 
-token you just generated.
+token you just generated. Again, you may need to install the gitcreds package.
 
 ```{r, eval=FALSE}
 library(gitcreds)
@@ -120,6 +149,8 @@ you to send code to the console just like we saw in the R example, but also can 
 the combination of code and prose you see here and auto-generate documents (what you 
 just did by hitting knit!).  Since these are all text-based, they are easy to share
 with others. We'll be doing that using github classroom.
+
+### Pick back up here
 
 If you look in the upper right windows, you should see a *Git* tab.  Select it. 
 
@@ -138,7 +169,8 @@ close (x) the git windows. Select the terminal tab:
 
 ![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dm7BlCVoK7RYCQS-sB66LWveip4Hude5tmpeALZEMJm_nR1AKVP_R-1SON-7JrvBPNZb28HWBFax2SqRCtf1iJNNUXBrTg6UupRMJhRPZIGWHy1a3QXgQYlwipDxyg0T6K4I7Q5jTVwamUfwgSBfBcpQ=w462-h228-no?authuser=0)
 
-Then paste this line into the terminal, (note you need 2 -- should be 2
+Then paste this line into the terminal (tab to the right of the console tab), 
+(note you need 2 -- should be 2
 dashes!)
 
 git config --global user.email "you@example.com"
@@ -184,7 +216,9 @@ ADD HERE IF YOU CAN @TEACHER IN COMMIT FOR HELP!)
 
 Now let's start working in R.  
 
-## R subtleties and functions
+## Assignment questions
+
+### R subtleties and functions
 
 1. Let x be defined by
 
@@ -192,6 +226,7 @@ Now let's start working in R.
 ```{r}
 x <- 1:10
 ```
+
 Try executing this chunk (in R studio, not the webview) by clicking the *Run* 
 button within the chunk or by placing your cursor inside it and pressing 
 *Ctrl+Shift+Enter*.
@@ -222,7 +257,7 @@ each of these does.
 3.  Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND RUN EACH OF 
 THESE COMMANDS. Then state what each of these does.
 
-## Data input, plotting, and tests
+### Data input, plotting, and tests
 
 You can read in a dataset from the internet following this protocol.
 
