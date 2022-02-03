@@ -10,13 +10,13 @@ assignment on github classroom and accepted it. You now have a private
 repository of these files. This repository contains starter code for all
 assignments.
 
-### If you are using RStudio on your desktop, QUBES, or anywhere that looks like an RStudio screen
+### If you are using RStudio on your desktop
 
 To start working on an assignment, open RStudio (on your desktop or
 cloudserver where you actually see the main Rstudio screen).
 
-![alt
-text](https://lh3.googleusercontent.com/pw/ACtC-3ddyHNvzmRICUa_CmWQmzbz5jr9aTdo_bs9yH9ZbfUPe2LjS46TYj1FsD7CjhKL3rknFZkui-YecWokRGY03cj8occR5HJN56P5N8KJTCUPgciKCAwD8YHJEKXXOOjH-LI8k1G8p88MGB7d_6ov4EJtQQ=w879-h664-no)
+![Screenshot showing where to start creating a
+repository](https://lh3.googleusercontent.com/pw/ACtC-3ddyHNvzmRICUa_CmWQmzbz5jr9aTdo_bs9yH9ZbfUPe2LjS46TYj1FsD7CjhKL3rknFZkui-YecWokRGY03cj8occR5HJN56P5N8KJTCUPgciKCAwD8YHJEKXXOOjH-LI8k1G8p88MGB7d_6ov4EJtQQ=w879-h664-no)
 
 Select file, new project, Version control. On the next screen select
 git. If this isn’t available, you may need to install git (free) on your
@@ -26,8 +26,8 @@ Next you’ll need to enter the url for your repository. Look for the Code
 button (usually green) in your githbub repository (where you may be
 reading this…).
 
-![alt
-text](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
+!\[[Click the green code button to get the repository
+url](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
 
 Click it, then copy the web url (or click the copy icon). Input that
 into the Rstudio Repository URL space. Then name the project (maybe
@@ -53,30 +53,46 @@ from Github repo**, then enter the url for your repository. Look for the
 Code button (usually green) in your githbub repository (where you may be
 reading this…).
 
-![alt
-text](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
+![In Rstudio cloud, click new project to start a
+repository](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
 
 Click it, then copy the web url (or click the copy icon). Input that
 into the field asking for the URL of your github repository.
 
 Note you may need to enter your github username and password to create
-the repository.
+the repository. If you receive other errors, you may need handle the
+github token authorization first (more info below in the **Github
+2-factor authentication (required as of Fall 2021)** section!)
 
 The next screen will bring you to a “normal” RStudio screen.
 
-## Now we can actually work in R
+Before continuing, I recommend turning down the computer usage. Free
+rstudiocloud accounts only allow so much usage, but that depends on how
+much power you allocate to a project. To do this, click on the RAM icon
+in the upper left corner, select resources, and move all sliders to the
+far left.
+
+![In Rstudio cloud, move all sliders to the left to give you more actual
+hours](https://lh3.googleusercontent.com/pw/AM-JKLVGtN01ndQcB622ioe8eLk0vcbTgdlE2QXG8L_q0scnCBEXjhn4Kvik3Lqm7BoiI11p0YaTYq5NlWaXa303IVly68oNYqfJoQWoNWnAyWUyo5fRcrQ39lrvFBdWP1J-qGd84xGNFN-U1aGgfF5ac6FsAA=w329-h734-no?authuser=0)
+
+If you end up doing something more complex, you can increase allocated
+power to speed everything up. For most class code, however, low power
+should be fine.)
+
+Continue to the next section (**Now we can actually work in R**) to get
+started ## Now we can actually work in R
 
 Now you can start working on the assignment in Rstudio. To view
-instructions, open the .Rmd file you want to work on IN RSTUDIO\! It
-will be in the folder for the assignment you are focusing on. From
-inside thep project space, go to **File**, **Open File** and find it, or
-look in the Files window to find and open the file.
+instructions, open the .Rmd file you want to work on IN RSTUDIO! It will
+be in the folder for the assignment you are focusing on. From inside
+thep project space, go to **File**, **Open File** and find it, or look
+in the Files window to find and open the file.
 
 ![alt
 text](https://lh3.googleusercontent.com/pw/ACtC-3esT_YVFqbmcul63AzkXBGrjK5J6kPBMRZW_mT_JNTG7UstxeT9hInq7dA91xV8-e6DbO77u8YepXb6sO6beUo0OlSWg2fXEBbxwgYTHWo7KkZlSAsVfzgpYiL7QbveqRLjctmUYb3RJninK9jMK4DP9A=w800-h452-no?authuser=0)
 
 Then **Knit** the file. Note the first time you do this in a project you
-may be prompted to install a number of packages\! If you are using a
+may be prompted to install a number of packages! If you are using a
 webservice you may also need to allow pop-ups in your browser.
 
 ![alt
@@ -86,16 +102,16 @@ The **Knit** button saves the file and shows you a rendered copy of the
 contents of the editor.
 
 Now you can start working on the assignment in Rstudio. To view
-instructions, open the .Rmd file you want to workon IN RSTUDIO\! It will
+instructions, open the .Rmd file you want to workon IN RSTUDIO! It will
 be in the folder for the assignment you are focusing on. Then **Knit**
 the file.
 
 ![alt
 text](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
 
-Presto\! You will see instructions. As you update the .Rmd file and
+Presto! You will see instructions. As you update the .Rmd file and
 **Knit** it, it will update. Make sure you also save changes and
-**Commit** and **Push** them back to the github clone\!
+**Commit** and **Push** them back to the github clone!
 
 This is the file you will eventually turn in (a little meta…). You can
 also view the instructions/assignment file on Github if you click on the
