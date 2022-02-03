@@ -29,7 +29,7 @@ download it at https://git-scm.com/download/.
 Next you’ll need to enter the url for your repository. Look for the Code button 
 (usually green) in your githbub repository (where you may be reading this...). 
 
-![[Click the green code button to get the repository url](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
+![Click the green code button to get the repository url](https://lh3.googleusercontent.com/pw/ACtC-3c6iXUxY_YkEQktN9szfL0Jfl3-jJnjfp2dwbMU_NtnOtoCOFzJcpRN1r0X0zCZlH2gtB9JlXz7_WLgXMBAU7a2K_vwTX5taNBBWwSgsO558aqLZEtKmH_cMpwv7ukzYi7R4ffncWbcscAy8sAzBcZ4Ww=w692-h490-no?authuser=0)
 
 Click it, then copy the 
 web url (or click the copy icon). Input that into the Rstudio Repository URL 
@@ -46,7 +46,7 @@ Go to the next section (**Now we can actually work in R**) to get started
 
 You'll instead see something like this:
 
-![alt text](https://lh3.googleusercontent.com/pw/ACtC-3dVAm8XnMQH9ebnayG0SgBgSewlPFWyJmubIbASefCQ0NKiuZHsQO6eUbzy-Y0LZ6U7KbPkmHCi91tJ4lm7xPs4xf0A3fyMXyMKuzfJ6B2tADIq_NX9GmYRrZS5OuZ6Y1DcCxyzMmmEsV-_DyV9XrLLJA=w1320-h581-no?authuser=0)
+![In Rstudio cloud, click new project to start a repository](https://lh3.googleusercontent.com/pw/ACtC-3dVAm8XnMQH9ebnayG0SgBgSewlPFWyJmubIbASefCQ0NKiuZHsQO6eUbzy-Y0LZ6U7KbPkmHCi91tJ4lm7xPs4xf0A3fyMXyMKuzfJ6B2tADIq_NX9GmYRrZS5OuZ6Y1DcCxyzMmmEsV-_DyV9XrLLJA=w1320-h581-no?authuser=0)
 
 To start working on an assignment, select **New Project**, **New Project from Github repo**, 
 then enter the url 
