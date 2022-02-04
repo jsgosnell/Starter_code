@@ -1,6 +1,6 @@
 ---
 title: "1. Getting Used to R (and Rstudio, Rmd...and more)"
-author: "jsg"
+author: "stephen's example"
 date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
 output:
   html_document:
