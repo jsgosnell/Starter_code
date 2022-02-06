@@ -36,7 +36,9 @@ just save all projects into the main directory. Alternatively you can
 click Browse and make an Assignments folder if you want. Whatever you
 choose, the project will be saved in new folder in that location using
 the name you chose. Note you may need to enter your github username and
-password to create the repository.
+password to create the repository. If you receive other errors, you may
+need handle the github token authorization first (more info below in the
+**Github 2-factor authentication (required as of Fall 2021)** section!)
 
 Go to the next section (**Now we can actually work in R**) to get
 started
@@ -80,40 +82,46 @@ power to speed everything up. For most class code, however, low power
 should be fine.)
 
 Continue to the next section (**Now we can actually work in R**) to get
-started ## Now we can actually work in R
+started
 
-Now you can start working on the assignment in Rstudio. To view
-instructions, open the .Rmd file you want to work on IN RSTUDIO! It will
-be in the folder for the assignment you are focusing on. From inside
-thep project space, go to **File**, **Open File** and find it, or look
-in the Files window to find and open the file.
+## Now we can actually work in R
 
-![alt
-text](https://lh3.googleusercontent.com/pw/ACtC-3esT_YVFqbmcul63AzkXBGrjK5J6kPBMRZW_mT_JNTG7UstxeT9hInq7dA91xV8-e6DbO77u8YepXb6sO6beUo0OlSWg2fXEBbxwgYTHWo7KkZlSAsVfzgpYiL7QbveqRLjctmUYb3RJninK9jMK4DP9A=w800-h452-no?authuser=0)
+Now you can start working on the files in the repository in Rstudio. To
+view the files, make sure you are in the right repository. You should
+see whatever you named the project in the upper right hand corner of
+Rstudio. If you don’t go to File \> Open Project and navigate to where
+you placed the repository.
+
+Once you are in the right project, open the file you want to work on.
+From inside the project space, go to **File**, **Open File** and find
+it, or look in the Files window to find and open the file.
+
+![Use the file tab to navigate to the .rmd
+file](https://lh3.googleusercontent.com/pw/ACtC-3esT_YVFqbmcul63AzkXBGrjK5J6kPBMRZW_mT_JNTG7UstxeT9hInq7dA91xV8-e6DbO77u8YepXb6sO6beUo0OlSWg2fXEBbxwgYTHWo7KkZlSAsVfzgpYiL7QbveqRLjctmUYb3RJninK9jMK4DP9A=w800-h452-no?authuser=0)
 
 Then **Knit** the file. Note the first time you do this in a project you
 may be prompted to install a number of packages! If you are using a
 webservice you may also need to allow pop-ups in your browser.
 
-![alt
-text](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
+![The knit button turns your .rmd file into other
+products](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
 
-The **Knit** button saves the file and shows you a rendered copy of the
-contents of the editor.
+Then **Knit** the file. Note the first time you do this in a project you
+may be prompted to install a number of packages! If you are using a
+webservice you may also need to allow pop-ups in your browser. Don’t be
+surprised if a new window pops up (it should if you have html output).
 
-Now you can start working on the assignment in Rstudio. To view
-instructions, open the .Rmd file you want to workon IN RSTUDIO! It will
-be in the folder for the assignment you are focusing on. Then **Knit**
-the file.
-
-![alt
-text](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
-
-Presto! You will see instructions. As you update the .Rmd file and
-**Knit** it, it will update. Make sure you also save changes and
-**Commit** and **Push** them back to the github clone!
+The **Knit** button saves the .Rmd file and renders a new version whose
+output depends on what you selected in the header. You will see
+instructions. As you update the .Rmd file and **Knit** it, it will
+update. Make sure you also save changes and **Commit** and **Push** them
+back to the github clone!
 
 This is the file you will eventually turn in (a little meta…). You can
 also view the instructions/assignment file on Github if you click on the
 .md file in the folder associated with the assignment you are working
 on.
+
+If this is your first time setting up repository you may run into some
+authentication issues. See [instructions for the first assignment for
+help](https://github.com/jsgosnell/Starter_code/blob/master/1.%20_Getting_used_to_R/1.-Getting-Used-to-R.md).
