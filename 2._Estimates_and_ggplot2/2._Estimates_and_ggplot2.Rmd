@@ -1,11 +1,16 @@
 ---
 title: "2. Estimates and ggplot2"
 author: "jsg"
-date: "9/17/2020"
-output: github_document
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    keep_md: true
+    self_contained: true
 ---
+
 Before doing this, review the **Estimation and Probability** lecture set slides from 
-https://sites.google.com/view/biostats/bioenv-2100/estimation-and-probablity and
+https://sites.google.com/view/biostats/lessons/estimation-and-probablity and
 the  **2_estimation_lecture.R** script in the lecture_files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
 
@@ -76,5 +81,6 @@ slow the convergence of the sample mean upon normality.  The reviewed distributi
 
 For this question, its easiest to just source the main file and see what happens.
 When you source a script, it is run in R without showing any console output
-(but graphs and objects are still produced!).  Try
-*source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/central_limit_theorem.R")*.  You'll also need to have the VGAM library installed.
+(but graphs and objects are still produced!).  Try 
+`source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/central_limit_theorem.R")`.  
+You'll also need to have the VGAM library installed.
