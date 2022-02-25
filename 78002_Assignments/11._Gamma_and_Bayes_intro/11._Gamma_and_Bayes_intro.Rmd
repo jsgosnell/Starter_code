@@ -50,7 +50,25 @@ left- or right-handed (look under Bayesian analysis in script for functions such
 as triplot and qbeta).  Vary both the relationship among the shape variables 
 and the magnitude (weighting) to understand how the prior impacts your posterior.
 
-6. Data on plant heights (in cm) for plants grown with a new and old formulation 
+6. Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html 
+for details), determine if the average male training at the Australian Institute 
+of Sport differs in weight from the average Australian male (85.9 kg) using
+bootstrapping techniques and a Bayesian approach. For the Bayesian approach, 
+compare approaches that give the null more and less weight.
+
+Data at 
+```{r}
+sport <- read.table("http://www.statsci.org/data/oz/ais.txt", header = T, 
+                    stringsAsFactors = T)
+```
+
+You can source the bootstrapjsg function using
+
+```{r}
+source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/bootstrapjsg.R")
+```
+
+7. Data on plant heights (in cm) for plants grown with a new and old formulation 
 of fertilizer can be found at
 
 https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/fertilizer.csv
@@ -59,7 +77,7 @@ Use the data to test the hypothesis that there is no difference in mean plant
 heights for the two groups A) Using frequentist methods B) Using Bayesian
 approaches.
 
-7.Develop a Bayesian model to determine if sepal width (from the iris dataset in
+8.Develop a Bayesian model to determine if sepal width (from the iris dataset in
 R) differs among populations.
 
 * compare models that parameterize each population as different vs one that only 

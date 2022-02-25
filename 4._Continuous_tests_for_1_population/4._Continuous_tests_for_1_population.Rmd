@@ -95,6 +95,5 @@ You can source the bootstrapjsg function using
 source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/bootstrapjsg.R")
 ```
 
-7. Use a Bayesian approach to compare the weight of Australian athletes to 85.9 kg.
-Compare approaches that give the null more and less weight.
+
 
