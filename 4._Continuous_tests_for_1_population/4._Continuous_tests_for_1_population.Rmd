@@ -72,21 +72,21 @@ Test the hypothesis that µ = 205
 * Using rank transform analysis 
 * Using binary transform analysis
 
-4. Evolutionary geneticists predicts the family sex ratio will be 80% female in 
+5. Evolutionary geneticists predicts the family sex ratio will be 80% female in 
 broods of eagles that successfully fledge >3 young. Nests that fledge 3 or more
 chicks are very rare but a sample of 30 chicks are obtained from such nests and
 they yield 25 females and 5 males. Test the hypotheses that that: 
 * a) the sex ratio is 50% females
 * b) the sex ratio is 80% females.
 
-5. Studies of flying snakes have led researchers to posit the mean undulation 
+6. Studies of flying snakes have led researchers to posit the mean undulation 
 rate is 1.4 Hz.  You wish to test this hypothesis using the small sample of 
 undulation rates shown below.  Create a small dataset of the paradise tree snake 
 undulation rates and choose and justify a test you can use to assess the data.
 
 Undulation rates (in Hz):  0.9, 1.4, 1.2, 1.2, 1.3, 2.0, 1.4, 1.6
 
-6.  Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html 
+7.  Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html 
 for details), determine if the average male training at the Australian Institute 
 of Sport differs in weight from the average Australian male (85.9 kg) using
 bootstrapping techniques. Data at 
