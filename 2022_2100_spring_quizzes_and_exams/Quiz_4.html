@@ -12,7 +12,7 @@
 <meta name="author" content="jsg" />
 
 
-<title>4. Continuous tests for 1 population</title>
+<title>Quiz 4 Spring 2022</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1508,86 +1508,55 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">4. Continuous tests for 1 population</h1>
+<h1 class="title toc-ignore">Quiz 4 Spring 2022</h1>
 <h4 class="author">jsg</h4>
-<h4 class="date">Last compiled on 09 March, 2022 15:04</h4>
+<h4 class="date">Last compiled on 09 March, 2022 11:44</h4>
 
 </div>
 
 
-<p>Before doing this, review the <strong>Introduction to normality and one-sample tests for continous data</strong> lecture set slides from <a href="https://sites.google.com/view/biostats/bioenv-2100/introduction-to-normality-and-one-sample-tests" class="uri">https://sites.google.com/view/biostats/bioenv-2100/introduction-to-normality-and-one-sample-tests</a> and the <strong>4_normality.R</strong> script in the lecture_files folder of the <a href="https://github.com/jsgosnell/CUNY-BioStats">CUNY-BioStats github repository</a>.</p>
-<p>You’ll also use the qqplot_example.R and central_limit_theorem.R script from the <a href="https://github.com/jsgosnell/CUNY-BioStats/tree/master/code_examples">code_examples folder</a>.</p>
-<p>Remember you should</p>
+<div id="medical-applications-of-oxygen" class="section level1">
+<h1>Medical applications of oxygen</h1>
+<p>A study was done to determine if oxygen was being appropriately supplied to patients in a medical unit (Barrett et al 2020). They surveyed 636 patients in mutiple wards and found 66 were using oxygen. Is there evidence that the ward the patient is located in impacts the probability they will receive oxygen?</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><em>Ward</em></th>
+<th align="center">Patients prescribed oxygen</th>
+<th align="center">Patients not prescribed oxygen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Acute Medical Unit (AMU)</td>
+<td align="center">8</td>
+<td align="center">81</td>
+</tr>
+<tr class="even">
+<td align="center">Coronary Care Unit (CCU)</td>
+<td align="center">2</td>
+<td align="center">14</td>
+</tr>
+<tr class="odd">
+<td align="center">Medical (General)</td>
+<td align="center">32</td>
+<td align="center">348</td>
+</tr>
+<tr class="even">
+<td align="center">Medical (Respiratory)</td>
+<td align="center">24</td>
+<td align="center">67</td>
+</tr>
+</tbody>
+</table>
+<p>Make sure your answers include</p>
 <ul>
-<li>add code chunks by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em> to answer the questions!</li>
-<li><strong>knit</strong> your file to produce a markdown version that you can see!</li>
-<li>save your work often
-<ul>
-<li><strong>commit</strong> it via git!</li>
-<li><strong>push</strong> updates to github</li>
-</ul></li>
+<li>null hypothesis</li>
+<li>alternative hypothesis</li>
+<li>explanation for test you will use (<strong>Note: make sure you do post-hoc tests if needed! I will not remind of this on exam!</strong>)</li>
+<li>results from statistical test</li>
+<li>clear explanation of how results relate to your stated hypotheses</li>
 </ul>
-<div id="recognizing-and-assessing-normality" class="section level2">
-<h2>Recognizing and assessing normality</h2>
-<ol style="list-style-type: decimal">
-<li>Using the qqplot_example.R code, examine the following distributions and, for the continuous distributions (marked with a “*”), observe how a normal probability plot (qqplot) can be used to visually test for approximate normality.</li>
-</ol>
-<ul>
-<li>*Normal (u= 0; σ<sup>2</sup>= 1, 10, 100)</li>
-<li>*Student’s t (df = 1, 10, 30, &amp; 100)</li>
-<li>*Chi-square (df= 1, 2, 5, 30, 50)</li>
-<li>Bernoulli (P=0.1, 0.5, &amp; 0.9)</li>
-<li>Binomial (P=0.05; N= 2, 5, 25, &amp; 50); (P=0.25; N= 2, 5, 25, &amp; 50); (P=0.50; N= 2, 5, 25, &amp; 50); (P=0.75; N= 2, 5, 25, &amp; 50); (P=0.95; N= 2, 5, 25, &amp; 50)</li>
-<li>Poisson ( u= 2, 5, 10, 30, &amp; 50)</li>
-</ul>
-<p>For this question, its easiest to just source the main file and see what happens. When you source a script, it is run in R without showing any console output (but graphs and objects are still produced!). Try <em>source(“<a href="https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R" class="uri">https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R</a>)</em></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Review the central_limit_theorem.R code if you need to convince/remind yourself how common normality of means is for even non-normal data. You can source the code using the same approach noted in Question 1.</li>
-</ol>
-</div>
-<div id="just-for-practice-note-some-sample-sizes-may-be-too-small-for-these-to-all-be-good-ideas" class="section level2">
-<h2>Just for practice (note some sample sizes may be too small for these to all be good ideas!)</h2>
-<p>Make sure you are comfortable with null and alternative hypotheses for all examples. You should also feel comfortable graphing the data.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Seven observers were shown, for a brief period, a grill with 161 flies impaled and were asked to estimate the number. The results are given by Cochran (1954). Based on five estimates, they were 183.2, 149.0, 154.0, 167.2, 187.2, 158.0, and 143.0. Test the null hypothesis that the mean of the estimates is 161 flies.</li>
-</ol>
-<ul>
-<li>Assuming variance = 275</li>
-<li>Estimating the variance from the data</li>
-<li>Using rank transform analysis</li>
-<li>Using binary transform analysis</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Yields of 10 strawberry plants in a uniformity trial are given by Baker and Baker (1953) as 239, 176, 235, 217, 234, 216, 318, 190, 181, and 225 g. Test the hypothesis that µ = 205</li>
-</ol>
-<ul>
-<li>Assuming variance = 1500</li>
-<li>Estimating the variance from the data</li>
-<li>Using rank transform analysis</li>
-<li>Using binary transform analysis</li>
-</ul>
-<ol start="5" style="list-style-type: decimal">
-<li>Evolutionary geneticists predicts the family sex ratio will be 80% female in broods of eagles that successfully fledge &gt;3 young. Nests that fledge 3 or more chicks are very rare but a sample of 30 chicks are obtained from such nests and they yield 25 females and 5 males. Test the hypotheses that that:</li>
-</ol>
-<ul>
-<li><ol style="list-style-type: lower-alpha">
-<li>the sex ratio is 50% females</li>
-</ol></li>
-<li><ol start="2" style="list-style-type: lower-alpha">
-<li>the sex ratio is 80% females.</li>
-</ol></li>
-</ul>
-<ol start="6" style="list-style-type: decimal">
-<li>Studies of flying snakes have led researchers to posit the mean undulation rate is 1.4 Hz. You wish to test this hypothesis using the small sample of undulation rates shown below. Create a small dataset of the paradise tree snake undulation rates and choose and justify a test you can use to assess the data.</li>
-</ol>
-<p>Undulation rates (in Hz): 0.9, 1.4, 1.2, 1.2, 1.3, 2.0, 1.4, 1.6</p>
-<ol start="7" style="list-style-type: decimal">
-<li>Using data from Australian athletes (<a href="http://www.statsci.org/data/oz/ais.html" class="uri">http://www.statsci.org/data/oz/ais.html</a> for details), determine if the average male training at the Australian Institute of Sport differs in weight from the average Australian male (85.9 kg) using bootstrapping techniques. Data at</li>
-</ol>
-<pre class="r"><code>sport &lt;- read.table(&quot;http://www.statsci.org/data/oz/ais.txt&quot;, header = T, 
-                    stringsAsFactors = T)</code></pre>
-<p>You can source the bootstrapjsg function using</p>
-<pre class="r"><code>source(&quot;https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/bootstrapjsg.R&quot;)</code></pre>
 </div>
 
 
