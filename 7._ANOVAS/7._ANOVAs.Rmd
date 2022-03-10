@@ -1,9 +1,15 @@
 ---
 title: "7. ANOVAs"
 author: "jsg"
-date: "9/22/2020"
-output: github_document
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    keep_md: true
+    self_contained: true
 ---
+
 Before doing this, review the **7. ANOVA and multiple comparisons** lecture set slides from 
 https://sites.google.com/view/biostats/bioenv-2100/anova-and-multiple-comparisons and
 the  **7_ANOVAs.R** script in the lecture files folder of the
