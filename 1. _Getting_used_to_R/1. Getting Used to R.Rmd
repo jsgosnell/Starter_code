@@ -309,7 +309,7 @@ THESE COMMANDS. Then state what each of these does.
 You can read in a dataset from the internet following this protocol.
 
 ```{r}
-sleep <- read.csv("http://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/sleep.csv")
+sleep <- read.csv("http://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/sleep.csv", stringsAsFactors = T)
 ```
 
 Run this chunk and note it has added an object named `sleep` to the environment. 

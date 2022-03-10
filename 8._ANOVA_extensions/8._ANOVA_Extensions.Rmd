@@ -1,9 +1,15 @@
 ---
 title: "8. ANOVA Extensions"
 author: "jsg"
-date: "11/16/2020"
-output: github_document
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    keep_md: true
+    self_contained: true
 ---
+
 Before doing this, review the **8. 2-way Anova** lecture set slides from 
 https://sites.google.com/view/biostats/bioenv-2100/2-way-anovas-and-interactions and
 the **8_Blocking_and_interactions.R** script in the lecture files folder of the

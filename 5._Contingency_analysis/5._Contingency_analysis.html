@@ -64,6 +64,7 @@ if (window.hljs) {
 
 
 
+
 <style type="text/css">
 .main-container {
   max-width: 940px;
@@ -84,6 +85,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -242,7 +246,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">5. Contingency Analysis: Extending the binomial to more categories</h1>
 <h4 class="author">jsg</h4>
-<h4 class="date">Last compiled on 03 March, 2022 12:35</h4>
+<h4 class="date">Last compiled on 10 March, 2022 17:21</h4>
 
 </div>
 
@@ -263,7 +267,7 @@ div.tocify {
 <ol style="list-style-type: decimal">
 <li>Let’s look at some heart attack data. Read in the data using</li>
 </ol>
-<pre class="r"><code>heart_atacks &lt;- read.table(&quot;https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/heartatk4R.txt&quot;,header=T)</code></pre>
+<pre class="r"><code>heart_attacks &lt;- read.table(&quot;https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/heartatk4R.txt&quot;,header=T, stringsAsFactors = T)</code></pre>
 <p>Every entry is a person that has suffered a heart attack. More information on the dataset can be found at</p>
 <p><a href="http://statland.org/Software_Help/DataDesk/datafile.htm" class="uri">http://statland.org/Software_Help/DataDesk/datafile.htm</a></p>
 <p>We want to again test if heart attacks occur equally across genders. * What if we know that males actually make up 50.8% of the population?</p>
