@@ -40,7 +40,8 @@ given one of two different drugs.
 
 Test the hypothesis that the mean clotting times
 are equal for the two groups
-*  Estimating the variance from the data 
+
+* Estimating the variance from the data 
 * Using rank transform analysis 
 * Using a permutation test 
 * Using a bootstrap test 
