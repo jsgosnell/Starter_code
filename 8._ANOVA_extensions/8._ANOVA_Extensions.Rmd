@@ -11,7 +11,7 @@ output:
 ---
 
 Before doing this, review the **8. 2-way Anova** lecture set slides from 
-https://sites.google.com/view/biostats/bioenv-2100/2-way-anovas-and-interactions and
+https://sites.google.com/view/biostats/lessons/2-way-anovas-and-interactions and
 the **8_Blocking_and_interactions.R** script in the lecture files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
 Make sure you are comfortable with null and alternative hypotheses and appropriate plots

@@ -11,7 +11,7 @@ output:
 ---
 
 Before doing this, review the **Introduction to normality and one-sample tests for continous data** lecture set slides from 
-https://sites.google.com/view/biostats/bioenv-2100/introduction-to-normality-and-one-sample-tests and
+https://sites.google.com/view/biostats/lessons/hypothesis-testing-with-the-binomial-distribution and
 the  **4_normality.R** script in the lecture_files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
 

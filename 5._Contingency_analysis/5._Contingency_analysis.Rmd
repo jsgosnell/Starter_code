@@ -10,7 +10,7 @@ output:
     self_contained: true
 ---
 Before doing this, review the **Contingency Analysis** lecture set slides from 
-https://sites.google.com/view/biostats/bioenv-2100/contingency-analysis and
+https://sites.google.com/view/biostats/lessons/contingency-analysis and
 the  **5_beyond_binomial.R** script in the lecture_files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
 
