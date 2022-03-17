@@ -2,8 +2,15 @@
 title: "9. Regression and correlation"
 author: "jsg"
 date: "11/18/2020"
-output: github_document
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    keep_md: true
+    self_contained: true
 ---
+
 Before doing this, review the **9. Linear Regression and Correlation** lecture set slides from 
 https://sites.google.com/view/biostats/bioenv-2100/linear-regression-and-correlation and
 the  **9_Regression_and_correlation.R** script in the lecture files folder of the

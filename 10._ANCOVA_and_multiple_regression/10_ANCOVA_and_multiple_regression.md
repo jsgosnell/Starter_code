@@ -1,86 +1,87 @@
-10\. ANCOVAs and multiple regression
-================
-jsg
-11/18/2020
+---
+title: "10. ANCOVAs and multiple regression"
+author: "jsg"
+date: "Last compiled on 17 March, 2022 07:17"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    keep_md: true
+    self_contained: true
+---
 
-Before doing this, review the \*\* Combining Multiple Explanatory
-Variables in Linear Models\*\* lecture set slides from
-<https://sites.google.com/view/biostats/bioenv-2100/ancova-and-multiple-regression>
-and the **10\_ANCOVA\_and\_Regression.R** script in the lecture files
-folder of the [CUNY-BioStats github
-repository](https://github.com/jsgosnell/CUNY-BioStats). Make sure you
-are comfortable with null and alternative hypotheses and appropriate
-plots for all examples.
+Before doing this, review the ** Combining Multiple Explanatory Variables in Linear Models** lecture set slides from 
+https://sites.google.com/view/biostats/bioenv-2100/ancova-and-multiple-regression and
+the  **10_ANCOVA_and_Regression.R**
+script in the lecture files folder of the
+[CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats). 
+Make sure you are comfortable with null and alternative hypotheses and appropriate plots
+for all examples.
 
 Remember you should
 
-  - add code chunks by clicking the *Insert Chunk* button on the toolbar
-    or by pressing *Ctrl+Alt+I* to answer the questions\!
-  - **knit** your file to produce a markdown version that you can see\!
-  - save your work often
-      - **commit** it via git\!
-      - **push** updates to github
+* add code chunks by clicking the *Insert Chunk* button on the toolbar or by
+pressing *Ctrl+Alt+I* to answer the questions!
+* **knit** your file to produce a markdown version that you can see!
+* save your work often 
+  * **commit** it via git!
+  * **push** updates to github
+  
 
-<!-- end list -->
+1.  Data on FEV (forced expiratory volume), a measure of lung function, can
+be found at 
 
-1.  Data on FEV (forced expiratory volume), a measure of lung function,
-    can be found at
+http://www.statsci.org/data/general/fev.txt
 
-<http://www.statsci.org/data/general/fev.txt>
+More information on the dataset is available at 
 
-More information on the dataset is available at
+http://www.statsci.org/data/general/fev.html.
 
-<http://www.statsci.org/data/general/fev.html>.
+Does the impact of age on FEV differ among genders? Consider how your answer to 
+this differs from the previous assignment!
 
-Does the impact of age on FEV differ among genders? Consider how your
-answer to this differs from the previous assignment\!
+2. Data on home gas consumption at various temperatures before and after new insulation was installed has been collected @ 
 
-2.  Data on home gas consumption at various temperatures before and
-    after new insulation was installed has been collected @
-
-<http://www.statsci.org/data/general/insulgas.txt>
+http://www.statsci.org/data/general/insulgas.txt
 
 More information on the data is available @
 
-<http://www.statsci.org/data/general/insulgas.html>
+http://www.statsci.org/data/general/insulgas.html
 
-Is there any relationship between these factors? How would you test
-this, and what type of plot would you produce to accompany your
-analysis?
+Is there any relationship between these factors?  How would you test this,
+and what type of plot would you produce to accompany your analysis?
 
-3.  Data on the height, diameter, and volume of cherry trees was
-    collected for use in developing an optimal model to predict timber
-    volume. Data is available @
+3.  Data on the height, diameter, and volume of cherry trees was collected for
+use in developing an optimal model to predict timber volume.  Data is available @ 
 
-<http://www.statsci.org/data/general/cherry.txt>
+http://www.statsci.org/data/general/cherry.txt
 
 Use the data to justify an optimal model.
 
-4.  Over the course of five years, a professor asked students in his
-    stats class to carry out a simple experiment. Students were asked to
-    measure their pulse rate, run for one minute, then measure their
-    pulse rate again. The students also filled out a questionnaire. Data
-    include:
+4.  Over the course of five years, a professor asked students in his stats class 
+to carry out a simple experiment.  Students were asked to measure their pulse 
+rate, run for one minute, then measure their pulse rate again.  The students 
+also filled out a questionnaire.  Data  include:
 
-| Variable | Description                                                              |
-| -------- | ------------------------------------------------------------------------ |
-| Height   | Height (cm)                                                              |
-| Weight   | Weight (kg)                                                              |
-| Age      | Age (years)                                                              |
-| Gender   | Sex (1 = male, 2 = female)                                               |
-| Smokes   | Regular smoker? (1 = yes, 2 = no)                                        |
-| Alcohol  | Regular drinker? (1 = yes, 2 = no)                                       |
-| Exercise | Frequency of exercise (1 = high, 2 = moderate, 3 = low)                  |
-| Change   | Percent change in pulse (pulse after experiment/pulse before experiment) |
-| Year     | Year of class (93 - 98)                                                  |
+Variable | Description
+-------  | ----------
+Height | Height (cm)
+Weight | Weight (kg)
+Age    | Age (years)
+Gender | Sex (1 = male, 2 = female)
+Smokes | Regular smoker? (1 = yes, 2 = no)
+Alcohol | Regular drinker? (1 = yes, 2 = no)
+Exercise | Frequency of exercise (1 = high, 2 = moderate, 3 = low)
+Change | Percent change in pulse (pulse after experiment/pulse before experiment)
+Year | Year of class (93 - 98)
 
-Using the available data (available at
+Using the available data (available at 
 
-<https://docs.google.com/spreadsheets/d/e/2PACX-1vToN77M80enimQglwpFroooLzDtcQMh4qKbOuhbu-eVmU9buczh7nVV1BdI4T_ma-PfWUnQYmq-60RZ/pub?gid=942311716&single=true&output=csv>
-)
+https://docs.google.com/spreadsheets/d/e/2PACX-1vToN77M80enimQglwpFroooLzDtcQMh4qKbOuhbu-eVmU9buczh7nVV1BdI4T_ma-PfWUnQYmq-60RZ/pub?gid=942311716&single=true&output=csv )
 
-determine the optimal subset of explanatory variables that should be
-used to predict change pulse rate (Change) (focusing on main effects
-only, no interactions) and explain your choice of methods. Interpret
-your results. Make sure you can explain any changes you needed to make
-to the dataset or steps you used in your analysis.
+determine the optimal subset of explanatory variables that should be used to
+predict change pulse rate (Change) (focusing on main effects only, no 
+interactions) and explain your choice of methods.  Interpret your results. Make
+sure you can explain any changes you needed to make to the dataset or steps you 
+used in your analysis.
+
