@@ -11,7 +11,7 @@ output:
 ---
 
 Before doing this, review the ** Combining Multiple Explanatory Variables in Linear Models** lecture set slides from 
-https://sites.google.com/view/biostats/bioenv-2100/ancova-and-multiple-regression and
+https://sites.google.com/view/biostats/lessons/ancova-and-multiple-regression and
 the  **10_ANCOVA_and_Regression.R**
 script in the lecture files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats). 
@@ -64,7 +64,7 @@ rate, run for one minute, then measure their pulse rate again.  The students
 also filled out a questionnaire.  Data  include:
 
 Variable | Description
--------  | ----------
+:-:  | :-:
 Height | Height (cm)
 Weight | Weight (kg)
 Age    | Age (years)
