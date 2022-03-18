@@ -246,7 +246,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">4. Continuous tests for 1 population</h1>
 <h4 class="author">jsg</h4>
-<h4 class="date">Last compiled on 17 March, 2022 07:28</h4>
+<h4 class="date">Last compiled on 18 March, 2022 14:59</h4>
 
 </div>
 
@@ -276,7 +276,7 @@ div.tocify {
 <li>Binomial (P=0.05; N= 2, 5, 25, &amp; 50); (P=0.25; N= 2, 5, 25, &amp; 50); (P=0.50; N= 2, 5, 25, &amp; 50); (P=0.75; N= 2, 5, 25, &amp; 50); (P=0.95; N= 2, 5, 25, &amp; 50)</li>
 <li>Poisson ( u= 2, 5, 10, 30, &amp; 50)</li>
 </ul>
-<p>For this question, its easiest to just source the main file and see what happens. When you source a script, it is run in R without showing any console output (but graphs and objects are still produced!). Try <em>source(“<a href="https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R" class="uri">https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R</a>)</em></p>
+<p>For this question, its easiest to just source the main file and see what happens. When you source a script, it is run in R without showing any console output (but graphs and objects are still produced!). Try <em>source(“<a href="https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R" class="uri">https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R</a>”)</em></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Review the central_limit_theorem.R code if you need to convince/remind yourself how common normality of means is for even non-normal data. You can source the code using the same approach noted in Question 1.</li>
 </ol>
@@ -293,6 +293,9 @@ div.tocify {
 <li>Using rank transform analysis</li>
 <li>Using binary transform analysis</li>
 </ul>
+<p>Note there are several ways to load the data! You can make a list (since the list is short):</p>
+<pre class="r"><code>flies &lt;- c(183.2, 149.0, 154.0, 167.2, 187.2, 158.0, 143.0 )</code></pre>
+<p>or make a dataframe in a spreadsheet software (eg, Excel, Google Sheets) and then upload using a read.csv command. We did this in the introduction to R!</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Yields of 10 strawberry plants in a uniformity trial are given by Baker and Baker (1953) as 239, 176, 235, 217, 234, 216, 318, 190, 181, and 225 g. Test the hypothesis that µ = 205</li>
 </ol>

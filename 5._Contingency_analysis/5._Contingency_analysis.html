@@ -246,7 +246,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">5. Contingency Analysis: Extending the binomial to more categories</h1>
 <h4 class="author">jsg</h4>
-<h4 class="date">Last compiled on 17 March, 2022 07:35</h4>
+<h4 class="date">Last compiled on 18 March, 2022 15:04</h4>
 
 </div>
 
@@ -283,7 +283,7 @@ div.tocify {
 </ol>
 <p><a href="http://www.statsci.org/data/general/dolpacti.txt" class="uri">http://www.statsci.org/data/general/dolpacti.txt</a></p>
 <p>Since this is a .txt file, not a .csv, you’ll need to use something like</p>
-<pre class="r"><code>dolphin &lt;- read.table(&quot;http://www.statsci.org/data/general/dolpacti.txt&quot;, sep=&quot;&quot;, header = T)</code></pre>
+<pre class="r"><code>dolphin &lt;- read.table(&quot;http://www.statsci.org/data/general/dolpacti.txt&quot;, sep=&quot;&quot;, header = T, stringsAsFactors = T)</code></pre>
 <p>More info on data @</p>
 <p><a href="http://www.statsci.org/data/general/dolpacti.html" class="uri">http://www.statsci.org/data/general/dolpacti.html</a></p>
 <p>Is travelling independent of time of day? You’ll need to consider traveling vs not traveling due to different number of groups observed in each period. Carry out post-hoc tests if needed.</p>

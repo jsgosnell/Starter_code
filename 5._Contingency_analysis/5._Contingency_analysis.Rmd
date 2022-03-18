@@ -49,7 +49,7 @@ http://www.statsci.org/data/general/dolpacti.txt
 Since this is a .txt file, not a .csv, you’ll need to use something like
 
 ```{r}
-dolphin <- read.table("http://www.statsci.org/data/general/dolpacti.txt", sep="", header = T)
+dolphin <- read.table("http://www.statsci.org/data/general/dolpacti.txt", sep="", header = T, stringsAsFactors = T)
 ```
 
 More info on data @ 
