@@ -2,7 +2,7 @@
 title: "All about the Bayes"
 subtitle: "Bayes standalone code"
 author: "jsg"
-date: "Last compiled on 14 April, 2022 12:09"
+date: "Last compiled on 14 April, 2022 12:11"
 output:
   html_document:
     toc: true
@@ -13,7 +13,7 @@ output:
 
 Before doing this, review the lecture set slides from 
 https://sites.google.com/view/biostats/lessons/intro-to-bayesian-statistics and
-the  
+the 
 **bayes_standalone.R** script in the lecture files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats). 
 Make sure you are comfortable with null and alternative hypotheses for all
