@@ -1,7 +1,7 @@
 ---
 title: "Quiz 7 Spring 2022"
 author: "jsg"
-date: "Last compiled on 28 April, 2022 17:29"
+date: "Last compiled on 29 April, 2022 09:12"
 output:
   html_document:
     toc: true
@@ -18,8 +18,8 @@ Three morphotypes of salamanders were tested to see if they had similar tail len
 sallies <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSJHbPnebpKq58mE4kQWF9mQ_0ak2sTyaUbEvtmgoSkb31DprOmAS9clOoNNHD_3tHITOXKdhMbWfBf/pub?gid=1050993814&single=true&output=csv", stringsAsFactors = T)
 ```
 
-Analyze the data correctly to consider how stage and morphotype impact heart 
-rate . Make sure you include
+Analyze the data correctly to consider how stage and morphotype impact tail 
+length.  Make sure you include
 
 * null hypothesis
 * alternative hypothesis
