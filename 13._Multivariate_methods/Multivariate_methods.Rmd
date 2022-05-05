@@ -79,13 +79,13 @@ individual plants in their dimensions. Along the way, make sure you
   * Use biplots and/or loadings to see if you can understand/interpret the 
   first few principal components
   
-2. Using the same plant dataset, use linear discriminant analysis to classify the 
+3. Using the same plant dataset, use linear discriminant analysis to classify the 
 various species.
 
-3.  Using the same plant dataset, use cluster analysis to determine how many 
+4.  Using the same plant dataset, use cluster analysis to determine how many 
 clusters are supported by the data.
   
-4. The data for this exercise are rodent species abundance from 28 sites
+5. The data for this exercise are rodent species abundance from 28 sites
 in California (Bolger et al. 1997, Response of rodents to habitat fragmentation 
 in coastal Southern
 California, Ecological Applications 7: 552–563). 
