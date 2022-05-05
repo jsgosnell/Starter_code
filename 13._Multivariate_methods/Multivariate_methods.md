@@ -1,7 +1,7 @@
 ---
 title: "Multivariate methods"
 author: "jsg"
-date: "Last compiled on 28 April, 2022 12:36"
+date: "Last compiled on 05 May, 2022 08:55"
 output:
   html_document:
     toc: true
@@ -78,4 +78,35 @@ individual plants in their dimensions. Along the way, make sure you
   * determine how many principal components to retain (and why)
   * Use biplots and/or loadings to see if you can understand/interpret the 
   first few principal components
+  
+2. Using the same plant dataset, use linear discriminant analysis to classify the 
+various species.
+
+3.  Using the same plant dataset, use cluster analysis to determine how many 
+clusters are supported by the data.
+  
+4. The data for this exercise are rodent species abundance from 28 sites
+in California (Bolger et al. 1997, Response of rodents to habitat fragmentation 
+in coastal Southern
+California, Ecological Applications 7: 552–563). 
+
+
+This data comes from the (website)[http://www.zoology.unimelb.edu.au/qkstats/data.htm) of Quinn and Keough (2002, Experimental
+Design and Data Analysis for Biologists, Cambridge Univ. Press, Cambridge, UK). Data
+is available via
+
+
+```r
+rodents <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTLRwuI1cQ61RZOVJFwi0jhO85fonqR7oZHzy_9A5fVwxuZQ2A6iBnlLG2Z-33rwNnycqNUUh1_XuMU/pub?gid=1403553505&single=true&output=csv", 
+                    stringsAsFactors = T)
+```
+
+The 9 species are indicated by variable (column) names. Genus abbreviations are: Rt (Rattus), Rs
+(Reithrodontomys), Mus (Mus), Pm (Peromyscus), Pg (Perognathus), N (Neotoma) and M (Microtus).
+Rattus and Mus are invasive species, whereas the others are native.
+
+* Analyze the dat using correspondence analysis
+  * interprent any results (loadings!)
+
+
 
