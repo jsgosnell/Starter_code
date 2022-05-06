@@ -1,5 +1,5 @@
 ---
-title: "Quiz 6 Spring 2022 answers"
+title: "Quiz 6 Spring 2022"
 author: "jsg"
 date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
 output:

@@ -1,7 +1,7 @@
 ---
-title: "Quiz 6 Spring 2022 answers"
+title: "Quiz 6 Spring 2022"
 author: "jsg"
-date: "Last compiled on 15 March, 2022 09:25"
+date: "Last compiled on 06 May, 2022 08:53"
 output:
   html_document:
     toc: true
