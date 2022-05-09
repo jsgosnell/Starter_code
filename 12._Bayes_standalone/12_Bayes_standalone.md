@@ -2,7 +2,7 @@
 title: "All about the Bayes"
 subtitle: "Bayes standalone code"
 author: "jsg"
-date: "Last compiled on 14 April, 2022 12:11"
+date: "Last compiled on 09 May, 2022 09:51"
 output:
   html_document:
     toc: true
