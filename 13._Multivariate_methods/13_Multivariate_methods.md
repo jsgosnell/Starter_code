@@ -1,7 +1,7 @@
 ---
 title: "Multivariate methods"
 author: "jsg"
-date: "Last compiled on 05 May, 2022 08:56"
+date: "Last compiled on 09 May, 2022 09:55"
 output:
   html_document:
     toc: true
