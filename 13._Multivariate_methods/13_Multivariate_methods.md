@@ -1,7 +1,7 @@
 ---
 title: "Multivariate methods"
 author: "jsg"
-date: "Last compiled on 09 May, 2022 09:55"
+date: "Last compiled on 09 May, 2022 11:28"
 output:
   html_document:
     toc: true
@@ -80,7 +80,7 @@ individual plants in their dimensions. Along the way, make sure you
   first few principal components
   
 3. Using the same plant dataset, use linear discriminant analysis to classify the 
-various species.
+various sites.
 
 4.  Using the same plant dataset, use cluster analysis to determine how many 
 clusters are supported by the data.

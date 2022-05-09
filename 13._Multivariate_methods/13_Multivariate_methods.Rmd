@@ -80,7 +80,7 @@ individual plants in their dimensions. Along the way, make sure you
   first few principal components
   
 3. Using the same plant dataset, use linear discriminant analysis to classify the 
-various species.
+various sites.
 
 4.  Using the same plant dataset, use cluster analysis to determine how many 
 clusters are supported by the data.
