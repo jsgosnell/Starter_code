@@ -1,7 +1,7 @@
 ---
 title: "Multivariate methods"
 author: "jsg"
-date: "Last compiled on 05 May, 2022 08:56"
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
 output:
   html_document:
     toc: true
@@ -10,7 +10,9 @@ output:
     self_contained: true
 ---
 
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.align="center")
+```
 
 
 1. A pharmaceutical company has a drug that may help an illness that causes 
@@ -20,8 +22,7 @@ helps, test for differences in multivariate means for the fever,
 pressure and aches column,
 against the grouping variable treatment.
 
-
-```r
+```{r}
 illness <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRlcjpU0XHfXF1WId1C5ZYX0YdY53KI9Nv91_tNCMj4z4iTjr-XMW1L_Ln8j3ahk5GUPZy4kGzSlA96/pub?gid=1322236994&single=true&output=csv",
                     stringsAsFactors = T)
 ```
@@ -45,8 +46,7 @@ relationships among leaf traits.
 Am. J. Botany 92: 1085-1093). Their measurements are available using
 
 
-
-```r
+```{r}
 pitcher <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQZf2mS4NmfBUUsn7lY2RTpuVjuWvRYN4MdLNt2XdS4WepolrxvWCKBI5diKBMWPLhdbEGwP-hfWOnz/pub?gid=1427497144&single=true&output=csv",
                     stringsAsFactors = T)
 ```
@@ -80,7 +80,7 @@ individual plants in their dimensions. Along the way, make sure you
   first few principal components
   
 3. Using the same plant dataset, use linear discriminant analysis to classify the 
-various species.
+various sites.
 
 4.  Using the same plant dataset, use cluster analysis to determine how many 
 clusters are supported by the data.
@@ -95,8 +95,7 @@ This data comes from the (website)[http://www.zoology.unimelb.edu.au/qkstats/dat
 Design and Data Analysis for Biologists, Cambridge Univ. Press, Cambridge, UK). Data
 is available via
 
-
-```r
+```{r}
 rodents <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTLRwuI1cQ61RZOVJFwi0jhO85fonqR7oZHzy_9A5fVwxuZQ2A6iBnlLG2Z-33rwNnycqNUUh1_XuMU/pub?gid=1403553505&single=true&output=csv", 
                     stringsAsFactors = T)
 ```
