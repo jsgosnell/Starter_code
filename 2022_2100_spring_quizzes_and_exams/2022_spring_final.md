@@ -1,7 +1,7 @@
 ---
 title: "2022 Spring Final (33 points total)"
 author: "jsg"
-date: "Last compiled on 20 May, 2022 08:46"
+date: "Last compiled on 20 May, 2022 10:57"
 output:
   html_document:
     toc: true
@@ -76,6 +76,13 @@ on flipper length (Flipper_length_mm). (6 pts)
 penguin <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQEyo_2bjGK6yEj5gj3SKP_VsqDxsqer4PRqTqqV_FRw9m0OM3u7SgbaT9OF4whgEb1Nx0z2QNU8ovd/pub?gid=836786692&single=true&output=csv", stringsAsFactors = T)
 ```
 
+Make sure you include (6 pts)
+
+* null hypothesis
+* alternative hypothesis
+* explanation for test you will use 
+* results from statistical test
+* clear explanation of how results relate to your stated hypotheses
 
 4. Create a properly-labelled plot of the data. There are many options here, but
 make sure you show trends and patterns that match your analysis. (5 pts)
