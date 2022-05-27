@@ -1,7 +1,0 @@
-## Tree graph review
-
-
-7. Kyphosis refers an issue with spinal curvature. Use the kyphosis dataset
-built into rpart to build and compare classification trees that minimize 
-mis-labeling (default, Gini’s index) and that maximize information gain 
-(add parms = list(split = 'information') to your rpart call).
