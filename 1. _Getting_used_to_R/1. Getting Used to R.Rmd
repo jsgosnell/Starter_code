@@ -11,6 +11,11 @@ output:
 
 ---
 
+### Overview
+
+####Rmd basics
+
+
 Rmd files differ from R files in that they combine regular text with code chunks.
 This is a code chunk
 
@@ -79,6 +84,8 @@ can also get more help with [this video](https://www.youtube.com/watch?v=shs95EH
 
 ### Practice in R 
 
+#### 1
+
 1. Let x be defined by 
 
 [comment]:(This is an comment in Rmarkdown. It won't be seen the processed file. 
@@ -105,6 +112,8 @@ Determine what the “:” does!  Complete the following sentence:
 
 The : means FILL THIS IN.
 
+#### 2
+
 2. Now try to guess the output of these commands
 
 * length(x)
@@ -115,6 +124,8 @@ The : means FILL THIS IN.
 
 INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS.  Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*. Then state what
 each of these does.
+
+#### 3
 
 3.  Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND RUN EACH OF 
 THESE COMMANDS. Then state what each of these does.
@@ -131,13 +142,19 @@ Run this chunk and note it has added an object named `sleep` to the environment.
 
 Info on the dataset is viewable @ http://www.statsci.org/data/general/sleep.html.
 
+#### 4
+
 4. How many rows does the **sleep** data set have (hint: `?dim`)?  What kind of data is stored in each variable?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
+#### 5
+
 5.  Change the column named *BodyWt* to *Body_weight*”* in the sleep dataset.
 
 ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
+
+#### 6
 
 6.  Produce a plot of how *TotalSleep* differs between primates and other species. What is this plot showing?
 
@@ -170,6 +187,8 @@ NOTE YOU CAN ADD A PLOT TO THE DOCUMENT TOO! AMEND THE BELOW AS NEEDED.
 plot(cars)
 ```
 
+#### 7
+
 7.  The **sleep** dataset begs to have a linear model fit for it. Let’s consider. First plot how *TotalSleep* is explained by *BrainWt*. Are there any issues with the data? Exclude any outlier and fit a linear model to obtain the p-value for the model (hint: summary()).  What does this imply?  
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
@@ -180,6 +199,8 @@ ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/9/94/Puffin_Mrkoww.jpg)
 **Dow Puffin** *Matthew Zalewski / CC BY (https://creativecommons.org/licenses/by/3.0)*
 
+#### 8
+
 8.  Sometimes data doesn’t have headers (column names),so you have to add them.
 Download a dataset on alcids (birds like puffins and auklets)  from 
 https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/alcids55.csv.  
@@ -188,6 +209,8 @@ then use the `names` function to name the columns ["year", "a1_abund", "NAO", "a
 Try it and check your input using the `head` command.
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
+
+#### 9
 
 9.  Here’s a sample dataset:
 
