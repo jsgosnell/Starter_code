@@ -551,6 +551,7 @@ You can also do this from the web (included here).  When you knit the file, outp
 your final file. However, its nice to know what **Source** does in general.
 
 ```{r}
+library(VGAM)
 source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/central_limit_theorem.R")
 ```
 
