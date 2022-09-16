@@ -8,7 +8,7 @@ output:
     toc_float: true
     keep_md: true
     self_contained: true
-
+    toc_depth: 5
 ---
 
 ### Overview
@@ -194,7 +194,8 @@ plot(cars)
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
 
-**EXTRA QUESTIONS** *not required*
+### EXTRA QUESTIONS 
+*not required*
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/9/94/Puffin_Mrkoww.jpg)
 **Dow Puffin** *Matthew Zalewski / CC BY (https://creativecommons.org/licenses/by/3.0)*
