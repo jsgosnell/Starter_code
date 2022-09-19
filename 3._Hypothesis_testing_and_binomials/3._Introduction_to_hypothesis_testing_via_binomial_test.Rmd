@@ -8,13 +8,15 @@ output:
     toc_float: true
     keep_md: true
     self_contained: true
+    toc_depth: 5
+
 ---
 
 Before doing this, review the **Introduction To Hypothesis Testing Via Binomial Tests** lecture set slides from 
 https://sites.google.com/view/biostats/lessons/hypothesis-testing-with-the-binomial-distribution and
 the  **3_hypothesis_testing_and_binomial.R** script in the lecture_files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).  
-You should also complete the swirl tutorial first!
+**You should also complete the swirl tutorial**!
 
 
 Remember you should
@@ -28,7 +30,37 @@ pressing *Ctrl+Alt+I* to answer the questions!
 
 ## Hypothesis Testing and the Binomial Distribution
 
+### Example
+
+Using the bat paper from class (Geipel et al. 2021), let's consider how to analyze
+data showing all 10 bats chose the walking over the motionless model.  
+
+```{r}
+binom.test(10,10)
+```
+We use the binom.test function. We only need arguments for # of succeses and #
+of trials. By default it runs a 2-sided test against a null hypothesis value of 
+p = .5. You can see how to update thee options by 
+looking at the help file.
+
+```{r}
+?binom.test
+```
+
+
+Note the confidence interval is assymetric since its estimated to be 1! We can see
+other options using the binom.confint function from the *binom* package.
+
+```{r}
+library(binom)
+binom.confint(10,10)
+```
+
+### Practice!
+
 Make sure you are comfortable with null and alternative hypotheses for all examples.
+
+#### 1
 
 1. Are people eared (do they prefer one ear or another)?  Of 25 people observed 
 while in conversation in a nightclub, 19 turned their right ear to the speaker 
@@ -45,6 +77,8 @@ eared-ness given this data (adapted from Analysis of Biological Data)?
   + R functions (required)(code)
 * Calculate a 95% confidence interval for the proportion of people who are right-eared
 * How do your 95% confidence interval and hypothesis test compare?
+
+#### 2
 
 2.  A professor lets his dog take every multiple-choice test to see how it 
 compares to his students (I know someone who did this).  Unfortunately, the
