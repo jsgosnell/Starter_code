@@ -1512,7 +1512,7 @@ div.tocify {
 <h1 class="title toc-ignore">3. Introduction to hypothesis testing via
 binomial tests</h1>
 <h4 class="author">jsg</h4>
-<h4 class="date">Last compiled on 19 September, 2022 12:38</h4>
+<h4 class="date">Last compiled on 29 September, 2022 06:59</h4>
 
 </div>
 
@@ -1577,6 +1577,10 @@ binom.confint(10,10)</code></pre>
 ## 9            lrt 10 10 1.0000000 0.8252466 1.000000
 ## 10     prop.test 10 10 1.0000000 0.6554628 1.000000
 ## 11        wilson 10 10 1.0000000 0.7224672 1.000000</code></pre>
+<p>All of these correct for the fact that most intervals use a normal
+approximation, which as you remember from our earlier discussions is not
+good when sample sizes are small and/or the p parameter is extreme
+(close to 0 or 1).</p>
 </div>
 <div id="practice" class="section level3">
 <h3>Practice!</h3>
@@ -1597,8 +1601,11 @@ Biological Data)?</li>
 <li>Make you understand how to construct a null distribution
 <ul>
 <li>using sampling/simulation (code or written explanation)</li>
-<li>by using an appropriate distribution (code or written explanation)
-*Calculate and compare p-values obtained using</li>
+<li>by using an appropriate distribution (code or written
+explanation)</li>
+</ul></li>
+<li>Calculate and compare p-values obtained using
+<ul>
 <li>simulation (calculation won’t be required on test, but make sure you
 understand!) (code or written explanation)</li>
 <li>equations for binomial distribution (code or written
