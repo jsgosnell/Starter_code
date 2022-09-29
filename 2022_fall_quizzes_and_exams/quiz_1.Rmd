@@ -8,7 +8,7 @@ output:
     toc_float: true
     keep_md: true
     self_contained: true
-    ---
+---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -23,10 +23,11 @@ publicly-available data from Long-term Ecological Research (LTER) projects.
 Data can be loaded using 
 
 ```{r}
-time_series <- read.csv("",
+time_series <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/data_from_crossley_et_al_2021.csv",
                        stringsAsFactors = T)
 ```
 
 Create a properly-labeled plot that shows how change over time (measured as slope, we'll get 
-to that later in class) compares among LTERs. 
-Note the column of interest is b and groups are defined in the LTER column. Multiple options exist.
+to that later in class) compares among LTERs. Make sure you show variation somehow!
+Note the column of interest is **b** and groups are defined in the **LTER** 
+column. Multiple options exist.
