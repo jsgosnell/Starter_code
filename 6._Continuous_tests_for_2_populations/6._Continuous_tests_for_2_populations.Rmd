@@ -8,6 +8,7 @@ output:
     toc_float: true
     keep_md: true
     self_contained: true
+    toc_depth: 6
 ---
 
 Before doing this, review the **Extending continuous tests to 2 samples** lecture set slides from 
@@ -24,6 +25,16 @@ pressing *Ctrl+Alt+I* to answer the questions!
 * save your work often 
   * **commit** it via git!
   * **push** updates to github
+
+## Examples
+
+
+## Practice
+
+### For the following problems, use the data to conduct each noted test (note some sample sizes may be too small for these to all be good ideas!)
+
+
+####1
 
 1. The following data are human blood clotting times (in minutes) of individuals
 given one of two different drugs. 
@@ -46,6 +57,7 @@ are equal for the two groups
 * Using a permutation test 
 * Using a bootstrap test 
 
+####2
 
 2. Data on plant heights (in cm) for plants grown with a new and old formulation 
 of fertilizer can be found at
@@ -66,6 +78,7 @@ fertilizer$ID <- 1:nrow(fertilizer)
 fertilizer_wide <- dcast(fertilizer, ID~fertilizer, value.var = "height")
 ```
 
+####3
 
 3. Metabolic rates were measured in animals before and after administering a drug. Data is
 available at 
@@ -79,6 +92,7 @@ Test the hypothesis that the drug has no effect on metabolic rate with using
 * a binary test
 * bootstrapping
 
+####4
 
 4. Endurance of the above animals was also measured. Data is available at
 
@@ -90,12 +104,16 @@ Test the hypothesis that the drug has no effect on using
 * a binary test
 * bootstrapping
 
-## For the following problems, make sure you can justify the test you choose to use and carry it out
+### For the following problems, make sure you can justify the test you choose to use and carry it out
+
+####5
 
 5. Using data from Australian athletes (http://www.statsci.org/data/oz/ais.html 
 for details), determine if the average male training at the Australian Institute 
 of Sport differs in from the average female training at the site in mercury
 concentration (Hg). 
+
+####6
 
 6. Laureysens et al. (2004) measured metal content in the wood of 13 poplar 
 clones growing in a polluted area, once in August and once in November.
@@ -118,6 +136,8 @@ time?
 |Trichobel |7.9 | 19.9
 |Gaver | 8.1 | 20.4
 |Wolterson | 13.4 |36.8
+
+####7
 
 7. Data was collected on cholesterol levels following heart attacks.  Data
 available at 
