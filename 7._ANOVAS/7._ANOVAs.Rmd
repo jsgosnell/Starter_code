@@ -8,6 +8,7 @@ output:
     toc_float: true
     keep_md: true
     self_contained: true
+    toc_depth: 6
 ---
 
 Before doing this, review the **7. ANOVA and multiple comparisons** lecture set slides from 
@@ -27,25 +28,85 @@ pressing *Ctrl+Alt+I* to answer the questions!
   * **commit** it via git!
   * **push** updates to github
   
+## Examples  
+
+We will run ANOVA's using the *lm* function to connect them to other test.  First,
+build the model
+
+```{r}
+iris_anova <- lm(Sepal.Length~Species, iris)
+```
+
+Then use the object it created to test assumptions
+
+```{r}
+par(mfrow = c(2,2))
+plot(iris_anova)
+```
+
+If assumptions are met, check the p-value using the *summary* or *Anova* function.
+
+```{r}
+summary(iris_anova)
+library(car)
+Anova(iris_anova, type = "III")
+```
+
+If the overall test is significant, carry out post hoc tests (Tukey shown here
+for all pairs, as most common)
+
+```{r}
+library(multcomp)
+compare_cont_tukey <- glht(iris_anova, linfct = mcp(Species = "Tukey"))
+summary(compare_cont_tukey)
+```
+
+If assumptions are not met, we can use the Kruskal Wallis non-parametric test and 
+associated post hoc tests.
+
+```{r}
+kruskal.test(Sepal.Length ~ Species, data = iris)
+pairwise.wilcox.test(iris$Sepal.Length, 
+                          iris$Species, 
+                          p.adjust.method="holm")
+```
+
+or a bootstrap alternative
+
+```{r}
+library(WRS2)
+t1waybt(Sepal.Length~Species, iris)
+bootstrap_post_hoc <- mcppb20(Sepal.Length~Species, iris)
+p.adjust(as.numeric(bootstrap_post_hoc$comp[,6]), "holm")
+```
+
 ## Just for practice 
+
 *Do this problems using ANOVA, Kruskal-Wallis, and 
 bootstrapping methods.  Make sure you can plot the data and carry out multiple 
 comparison methods as needed. Also be sure to understand the use of coefficients 
 and adjusted R^2^ values and where to find them.* 
 
+### 1
+
 1. Use the iris dataset in R to determine if petal length differs among species.  
 
-## t-tests are special cases of ANOVAs, which are special cases of linear models!
+
+### 2
 
 2. Data on plant heights (in cm) for plants grown with a new and old formulation 
 of fertilizer can be found at
 
 https://docs.google.com/spreadsheets/d/e/2PACX-1vSUVowOKlmTic4ekL7LSbwDcqrsDSXv5K_c4Qyfcvz1lLE1_iINmGzy0zMGxY7z5DImlUErK4S2wY7Y/pub?gid=0&single=true&output=csv.
 
-Analyze this data using the t.test function and the lm function to convince yourself the outcome is the same.
+Analyze this data using the t.test function and the lm function to convince yourself
+that t-tests are special cases of ANOVAs, which are special cases of linear models! 
+
 
 
 ## For the following questions, pick the appropriate method for analyzing the question.  Use a plot of the data and/or model analysis to justify your decision.  Make sure you can carry out multiple comparison methods as needed. Also be sure to understand the use of coefficients and adjusted R^2^ values and where to find them.
+
+### 3
 
 3. Data on sugar cane yield for multiple fields is available using 
 
@@ -56,6 +117,8 @@ More info on the data can be found at
 http://www.statsci.org/data/oz/cane.html.
 Is there evidence that location (DistrictPosition column) impacts yield 
 (Tonn.Hect column)?  If so, which areas are driving this distance?
+
+### 4
 
 4. Data on FEV (forced expiratory volume), a measure of lung function, can be 
 found at 
@@ -69,6 +132,8 @@ http://www.statsci.org/data/general/fev.html.
 Is there evidence that FEV depends on gender? If so, which gender has the higher
 FEV score?  How much variance does gender explain? 
 
+### 5
+
 5. A professor carried out a long-term study to see how various factors impacted
 pulse rate before and after exercise.  Data can be found at
 
@@ -80,6 +145,8 @@ http://www.statsci.org/data/oz/ms212.html.
 
 Is there evidence that frequency of exercise (Exercise column) impacts resting
 pulse rate (Pulse1 column)?
+
+### 6
 
 6. Continuing with the pulse dataset, is there evidence frequency of exercise
 impacts change in pulse rate?  Note we should only consider change for students 
