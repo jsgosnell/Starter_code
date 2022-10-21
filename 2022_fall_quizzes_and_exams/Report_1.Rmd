@@ -16,6 +16,10 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
 
+For instructions, see 
+[this file](https://docs.google.com/document/d/1s_Y3O69ei2xLlYc-JPnvQtH6Ci_OH_Bdk4BvnuodJ5Q/edit?usp=sharing){target="blank"} 
+
+
 THIS TEMPLATE IS DESIGNED TO HELP GUIDE YOUR PROJECT DEVELOPMENT. YOU CAN CHANGE
 OR ADD ANY SECTIONS, BUT I NEED A BRIEF BACKGROUND (WHAT IS YOUR QUESTION, WHY,
 WHAT DOES THE DATA LOOK LIKE?). THEN YOU NEED TO IMPORT THE DATA, CHECK IT, PERFORM
