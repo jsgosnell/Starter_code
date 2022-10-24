@@ -28,7 +28,11 @@ pressing *Ctrl+Alt+I* to answer the questions!
   * **commit** it via git!
   * **push** updates to github
   
+## Examples
 
+## Practice
+
+### 1
 
 1. A survey was conducted to see if athletes and non-athletes deal with anger in
 the same way.  Data is @
@@ -51,6 +55,8 @@ index of general anger expression:
 
 Is there any evidence that gender or athlete status impact how anger is expressed?
 
+### 2
+
 2. A professor carried out a long-term study to see how various factors impacted
 pulse rate before and after exercise.  Data can be found at 
 http://www.statsci.org/data/oz/ms212.txt
@@ -59,6 +65,8 @@ http://www.statsci.org/data/oz/ms212.html.
 Is there evidence that frequency of exercise
 (Exercise column) and gender impact change in pulse rate for students who ran 
 (Ran column = 1)?
+
+### 3
 
 3. (Continuing from question 2) I’m curious if the treatment (running vs not) even had an impact, and if so did it depend on gender. How would you test this?  
 
