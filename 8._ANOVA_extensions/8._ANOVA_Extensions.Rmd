@@ -30,6 +30,86 @@ pressing *Ctrl+Alt+I* to answer the questions!
   
 ## Examples
 
+### If interaction is significant
+
+Following the memory example from class, read in and check data
+
+```{r}
+memory <- read.table("http://www.statsci.org/data/general/eysenck.txt", header = T,
+                     stringsAsFactors = T)
+str(memory)
+```
+
+Let's put younger level first
+
+```{r}
+library(plyr)
+memory$Age <- relevel(memory$Age, "Younger")
+```
+
+and graph
+
+```{r}
+library(Rmisc)
+function_output <- summarySE(memory, measurevar="Words", groupvars =
+                               c("Age", "Process"), na.rm = T)
+library(ggplot2)
+ggplot(function_output, aes(x=Age, y=Words,color=Process, 
+                                   shape = Process)) +
+  geom_line(aes(group=Process, linetype = Process), size=2) +
+    geom_point(size = 5) +
+  ylab("Words remembered")+ 
+  xlab("Age") + 
+  ggtitle("Process type interacts with age to impact memory")+
+  theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32))
+```
+
+There appears to be some interactions. Let' build a model
+
+```{r}
+memory_interactions <- lm(Words ~ Age * Process, memory)
+```
+
+and check assumptions.
+
+```{r}
+par(mfrow=c(2,2))
+plot(memory_interactions)
+```
+
+These appear to be met, so look at output
+
+```{r}
+library(car)
+Anova(memory_interactions, type = "III")
+```
+
+Since interaction is significant, analyze subsets. For example, 
+
+```{r}
+memory_interactions_young <- lm(Words ~ Process, memory[memory$Age == "Younger",])
+plot(memory_interactions_young)
+Anova(memory_interactions_young, type = "III")
+```
+
+There is a significant difference in words recalled based on process, but why? 
+Investigate with post-hoc tests.
+
+```{r}
+library(multcomp)
+comp_young <- glht(memory_interactions_young, linfct = mcp(Process = "Tukey"))
+summary(comp_young)
+```
+
+### Blocking example
+
+
 ## Practice
 
 ### 1
