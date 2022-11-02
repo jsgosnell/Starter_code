@@ -330,7 +330,8 @@ Test the hypothesis that odd and typical feathers did not differ using
 
 #### 4
 
-4. Endurance of the above animals was also measured. Data is available at
+4. Endurance of animals was tested in an experiment before and after a drug was 
+administered.  Data is available at
 
 https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/endurance.csv
 

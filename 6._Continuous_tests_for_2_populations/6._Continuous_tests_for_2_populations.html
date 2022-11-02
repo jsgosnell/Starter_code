@@ -1510,7 +1510,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">6. Continuous tests 2 populations</h1>
 <h4 class="author">jsg</h4>
-<h4 class="date">Last compiled on 02 November, 2022 14:25</h4>
+<h4 class="date">Last compiled on 02 November, 2022 14:36</h4>
 
 </div>
 
@@ -1805,17 +1805,17 @@ bootstrapjsg(cholesterol_wide$day_2, cholesterol_wide$day_14)</code></pre>
 <pre><code>##                                                                       
 ##                             &quot;0.95&quot; &quot;% Percentile Confidence Interval&quot; 
 ##                                                                       
-##                 &quot;6.93618436403738&quot;                 &quot;57.7628754793164&quot; 
+##                 &quot;5.97434317984067&quot;                 &quot;57.8144715350556&quot; 
 ##                                                                       
-##                          &quot;p-value&quot;                           &quot;0.0118&quot;</code></pre>
+##                          &quot;p-value&quot;                           &quot;0.0134&quot;</code></pre>
 <pre class="r"><code>cholesterol_difference &lt;- na.omit(cholesterol_wide$day_2 - cholesterol_wide$day_14)
 bootstrapjsg(cholesterol_difference)</code></pre>
 <pre><code>## Warning in boot.ci(a, conf): bootstrap variances needed for studentized
 ## intervals</code></pre>
 <pre><code>##                                                                         
-##                  &quot;0.95&quot; &quot;% Confidence Interval&quot;      &quot;15.8973727193626&quot; 
+##                  &quot;0.95&quot; &quot;% Confidence Interval&quot;      &quot;15.4736842105263&quot; 
 ##                                                                         
-##                    &quot;60&quot;               &quot;p-value&quot;                 &quot;6e-04&quot;</code></pre>
+##      &quot;59.6842105263158&quot;               &quot;p-value&quot;                 &quot;4e-04&quot;</code></pre>
 <p>Note again how pairing helps!</p>
 </div>
 <div id="permutation" class="section level4">
@@ -2025,8 +2025,8 @@ using</p>
 <div id="section-3" class="section level4">
 <h4>4</h4>
 <ol start="4" style="list-style-type: decimal">
-<li>Endurance of the above animals was also measured. Data is available
-at</li>
+<li>Endurance of animals was tested in an experiment before and after a
+drug was administered. Data is available at</li>
 </ol>
 <p><a href="https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/endurance.csv" class="uri">https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/endurance.csv</a></p>
 <p>Test the hypothesis that the drug has no effect on using * a
