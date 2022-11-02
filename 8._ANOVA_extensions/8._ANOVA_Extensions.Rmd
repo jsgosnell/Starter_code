@@ -110,6 +110,35 @@ summary(comp_young)
 ### Blocking example
 
 
+Following feather color example from class:
+
+```{r}
+# more than 2? ####
+feather <-  read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/wiebe_2002_example.csv
+", stringsAsFactors = T)
+str(feather)
+set.seed(25)
+special <- data.frame(Bird = LETTERS[1:16], Feather = "Special", 
+                      Color_index= feather[feather$Feather == "Typical", "Color_index"] +
+                        .3 +runif(16,1,1)*.01)
+feather <- merge(feather, special, all = T)
+
+
+Anova(lm(Color_index ~ Feather + Bird, data=feather), type= "III")
+
+library(multcomp)
+compare <- glht(lm(Color_index ~ Feather + Bird, data=feather), linfct = mcp("Feather" = "Tukey"))
+summary(compare)
+```
+
+```{r, error=T}
+#note comparison doesn't work
+Anova(lm(Color_index ~ Feather * Bird, data=feather), type= "III")
+```
+
+
+
+
 ## Practice
 
 ### 1
