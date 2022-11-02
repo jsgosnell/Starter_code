@@ -315,12 +315,13 @@ fertilizer_wide <- dcast(fertilizer, ID~fertilizer, value.var = "height")
 
 #### 3
 
-3. Metabolic rates were measured in animals before and after administering a drug. Data is
-available at 
+3. (Example from  Handbook on Biological Statistics)  Odd (stunted, short, new) 
+feathers were compared in color to typical feathers
+in Northern Flickers (*Colaptes auratus*). Data is at 
 
-https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/metabolic_rates.csv
+https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/wiebe_2002_example.csv
 
-Test the hypothesis that the drug has no effect on metabolic rate with using 
+Test the hypothesis that odd and typical feathers did not differ using
 
 * a Student's t test
 * a rank test
