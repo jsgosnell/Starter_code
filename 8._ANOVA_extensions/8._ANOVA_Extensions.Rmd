@@ -114,8 +114,7 @@ Following feather color example from class:
 
 ```{r}
 # more than 2? ####
-feather <-  read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/wiebe_2002_example.csv
-", stringsAsFactors = T)
+feather <-  read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/wiebe_2002_example.csv", stringsAsFactors = T)
 str(feather)
 set.seed(25)
 special <- data.frame(Bird = LETTERS[1:16], Feather = "Special", 
