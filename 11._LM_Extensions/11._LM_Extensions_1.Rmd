@@ -1,5 +1,5 @@
 ---
-title: "11. Linear model extensions (part 1)"
+title: "11. Linear model extensions"
 author: "jsg"
 date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
 output:
