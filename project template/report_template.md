@@ -1,7 +1,7 @@
 ---
 title: "REPORT/PROJECT TEMPLATE"
 author: "jsg"
-date: "Last compiled on 31 October, 2022 14:33"
+date: "Last compiled on 22 November, 2022 09:20"
 output:
   html_document:
     toc: true
@@ -155,16 +155,16 @@ summary(comparison)
 ## 
 ## Linear Hypotheses:
 ##            Estimate Std. Error t value Pr(>|t|)   
-## 2 - 1 == 0  -1.0643     0.4670  -2.279  0.16256   
-## 3 - 1 == 0  -1.7793     0.6679  -2.664  0.07157 . 
-## 4 - 1 == 0  -1.5543     0.6679  -2.327  0.14774   
-## 5 - 1 == 0  -1.9599     0.4847  -4.043  0.00171 **
-## 3 - 2 == 0  -0.7150     0.7293  -0.980  0.85600   
-## 4 - 2 == 0  -0.4900     0.7293  -0.672  0.95921   
-## 5 - 2 == 0  -0.8956     0.5664  -1.581  0.50374   
-## 4 - 3 == 0   0.2250     0.8717   0.258  0.99892   
-## 5 - 3 == 0  -0.1806     0.7408  -0.244  0.99914   
-## 5 - 4 == 0  -0.4056     0.7408  -0.547  0.98058   
+## 2 - 1 == 0  -1.0643     0.4670  -2.279   0.1626   
+## 3 - 1 == 0  -1.7793     0.6679  -2.664   0.0715 . 
+## 4 - 1 == 0  -1.5543     0.6679  -2.327   0.1478   
+## 5 - 1 == 0  -1.9599     0.4847  -4.043   0.0017 **
+## 3 - 2 == 0  -0.7150     0.7293  -0.980   0.8560   
+## 4 - 2 == 0  -0.4900     0.7293  -0.672   0.9592   
+## 5 - 2 == 0  -0.8956     0.5664  -1.581   0.5038   
+## 4 - 3 == 0   0.2250     0.8717   0.258   0.9989   
+## 5 - 3 == 0  -0.1806     0.7408  -0.244   0.9991   
+## 5 - 4 == 0  -0.4056     0.7408  -0.547   0.9806   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## (Adjusted p values reported -- single-step method)
@@ -226,5 +226,146 @@ summary(dreaming_by_sleep_lm)
 ```
 
 # Publication-quality graphs
+
+ggplot2 is your friend here! Remember to add in labels for axes (with units!), a
+good title, and pick the right graph type! Examples  below for a few common needs
+using the iris dataset
+
+## ANOVA 
+
+You can plot raw data
+
+
+```r
+library(ggplot2)
+ggplot(iris, aes(Species,Sepal.Length)) + 
+  geom_point(aes(colour=Species), size = 3) +
+  ylab("Sepal Length (cm)")+ggtitle("Sepal Length of various iris species")+
+  theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32))
+```
+
+![](report_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+histogram
+
+
+```r
+ggplot(iris, aes(Sepal.Length)) + 
+  geom_histogram(aes(fill=Species), size=3) +
+  xlab("Sepal Length (cm)")+
+  ylab("Frequency")+
+  ggtitle("Sepal Length of various iris species")+
+  theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32))
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+![](report_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+or group data
+
+
+```r
+library(Rmisc)
+```
+
+```
+## Loading required package: lattice
+```
+
+```
+## Loading required package: plyr
+```
+
+```r
+function_output <- summarySE(iris, measurevar="Sepal.Length", groupvars =
+                               c("Species"))
+
+ggplot(function_output, aes(x=Species, y=Sepal.Length)) +
+  geom_col(aes(fill=Species), size = 3) +
+  geom_errorbar(aes(ymin=Sepal.Length-ci, ymax=Sepal.Length+ci), size=1.5) +
+  ylab("Sepal Length (cm)")+ggtitle("Sepal Length of various iris species")+
+  theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32))
+```
+
+![](report_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+
+## Blocking/Factorial ANOVA
+
+If you have 2 groups, you need to use color, shape, and/or another aesthetic to 
+note that
+
+
+
+```r
+memory <- read.table("http://www.statsci.org/data/general/eysenck.txt", header = T,
+                     stringsAsFactors = T)
+library(plyr)
+memory$Age <- relevel(memory$Age, "Younger")
+library(Rmisc)
+function_output <- summarySE(memory, measurevar="Words", groupvars =
+                               c("Age", "Process"), na.rm = T)
+library(ggplot2)
+ggplot(function_output, aes(x=Age, y=Words,color=Process, 
+                                   shape = Process)) +
+  geom_line(aes(group=Process, linetype = Process), size=2) +
+    geom_point(size = 5) +
+  ylab("Words remembered")+ 
+  xlab("Age") + 
+  ggtitle("Process type interacts with age to impact memory")+
+  theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32))
+```
+
+![](report_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+
+
+## Regression
+
+
+```r
+library(ggplot2)
+ggplot(iris, aes(x=Petal.Length, y=Sepal.Length)) +
+  geom_point(size = 3) +
+  ylab("Sepal Length")+ggtitle("Sepal length increases with petal length")+
+  theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32))+
+  xlab("Petal length (cm)") +
+  ylab("Sepal length (cm)")
+```
+
+![](report_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+
 
 # Brief discussion
