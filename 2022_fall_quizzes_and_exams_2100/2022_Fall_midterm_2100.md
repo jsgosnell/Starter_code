@@ -2,7 +2,7 @@
 title: "2022 Fall Midterm (27 points total)"
 subtitle:  "Happy Halloween"
 author: "jsg"
-date: "Last compiled on 28 October, 2022 07:58"
+date: "Last compiled on 14 December, 2022 11:39"
 output:
   html_document:
     toc: true
@@ -50,7 +50,9 @@ werewolves. Historically,
 10% of people in the focal town transformed during full moons. Last month, a study 
 using sleep trackers found 17 out of 111 subjects infected with the new strain
 became werewolves.  Is there 
-evidence that transformations are becoming more common with this strain? (6 pts)
+evidence that transformations are becoming more common with this strain? 
+
+Make sure you include (6 pts)
 
 * null hypothesis
 * alternative hypothesis
