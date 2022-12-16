@@ -2,7 +2,7 @@
 title: "2022 Fall Final (23 points total)"
 subtitle:  "Thanks for a good semester"
 author: "jsg"
-date: "Last compiled on 16 December, 2022 09:56"
+date: "Last compiled on 16 December, 2022 09:59"
 output:
   html_document:
     toc: true
@@ -64,7 +64,7 @@ Make sure you include (6 pts)
 
 2. Another potential impact of fires is the change they produce in available food levels.
 Sage grouses eat sagebrush in the winter, and invasive plants could offer less 
-food. To consider this, scientists weight male and female grouse from recently burned plots,
+food. To consider this, scientists weighed male and female grouse from recently burned plots,
 those burned 5 years ago, and those not burned in the past 20 years.  Data can 
 be imported using
 
