@@ -2,7 +2,7 @@
 title: "2022 Fall Final (23 points total)"
 subtitle:  "Thanks for a good semester"
 author: "jsg"
-date: "Last compiled on 16 December, 2022 08:01"
+date: "Last compiled on 16 December, 2022 09:56"
 output:
   html_document:
     toc: true
@@ -73,7 +73,7 @@ be imported using
 grouse_weight <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/grouse_weight.csv", stringsAsFactors = T)
 ```
 
-Is there any evidence the fires impacted nest success?  
+Is there any evidence the fires impacted grouse weight?  
 
 Make sure you include (6 pts)
 
