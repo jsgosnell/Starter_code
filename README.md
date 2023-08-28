@@ -1,7 +1,7 @@
 ---
 title: "README"
 author: "jsg"
-date: "Last compiled on 25 August, 2022 12:19"
+date: "Last compiled on 27 August, 2023 22:48"
 output:
   html_document:
     toc: true
@@ -15,7 +15,8 @@ and it's related tools (R, Rstudio, git).
 
 ### Required tools
 
-* **Get access to R!**. You can make an account at Rstudio cloud (https://rstudio.cloud/).
+* **Get access to R!**. You can make an account at Rstudio cloud (https://rstudio.cloud/),
+now Posit!.
 You can also install R (https://cran.r-project.org/) and Rstudio (https://www.rstudio.com/) 
 on your machine, but I **strongly recommend** starting with Rstudio cloud.  
 Rstudio cloud is free for up to 50 hours/month, you don't have to maintain it, and
@@ -68,18 +69,6 @@ web url (or click the copy icon). Input that into the field asking for the URL
 of your github repository. 
 
 Note you may need to enter your github username and password to create the repository.
-
-Before continuing,  I recommend turning down the computer usage. Free rstudiocloud 
-accounts only allow so much usage, but that depends on how much power you allocate
-to a project. To do this, click on the RAM icon in the upper left corner, select 
-resources, and move all sliders to the far left.
-
-![In Rstudio cloud, move all sliders to the left to give you more actual hours](https://lh3.googleusercontent.com/pw/AM-JKLVGtN01ndQcB622ioe8eLk0vcbTgdlE2QXG8L_q0scnCBEXjhn4Kvik3Lqm7BoiI11p0YaTYq5NlWaXa303IVly68oNYqfJoQWoNWnAyWUyo5fRcrQ39lrvFBdWP1J-qGd84xGNFN-U1aGgfF5ac6FsAA=w329-h734-no?authuser=0)
-
-If you end up doing something more complex, you can increase allocated power to 
-speed everything up. For most class code, however, low power should be fine.)  If
-you make changes here, Rstudio.cloud will need to relaunch to apply them. Let it do
-that then keep working.
 
 The next screen will bring you to a "normal" RStudio screen.  Continue to the 
 [**Now we can actually work in R**](## Now we can actually work in R and markdown) 
