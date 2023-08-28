@@ -1,7 +1,7 @@
 ---
 title: "README"
 author: "jsg"
-date: "Last compiled on 27 August, 2023 22:48"
+date: "Last compiled on 27 August, 2023 22:51"
 output:
   html_document:
     toc: true
@@ -19,7 +19,7 @@ and it's related tools (R, Rstudio, git).
 now Posit!.
 You can also install R (https://cran.r-project.org/) and Rstudio (https://www.rstudio.com/) 
 on your machine, but I **strongly recommend** starting with Rstudio cloud.  
-Rstudio cloud is free for up to 50 hours/month, you don't have to maintain it, and
+Rstudio cloud is free for up to 25 hours/month, you don't have to maintain it, and
 it gives gives a standard install (same on all machines, so your intro/
 our training may be smother).  You can also do both.  If you need help, 
 videos are at :
