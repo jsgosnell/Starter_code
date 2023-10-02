@@ -11,7 +11,7 @@ output:
     toc_depth: 5
 ---
 
-Before doing this, review the **Introduction to normality and one-sample tests for continous data** lecture set slides from 
+Before doing this, review the **Introduction to normality and one-sample tests for continuous data** lecture set slides from 
 https://sites.google.com/view/biostats/lessons/hypothesis-testing-with-the-binomial-distribution and
 the  **4_normality.R** script in the lecture_files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats).
@@ -75,8 +75,41 @@ binom.test(above_175.6, nrow(sport[sport$Sex == "male",]))
 We can also bootstrap the data.
 
 ```{r}
-source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/bootstrapjsg.R")
-bootstrapjsg(data1=sport[sport$Sex == "male", "Ht"], null=175.6)
+number_of_simulations <- 1000
+library(ggplot2)
+boostrap_data<- sport[sport$Sex == "male", "Ht"]
+boostrap_outcomes <- data.frame(mean = rep(NA, number_of_simulations), sd = NA)
+for (i in 1:number_of_simulations){
+iris_bootstrap <-sample(boostrap_data, length(boostrap_data), replace = T)
+boostrap_outcomes$mean[i] <- mean(iris_bootstrap)
+boostrap_outcomes$sd[i] <- sd(iris_bootstrap)
+}
+ggplot(boostrap_outcomes, aes(x=mean)) +
+  geom_histogram(color="black") +
+  labs(title=expression(paste("Bootstrapped means")),
+       x= "Mean value",
+       y= "Frequency")
+```
+
+and find associated quantile-based 95% confidence intervals:
+```{r}
+quantile(boostrap_outcomes$mean, probs=c(.025, .975) ) 
+```
+
+or using functions in the *boot* library
+```{r}
+library(boot)
+results <- boot(data=boostrap_data, statistic = function(x, inds) mean(x[inds]),
+   R=number_of_simulations)
+ggplot(data.frame(results$t), aes(x=results.t)) +
+  geom_histogram(color="black") +
+  labs(title=expression(paste("Bootstrapped means")),
+       x= "Mean value",
+       y= "Frequency")
+quantile( results$t, probs=c(.025, .975) ) 
+boot.ci(results)       
+
+
 ```
 
 ## Let's practice!
@@ -103,9 +136,15 @@ When you source a script, it is run in R without showing any console output
 
 #### 2
 
-2. Review the central_limit_theorem.R code if you need to convince/remind 
-yourself how common normality of means is for even non-normal data. You can source the code
-using the same approach noted in Question 1 (and shown in earlier labs!).
+2. Review the central_limit_theorem.R code (remember
+
+```{r}
+library(VGAM)
+source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/central_limit_theorem.R")
+```
+
+if you need to convince/remind 
+yourself how common normality of means is for even non-normal data.
 
 ### Working with data (note some sample sizes may be too small for these to all be good ideas!)
 
@@ -173,9 +212,5 @@ sport <- read.table("http://www.statsci.org/data/oz/ais.txt", header = T,
                     stringsAsFactors = T)
 ```
 
-You can source the bootstrapjsg function using
 
-```{r}
-source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/bootstrapjsg.R")
-```
 
