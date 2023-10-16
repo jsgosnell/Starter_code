@@ -168,7 +168,6 @@ Test the hypothesis that odd and typical feathers did not differ using
 
 * a Student's t test and/or lm
 * a rank test
-* a binary test
 * bootstrapping
 
 Note we will return to this question next week!
