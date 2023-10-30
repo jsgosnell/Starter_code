@@ -1,5 +1,5 @@
 ---
-title: "9. Regression and correlation"
+title: "8. Regression and correlation"
 author: "jsg"
 date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
 output:
@@ -10,7 +10,7 @@ output:
     self_contained: true
 ---
 
-Before doing this, review the **9. Linear Regression and Correlation** lecture set slides from 
+Before doing this, review the **Relationships among numerical variables** lecture set slides from 
 https://sites.google.com/view/biostats/lessons/linear-regression-and-correlation and
 the  **9_Regression_and_correlation.R** script in the lecture files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats). 
