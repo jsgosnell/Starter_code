@@ -1,7 +1,7 @@
 ---
-title: "9. Regression and correlation"
+title: "8. Regression and correlation"
 author: "jsg"
-date: "Last compiled on 31 October, 2022 13:23"
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y %H:%M')`"
 output:
   html_document:
     toc: true
@@ -10,7 +10,7 @@ output:
     self_contained: true
 ---
 
-Before doing this, review the **9. Linear Regression and Correlation** lecture set slides from 
+Before doing this, review the **Relationships among numerical variables** lecture set slides from 
 https://sites.google.com/view/biostats/lessons/linear-regression-and-correlation and
 the  **9_Regression_and_correlation.R** script in the lecture files folder of the
 [CUNY-BioStats github repository](https://github.com/jsgosnell/CUNY-BioStats). 
@@ -33,8 +33,7 @@ pressing *Ctrl+Alt+I* to answer the questions!
 
 Following the iris dataset from class
 
-
-```r
+```{r}
 library(ggplot2)
 ggplot(iris, aes(x=Petal.Length, y=Sepal.Length)) +
   geom_point(size = 3) +
@@ -48,106 +47,21 @@ ggplot(iris, aes(x=Petal.Length, y=Sepal.Length)) +
         plot.title = element_text(hjust = 0.5, face="bold", size=32))+
   xlab("Petal length (cm)") +
   ylab("Sepal length (cm)")
-```
 
-![](9._Regression_and_correlation_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
-```r
 iris_regression <- lm(Sepal.Length ~ Petal.Length, iris)
 par(mfrow = c(2,2))
 plot(iris_regression)
-```
-
-![](9._Regression_and_correlation_files/figure-html/unnamed-chunk-1-2.png)<!-- -->
-
-```r
 library(car)
-```
-
-```
-## Loading required package: carData
-```
-
-```r
 Anova(iris_regression, type = "III")
-```
-
-```
-## Anova Table (Type III tests)
-## 
-## Response: Sepal.Length
-##              Sum Sq  Df F value    Pr(>F)    
-## (Intercept)  500.16   1 3018.28 < 2.2e-16 ***
-## Petal.Length  77.64   1  468.55 < 2.2e-16 ***
-## Residuals     24.53 148                      
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-```
-
-```r
 summary(iris_regression)
 ```
 
-```
-## 
-## Call:
-## lm(formula = Sepal.Length ~ Petal.Length, data = iris)
-## 
-## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -1.24675 -0.29657 -0.01515  0.27676  1.00269 
-## 
-## Coefficients:
-##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)   4.30660    0.07839   54.94   <2e-16 ***
-## Petal.Length  0.40892    0.01889   21.65   <2e-16 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Residual standard error: 0.4071 on 148 degrees of freedom
-## Multiple R-squared:   0.76,	Adjusted R-squared:  0.7583 
-## F-statistic: 468.6 on 1 and 148 DF,  p-value: < 2.2e-16
-```
-
-
-```r
+```{r}
 cor.test(~ Sepal.Length + Petal.Length, data = iris)
-```
-
-```
-## 
-## 	Pearson's product-moment correlation
-## 
-## data:  Sepal.Length and Petal.Length
-## t = 21.646, df = 148, p-value < 2.2e-16
-## alternative hypothesis: true correlation is not equal to 0
-## 95 percent confidence interval:
-##  0.8270363 0.9055080
-## sample estimates:
-##       cor 
-## 0.8717538
-```
-
-```r
 cor.test(~ Sepal.Length + Petal.Length, data = iris,
          method="spearman")
-```
 
-```
-## Warning in cor.test.default(x = mf[[1L]], y = mf[[2L]], ...): Cannot compute
-## exact p-value with ties
-```
-
-```
-## 
-## 	Spearman's rank correlation rho
-## 
-## data:  Sepal.Length and Petal.Length
-## S = 66429, p-value < 2.2e-16
-## alternative hypothesis: true rho is not equal to 0
-## sample estimates:
-##       rho 
-## 0.8818981
 ```
 
 
