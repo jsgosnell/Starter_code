@@ -1486,7 +1486,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">10. ANCOVAs and multiple regression</h1>
 <h4 class="author">jsg</h4>
-<h4 class="date">Last compiled on 14 November, 2022 08:27</h4>
+<h4 class="date">Last compiled on 13 November, 2023 12:30</h4>
 
 </div>
 
@@ -1512,134 +1512,152 @@ you can see!</li>
 <div id="example" class="section level2">
 <h2>Example</h2>
 <p>Following the iris example from class</p>
-<pre class="r"><code>set.seed(13)
+<pre class="r"><code>set.seed(3)
 iris_example_species &lt;-data.frame(
-  Species = c(rep(&quot;x&quot;,25), rep(&quot;y&quot;, 25), rep(&quot;z&quot;, 25)),
-  Sepal_Length = runif(75,2,4 ),
-  #no difference based on species or sepal length
-  Petal_no_impacts = runif (75, 4, 6))
-#no difference based on species
-iris_example_species$Petal_no_impact_species &lt;- 
-  iris_example_species$Sepal_Length * 2 + rnorm(75)
-#no impact of petal length
-iris_example_species$Petal_no_relationship &lt;-rnorm(75) +
-  c(rep(2,25), rep(3,25), rep(4,25))
-#impact of species and petal length but no interaction
-iris_example_species$Petal_no_interaction &lt;- 
-  iris_example_species$Sepal_Length * 2 + rnorm(75) +
-  c(rep(2,25), rep(3,25), rep(4,25))
-#impact of species and petal length with interaction
-iris_example_species$Petal_interaction &lt;- 
-  iris_example_species$Sepal_Length * c(rep(-2, 25),rep(2,25), rep(5,25)) + 
+  Species = c(rep(&quot;baruch&quot;,25), rep(&quot;hunter&quot;, 25), rep(&quot;york&quot;, 25)),
+  Petal_Length = runif(75,2,4 ))
+set.seed(31)
+iris_example_species$Sepal_interaction &lt;- 
+  iris_example_species$Petal_Length * c(rep(-2, 25),rep(0,25), rep(5,25)) + 
   c(rep(2,25), rep(3,25), rep(4,25)) + rnorm(75)</code></pre>
 <p>Plot the data</p>
 <pre class="r"><code>library(ggplot2)
-ggplot(iris_example_species, aes(x= Sepal_Length, y = Petal_interaction, color = Species)) +
-  geom_point(size = 3)+
-  xlab(&quot;Sepal Length&quot;) +
-  ylab(&quot;Petal Length&quot;) +
-  ggtitle(&quot;Impact of Sepal Length and Species on Petal Length&quot;) +
-  theme(axis.title.x = element_text(face=&quot;bold&quot;, size=28), 
-        axis.title.y = element_text(face=&quot;bold&quot;, size=28), 
-        axis.text.y  = element_text(size=20),
-        axis.text.x  = element_text(size=20), 
-        legend.text =element_text(size=20),
-        legend.title = element_text(size=20, face=&quot;bold&quot;),
-        plot.title = element_text(hjust = 0.5, face=&quot;bold&quot;, size=32))</code></pre>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
-<p>Note the impact of sepal length appears to depend on species.</p>
+ggplot(iris_example_species, aes(x= Petal_Length, y = Sepal_interaction, color = Species)) +
+  geom_point()+
+  ylab(&quot;Sepal Length&quot;) +
+  xlab(&quot;Petal Length&quot;) +
+  ggtitle(&quot;Impact of petal length and species on sepal length&quot;) +
+    geom_smooth(method = &quot;lm&quot;, se = F)</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAABR1BMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrYAujgzMzM6AAA6ADo6AGY6OgA6OmY6OpA6ZmY6ZpA6ZrY6kJA6kLY6kNtNTU1NTW5NTY5NbqtNjshhnP9mAABmADpmAGZmOgBmOmZmOpBmZgBmZmZmkJBmkLZmkNtmtpBmtttmtv9uTU1uTW5uTY5ubo5ubqtuq+SOTU2OTW6OTY6Obk2OyP+QOgCQOjqQOmaQZgCQZjqQZmaQkGaQkLaQtpCQttuQ27aQ2/+rbk2rbm6rbo6ryKur5OSr5P+2ZgC2Zjq2kDq2tpC2ttu225C229u22/+2/9u2///Ijk3I///bkDrbkGbbtmbbtpDb25Db27bb29vb/7bb/9vb///kq27k///r6+vy8vL4dm3/tmb/yI7/25D/27b/29v/5Kv//7b//8j//9v//+T///+7yTC3AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAe+0lEQVR4nO2d+3/cxnXFl7JUyis5DyekI5Ox4roP03Et2RXdtK4dKm1FJ3UcWlunrUvJ1WpdPoT//+diAAxeewEMZubODAbnfBKLxOLg7MV8iXksdneRQFDAWvh+AhDUJwAKBS0ACgUtAAoFLQAKBS0ACgUtAAoFLQAKBa2RgF4f3zofs//mV2fbG79cLHY7j9J0lHkKwcKp/Pyuj3eV9ms/Dwax1RiFmAFd3dgGdL1IAVV0jGk84Ywd0FE1RiEvgB4pO0IBlFMAtE8agG6We98ud/4mWS8XPz1PLg/30h9unohHv31jsUgfED9lm66P04vlXmH94f5icfPrJDlNt+UQ1q3i0R99XTrkkVqNV+wlfvvDG1XUzl8f7+bO9IHv7hcPJPWn1HLc/GMJ6PU/pnu8Tz6bspBWfOlplVYPSRq7SSd1toxrjFpagP5kmZ7az5dZV315KH5b7KTnfLXIdJT34ummOqDrZb6tAWhp3SwbjvJIzcaTe+Uc51HFrmXj3bxfPJCpdqCm4+b9XVlRsZ14NmUhdLwMWRNPq3HoykmdLdMa45YWoIv3k28FR5vlrfPLw3TGc/37FNXr4xtfi7YQP6Un+FuBZtlhp+f2fXGm0yYou/i6VVxo/pxai06sOlKt8aq90qOl06xV9vex80Xyw/GidIqE/1iU9FUHIhxCm+Wb59ke1LMpC2nGl55WaVVI89CVkz5bRjVGLi1AdwVc6UkSv2U/pB13RuJ//+GflgvRgLJfLwEtmvM0bfAaoNJaGMTehaM4UqPxqr3S1j0T/t30YHvy6AXaxQNS5YHkA/lRSrw2y9f+6o9dz6YspBlfelqltdLL3SondbbMa4xZemNQeX5OBaDZiVql5OW9UwZo2cVWgGab1k1ApXWd92GiZ8sc5ZEajVftlW8WEx2RW0x5qglENQNqHUg8kMdXu4ghx+KnX5PPpiykGV96WqW10+VulZM6W6Y1xi2LgKbd10/++d+/OzQHtDqSYeO1D0QBmvxZjOjExU0dUOlplbaFTrEbBai1GiOXBUDz0yU6PtFQm+XILr6ylo7qSK3u76j2NCRure6v0XjtA4kH8ifX7CH/6zeLI+rZtLr4xrREeFqlUeiI3SondbYMa4xcFgBd/Dwf9qdn8FwskmQj/bQLE22R//EnnZOkn5fTki+SdB4gxqBZ71cdqTmBKPaq2qg+gZCz7TqgzQMVjvezGUi+yzp9Dsn177NL2tazKQtpxpeeVmmt9HK3ykmfLaMaI5cFQF9b5t2dXBfJGKwWSNrLTHVApVWO0vZyR3Wk5hJMuVetjeQSjHQ2Gq99oOyB7CjtZaZ6IbVnIwtpx8tCm6XR6XUndbYMa4xcNsagYsVeTBiy9eovshmqWFkWK9SX98uX3TfFanZjDCqt2aOvlY7ySK1FbLlXvY1E1N+KZyOc/9NqvNaB8gfSkeHNPzUX6t88p5+NLKQZX3qSZmltdKrdpJM6W6Y1xi3ju5kMljvsrZRcHu4N7zR4DActbnS2zGucoKYO6Gb5F+k479TCyyrhAmqvxglq6oC2hoMGChdQezVOUFMHtD0c1Fe4gNqrcYLCHfVQ0AKgUNACoFDQAqBQ0AKgUNACoFDQGgno9y1tbRgjEzOC/Qbz0EgIgCJYx8tDIyEAimAdLw+NhAAognW8PDQSAqAI1vHy0EgIgCJYx8tDIyEAimAdLw+NhAAognW8PDQSAqAI1vHy0EgIgCJYx8tDIyEAimAdLw+NhAAognW8PDQSAqAI1vHy0EgIgCJYx8tDIyEAimAdLw+NhAAognW8PDQSAqAI7tHBwQEAde5FsKoOhACoay+CVQVAvXgRrCoA6sWLYGVhDOrDi2BzLw+NhAAognW8PDQSAqAI1vHy0EgIH9wABS1cQRGs4+WhkRAARbCOl4dGQgAUwTpeHhoJAVAE63h5aCQEQBGs4+WhkRAARbCOl4dGQgAUwTpeHhoJAVAE63h5aCQEQBGs4+WhkRAARbCOl4dGQgAUwTpeHhoJAVAE63h5aCQEQBHcKXG7MgB170Wwig5yAVD3XgT366BUt5eHRkIAFME1HbTg7PTy0EgIgCJYagvNHi8PjYQAaCTB22CNC6bh7PTy0EgIgMYR3EWXgpno1Ye9PDQSAqBxBI8AtLYjNeRUC+ahkRAAjSNYHbJyz2E0e4J5aCQEQCMJVh6D5lAqwtkZzEMjIQA6t2CVXn04mIdGQgB0PsG1EacqnJ3BPDQSAqAzCdZBsyeYh0ZCAHQWwZpsdgfz0EgIgEYerH/l7A3moZEQAJ1SsDJntYl6JusV89BICIBOKFj5Srg1GwKg1ip34J1ssCqg2536iOCtCADq2jvZYBrQxraOlaR2cDfo2xkA1LV3usEdfMqtFZoDkPVcigGoHTOCpSRRvZP11gMAVElRceIumIJtYCmp/WDfzhiDWjHPN7gBlwKcW55iw+jg5kZXAqBTC65gU1+CN1qpB6CuvdMOrqZBI6gz4BOAOvdOPFitV2cIbmx0JQA6oWCV+RBLMLHRlQDoVII10TQPBqCuvVMM1mfTMBiAuvdOK7h+5dRmFIBaq9yBdyrBzSHniJtFTIMVvDw0EgKggQZvDTkBqIpsFj4JTvwEU9MhAKoim4WHz4mP4M7JevI9xqDDsll40Jx4CB5Y5AyrYh4aCQHQMIKHVznDqpiHRkIANIBgpRX4sCrmoZEQAPUaPOKly7Aq5qGREAD1FTz2dfWktBkGW/Hy0EgIgHoJ1nhdPamMBsEaAqCuvb6D9W76AKBtXXywv/8oSa4e7t97LrfZLNw3Jx6Cde+Wq4IBaKmrj58kF79+8urxo+TZ23KjzcLnBejYIWdXMMagUi8Fld88uvrkaXLx4dNio83CZwSoRDOeip3AKdQ/Bk2vohcfPc8upknyeio3TyouSTghHfUC+urxg+TlPQmokM2/zPivoFu9ejwVO0AzVx+gVw8fpFOljwDoeO8BPeSMp2IXbGbqncWnc/gEY9DR3u7ZUDwVu2AzUzegOZ9ZN49Z/Ahv30w9noodoJmrG9Bn+0KPsA466JU88t6RFFLFQQBKymbhsTTXQVPugh2ZAahrLxegroMdmQGoa6/N4HGvDsVQcbHRlQCotle1X7ce7NgMQF17bQTrva4+5YpbG10JgGp4De9I0g/2Ygagrr0GZuX5uu3g0E41D42EAKiqGmQCUFcCoEOqgDwoPiKp3MobbNELQO1V7sBrdEdS/BUreXloJDQvQAvMlM3EeHNiFXMF89BIaFaAStQUzJ0vX06rYrZgHhoJAdCu/SSYrdHmtCpmC+ahkRAApffqnAJNq2K2YB4aCc0K0KExqMoK58Qq5grmoZHQvADtNKuvv8dSsaGXh0ZCAHTkF7xEUbG5l4dGQrMHdOzLltOv2IqXh0ZCcwZU60X1SVdsz8tDI6FJAVpjySzY4I6PsDjxFsxDI6FJAFqtSNr4CASDu5HMggGohqYAqKTJBqAmbBoFG5vDCuahkdB8AK316vFw4i2Yh0ZCUwJUewzaHnLGw4m3YB4aCU0BUOrmS/Vgyzd8hMWJt2AeGglNAlB9Lz3kjIcTb8E8NBKaEKAN0Aa9fQtJ8XDiLZiHRkLTAbQJW593cJUzHk68BfPQSCg6QFUWOePhxFswD42E4gJUcZUzHk68BfPQSGg6gPaPQUe9dhkPJ96CeWgkNCFAO7y1Eef8PiLJWzAPjYQmDqje6+rxcOItmIdGQpMGVPd19Xg48RbMQyOhiQLq746ksDjxFsxDI6EpAmpGp0GwqTeiYB4aCU0O0ILNsJprfsE8NBKaEKCNyXrSfogx2Jo3omAeGglNA9DtlaRk62GWYLveiIJ5aCQ0AUDJEScA9RvMQyOh0AHtmg4BUL/BPDQSChfQ/teHMAb1G8xDI6EQAVV58TKs5ppfMA+NhIIDVHGRszsYdzO5COahkZBDQLfIIczmNySpHCAeTrwF89BIyB2gKjNx9ckOAPUbzEMjoQAAVRlyqp01OmaE2SSY2xxWMA+NhHwDqvu6OsagfoN5aCTkdwyqf89HWM01v2AeGgn5msXrXjmNg03NCM43upJ7QLWGnNsnSN8aEyfegnloJOQY0Aaa8TTX/IJ5aCQ0ElAjFWw6TIQmL0dXULJTj+d6Mr9gHhoJsQPaM+KMp7nmF8xDIyFeQPtnQ/E01/yCeWgkxAgozWZtSzzNNb9gHhoJMQNKbrTwRQiBNdf8gnloJOR6HRSAxhHMQyMhAIpgHS8PjYScv5KEMWgUwTw0EgrujnoHXgSbe3loJMQH6PBL7SYvxofVXPML5qGREBugwzeDGN0uElZzzS+Yh0ZCABTBOl4eGgkBUATreHloJIQxKIJ1vDw0EsIsHsE6Xh4aCQFQBOt4eWgkBEARrOPloZEQAEWwjpeHRkIAFME6Xh4aCQFQBOt4uwBZLRaLnZNugDZ3eh6kBEARrOPt4GN14yxJ1oujcVT1qQHoZrkQEiEAFMF9XhqP6+MMzdNb5yyAXh/vDu1us/CImmt+wTQe18d7xU+bO58tFoLT6+P8iif+3c27eLkpux4OXWzrgF4eDl6abRYeUXPNL7iDj/VikSO6Wd44Exe87KK3unUu/hV8pYDKTdlwdLMcYK55BQWgCFbzdhIiZkm7BXgpgmtxqUzJlJOj+qa73UNJGtBk3TP6BKAIrm/s0eVhcXlMKVxls5rFnkQr3S43JacZyqqAXh4upDBJQvCQtxeqlMIS0GK+VAe0mkKl0A1dE7HMhGAdbyeZEtCsi797tt45qT+SdfH1ddLBeQ8xSerr6G0WHlFzzS+4g49TAZ+YBVWTpPR6mSIpJ0zZJCnflHE2uHAPQBGs4+0CZJUPL/NlJjHCFGtKObWNZSaxaT3wqlML0FU5Bu0ZudosPKLmml/wAFbjX9LsEtZBEazjHQKFBVAF2Sw8ouaaX/AQKExX0MFO3mbhETXX/ILt0KegxhV0la/x73W/KG+z8Iiaa37BDtDMRc/iOyfyNguPqLnmF+wAzVwAFME6Xgdo5iK7+GTVdUOfzcIjaq75BbtgM1NzFi+WThdHyapz+dRm4RE11/yCaTz+l5Y9QAdls/CImmt+wQCU0Ytgc68fQPGeJAQrer0AivckIVjV6wVQvBaPYFWvF0DxniQEq3q9AIr3JCFY1esFUHmzCCZJCB7yegFUQTYLj6i55hesBehp7xCSfhsyAEWwjncI0BcvXnAAulosjjpfhwegCK42dgD6Ykt1QN/LPupGLLcfJZsf3b/xVcqk4DIdXO6cbO7+JfFJOA1AT299d3jUuxpqs/CImmt+wXqA3jpPcbz85YmgUrwxeZMDKpaP1rf+c7mX/rd9dWytg4qlULyrE8GD3i5Aqx6+1seXgB7Jbv7ynbMCzozVrHOXGwAogs29A4DSY9AvTwpIxUpRHdAfnysBmqxEFy/uBy108eHTJLl6uH/vOQBFcHPjAKBds/i0N88+5O6uzhW0uB+05PPl/i+eJq8eP0qevQ1AEdzcqAXobknmnZNscpQOR1c3sjHo5u5XCoA29M1b/5peQa8+eZpfSQEogmsbtQB9L/skkdVicfN+/umL6Y8/e6ecxSsCWo1BBZgXHz1Prj5+kv72eqpunCHI0StJTUBf3pOACtn8y4zoejK/4HAAra6gABTB1cZgAMUYFMHUxmAAffX4AWbxCN7aGAygWAdFMLXROaD4jHoEj/C6B1RNNguPqLnmFwxAGb0INvcCUEYvgs29AJTRi2BzLwBl9CLY3AtAGb0INve6BxTLTAge4XUPqJpsFh5Rc80vWAdQ8m2bQ995DEARrOMdAvT27dsMgOLjFxGs6O0C9PaW6oBm7ysu34j0m/S37PuO8y89Fu9D3iav+eFhe8VbRgAogvu9WoDm7yuWgFa/ne4lK/H9sxR47Y9fPKXemwxAEdze2AFo1cPX+ngJaPUWucY/4p1JxfuQhwFNScbbjhE86B0AtHMMSgJ6mH3tscJH35xmdPZ99o3NwiNqrvkFDwHaNYsnAX3nTD48AGg6CE1Oe7/C22bhETXX/IINAC3ea1zj9LQcjQ4AOiybhUfUXPMLNgC0eK9x+blM2Sx+5wQfv4hgi14dQLW09fGLxCfgAVAEb230Amj5XZ0AFMH9Xi+AVt92DEAR3O8FoIxeBJt7vQCarMUKE7p4BA97vQCqcEuozcIjaq75BXsBVEE2C4+oueYXDEAZvQg293oCFF9Dg2A1rx9A8TU0CFb0egEU3/KBYFUvAGX0Itjc6wXQra+hAaAIDgrQ1tfQAFAEd3ltAHr9ac+dxzSgg7JZeETNNb/gIUAPDg4AKIL9BXcBerClCtDTo2Tz4/PqPcZ/+vTk+rhvUbMF6GrnJHu1E108gge9OoCu98T/ivd3LI/EFfS0D7YWoOJOEbEGikkSgoe9XYBWPXytjy8evXz3/MsT8Q65y19mb+G8/vSNQT4rQMUb5vL3zuNdnQge9A4ASo5Brz/97bvnOZk5oMc/e3egg298ut1Rcb8d1kERPOgdApScxa/e20saV9CTlXoXnwGaXTwBKIIHvVqAbu6IL4wv32OcAjo8ka918UdJ/jL8Kbp4BA95tQC9/ofsPW/ZLD4HdPDD7WqTpFU+tUrWfW/rtFl4RM01v2AtQDdv9sPYD2hyKlaYro/7PlgEgCK42KgB6KoXrWFAVWSz8Iiaa37BOoBqCYAiWMcLQBm9CDb3AlBGr9Pg27dv+wm2Zh4BKIMAKK83+6hhH8H2zADUtReAmnt5aCQEQHm9ANRQAJTZizGomQAognW8PDQSGgkoBLkVrqAI1vHy0EgIgCJYx8tDIyEAimAdLw+NhAAognW8PDQSAqAI1vHy0EgIgCJYx8tDIyEAimAdLw+NhAAognW8PDQSAqAI1vHy0EgIgCJYx8tDIyEAimAdLw+NhGYIaOP+IpfBAFRDwQGqiI9+cPMOzdEKixNvwTw0EgoNUFV8AKjfYB4aCcUJaN8xAKgNLw+NhKIEtP8gzGPQvsMD0NEKDVArY9Ahyjk56c0GoKMVHKA2vPMAdExPAECtVW7FO9B2UQA6aiwNQK1Vru7VH0uy9rSuxqC3xxAKQK1Vruw1mI1HMRS8vU3o7TEye9I8NBKaOqD5mR6J6rQAHYUdA6EAVM9bO9N955t6hHN2pmp2i1zrWc8dUMXqLYxBBwElH+IClAO68tkn26UM1N79rGcOqGr5FjhxAignduoiAO0scNu87VIPJje60sQBHRyDdgPKgt1A4caDGsUCLQdTG11p6oCS2ZzI2RqDjlZPxfpm7WAeGglNYwzKjp26gllm8hvMQyMhj7N4DurUsOPnpOOZANDR4gGUHzuO26i0vdTByMMB0NHyCGhQzaV8+QWg+UZXmu5CvV0zAB3n5aGREADNtY1UB7AYg+YbXSl0QLuua+xjUI6LIAAdr8AB7ex5XfxlANBuLw+NhOYJqMJ4E4D2enloJDRLQJVmRL4u3RxeAGqv8pZY1kGVp+yEwuLEWzAPjYRCB7SLJgCqYdarGoD2iwFQlTFop9co2JO3dv+WpWAeGgnNE1BPXgA6XuEBunUS3bwW78ILQMcrOEAVz+KEOfEXjDGohcoB6CSCeWgkBEAdeiMK5qGRUHCAKvZDYTXX/IJ5aCQUHqD8XgSbe3loJARAEazj5aGREABFsI6Xh0ZCrgGtjzDjaa75BfPQSMgxoI05ejzNNb9gHhoJAVAE63h5aCQEQBGs4+WhkRDGoAjW8fLQSGgY0KuH+/eey19sFh5Rc80vmBXKugYBffX4UfLsbfmbzcIjaq75BfNSWdMgoFefPE0uPnxa/Gaz8Iiaa37BzFhWGgT04qPnydXHT9KfXk/l4BlBUE2DgL68JwEVsvmXGdH1ZH7BzFhWGnEFFbJZeETNNb9gZiwrYQyKYB0vM5aVFGbxDzCLR/DWRlfCOiiCdbysUNaF2+0QrOPloZEQAEWwjpeHRkIAFME6Xh4aCQFQBOt4eWgkBEARrOPloZEQAEWwjpeHRkIAFME6Xh4aCQFQBOt4eWgkBEARrOPloZEQAEWwjpeHRkIOAX3x4oW+2STYqhnB+UZXcgfoixdtQuNprvkF89BICIAiWMfLQyMhr4BudfrqCqu55hfMQyMhS4Bu07etrT1UTF0ybi7d6LA48RbMQyMhm4DWpFS5T0C1s8PixFswD42EbHbxIykdgbLiWRthBqBmXh4aCTGNQRVYNeKTDlY9HgA19vLQSMgOoH0IdrFqxCd51raO2BWAMaixl4dGQlYAHWaNoJQf0M6EeDjxFsxDIyFHgNakNZ9SOmsA1F0wD42E3APa0fOPZFVlDApA+YJ5aCTEOQbtUMlNje7RmCqd8b4xqK7C4sRbMA+NhDzczdQCtP2IGqphNdf8gnloJOTjdjuJHmFW7v3Daq75BfPQSCiw+0GbMPZQGlZz9an+vAHoaAUGaOewsc1qWM3Vo8ZfFgAdrdAA7ZXJtN8o2MALQM00KUC/r9rbCFUAauzloZHQVAHtWKJSYxVjUGMvD42Epg1oa7sqpvFw4i2Yh0ZCUwNUXpB6vMOoxsOJt2AeGglNDlBVb1/vHw8n3oJ5aCQULaCVtjGNhxNvwTw0EpoBoDVZWKaaWMVcwTw0EpoXoLk05/7mwQB0vOYIaGV2vEQVQMW2vDw0Epo3oDWpokqsb5kFU89E22sUPMbLQyOhOAAdOZzsDh7u/RPCYCF4+IiBnGq50ZWiAHTshEeZk+ElKgDKLAA6rL4rKgBlFgBVVUfvjzEor6IA1N4YVMU7MEjlC/ZkBqCuvWbBDSRHsjrNismNrjQpQGsABAJoro7e33KwgReA2qu8Rz2Tad7ghrf/QtmPKQAdLQA62qs46KQuqQB0tAAor1d7PmUabM8MQJUVxBh0rKHk0pDVsCrmoZHQpACdZHDzuk/Op5RYDatiHhoJAVAd75jrX+fAZCSlYZ1qHhoJjQQUEsp4GrO30gFrMnp2cQlXUA1vxwVP5SrYs89A7x/WqeahkRAA1fDSgCr00wOLqM1DtSgN61Tz0EgIgOp4uy6gtgBtH3VgpMo7gAWgrr1MwTyAVofu7P1VguuHGhkOQF17uYKrtu+iQPllqO5ggtIxgGr8hQBQ11724E4K7Aar9P5tMwA1rdyBNxZAq6zO3n/LDEBNK3fgjQrQdixNKcagOooWUP9fL9JmFbN4a5U78M4lWK331wvmoZEQAJ1FMADV0fw44Q92NfjloZEQAI0quOsaCUCtVe7AG3EwALVYeMSceAsmAM02AFBrlTvwxhxM8cnxmdI8NBICoJEHA1DLlTvwzioYgFqu3IF3XsEYg9qt3IEXweZeHhoJAVAE63h5aCQEQBGs4+WhkRAARbCOl4dGQgAUwTpeHhoJAVAE63h5aCQEQBGs4+WhkRAARbCOl4dGQgAUwTpeHhoJAVAE63h5aCQEQBGs4+WhkRAARbCOl4dGQgAUwTpeHhoJAVAE63h5aCQEQBGs4+WhkZDhR4C/budZIBjBHQKgCA41OBMARXCowZkAKIJDDc6Er6GBghYAhYIWAIWCFgCFghYAhYKWJqAXH+zvP8p+unq4f++5xSekHPxsf3//F0+dBb8s0xxXXAU7rjhJXj320sYN6QF69fGT5OLXT5K8hmdv231OSsHJN4+cpaa6+PBpUafjiqtgxxUn4i8iS3RccVN6gL4UTzc7X1efPM3OoSNVwa9+98RVqFRep+OKq2DnFV/83d9ngHqouJL+GFRczNIiPnpe/ORMeVza7cjO3pXyq4iHivNg1xW/+t2/5V28h4oraQP66vED8c/Le66ffBEsOnqn15SLD97K0pxXLINdV/zsQTEGdd/GNekCevUww8T9X5cMzuR2VOa5z8jkruK0zlfTvYJefFCcKNfjkzI4k+Npg49RdxXc+olbYs1gf19cDSY4Bq0wER2uyzltGSz6nVf/4m52VnZzjiuugh1XnJTLTI4rbkoP0Pyv65H4s3K7RlYLTn98y2G3k8e5r7gW7LjiHFAPFTeEV5KgoAVAoaAFQKGgBUChoAVAoaAFQKGgBUClro8XQjsn1aYfvi5/3Nw5yXfa6z9Kail2hawIgEoV7K1unMktddIUARW7AVCbAqBSBXuXh0dyCwANQABUqgao6O1vnG2Wi8VeIv4r/mkBmu+Sbv48ffxI2BY7n9/9Slg2dz5bZNsgCwKgUgV7pzfOro93067+1rmAMrugpt1+C9Byl+Wtc/Hw5eFeumu+m9zmsZaIBECliklSCtZawJWSKWj7v/Mk67hbgJa7LI+yh7PfVxLQowT9vC0BUKlqeLnKSBV9tYBsnU3tW4A2dkn/k15M03/vnpVjUABqSQBUqgaooC3JIbs83DkhrqD1XQAopwCoVAXoulgLFZCtBXnrrStofZeyi1/fAKDWBUClKkCvj1MqUwTFBEmQuFluASp3kTDKSZKwAFCbAqBStSVOMV8Sl8jTxW76/8XOb/MJU1LOpPbkLiWMYpnps/QymloAqE0BUHtaFwNTyKIAqBWJkUC2NgpZFgC1I7HuBD4ZBEChoAVAoaAFQKGgBUChoAVAoaAFQKGgBUChoPX/LhHaK1YecjsAAAAASUVORK5CYII=" /><!-- --></p>
+<p>Analysis would indicate (assumption plots not shown here to allow
+focus on interpreting interactions)</p>
 <pre class="r"><code>library(car)</code></pre>
+<pre><code>## Warning: package &#39;car&#39; was built under R version 4.3.1</code></pre>
 <pre><code>## Loading required package: carData</code></pre>
-<pre class="r"><code>Anova(lm(Petal_interaction ~ Sepal_Length * Species, iris_example_species), 
+<pre class="r"><code>Anova(lm( Sepal_interaction~ Petal_Length * Species, iris_example_species), 
       type = &quot;III&quot;)</code></pre>
 <pre><code>## Anova Table (Type III tests)
 ## 
-## Response: Petal_interaction
-##                       Sum Sq Df F value    Pr(&gt;F)    
-## (Intercept)            2.096  1  1.6503    0.2032    
-## Sepal_Length          28.875  1 22.7307 1.001e-05 ***
-## Species                2.920  2  1.1494    0.3228    
-## Sepal_Length:Species 159.284  2 62.6954 3.027e-16 ***
-## Residuals             87.651 69                      
+## Response: Sepal_interaction
+##                       Sum Sq Df  F value    Pr(&gt;F)    
+## (Intercept)            7.076  1   8.0267  0.006038 ** 
+## Petal_Length          38.452  1  43.6177  6.88e-09 ***
+## Species                3.353  2   1.9015  0.157092    
+## Petal_Length:Species 227.334  2 128.9368 &lt; 2.2e-16 ***
+## Residuals             60.828 69                       
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>Interaction is significant, so follow up for each species. this ends
-in regression!</p>
-<pre class="r"><code>summary(lm(Petal_interaction ~ Sepal_Length, 
-         iris_example_species[iris_example_species$Species == &quot;x&quot;,]))</code></pre>
+<p>interactions do exist. This means we can’t interpret the “general”
+relationship, so we need to look for each species using regression.</p>
+<pre class="r"><code>summary(lm(Sepal_interaction ~ Petal_Length, 
+         iris_example_species[iris_example_species$Species == &quot;baruch&quot;,]))</code></pre>
 <pre><code>## 
 ## Call:
-## lm(formula = Petal_interaction ~ Sepal_Length, data = iris_example_species[iris_example_species$Species == 
-##     &quot;x&quot;, ])
+## lm(formula = Sepal_interaction ~ Petal_Length, data = iris_example_species[iris_example_species$Species == 
+##     &quot;baruch&quot;, ])
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -2.1788 -0.9693  0.2359  0.5302  1.6908 
+## -1.7194 -0.5504 -0.1860  0.4736  1.7067 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)    1.5724     1.1058   1.422    0.168    
-## Sepal_Length  -1.8824     0.3567  -5.277 2.35e-05 ***
+## (Intercept)    2.9734     0.9767   3.044  0.00576 ** 
+## Petal_Length  -2.3663     0.3335  -7.097 3.14e-07 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 1.018 on 23 degrees of freedom
-## Multiple R-squared:  0.5477, Adjusted R-squared:  0.528 
-## F-statistic: 27.85 on 1 and 23 DF,  p-value: 2.35e-05</code></pre>
-<p>Significant negative relationship for species x.</p>
-<pre class="r"><code>summary(lm(Petal_interaction ~ Sepal_Length, 
-           iris_example_species[iris_example_species$Species == &quot;y&quot;,]))</code></pre>
+## Residual standard error: 0.8738 on 23 degrees of freedom
+## Multiple R-squared:  0.6865, Adjusted R-squared:  0.6728 
+## F-statistic: 50.36 on 1 and 23 DF,  p-value: 3.144e-07</code></pre>
+<pre class="r"><code>Anova(lm(Sepal_interaction ~ Petal_Length, 
+         iris_example_species[iris_example_species$Species == &quot;baruch&quot;,]), 
+      type=&quot;III&quot;)</code></pre>
+<pre><code>## Anova Table (Type III tests)
+## 
+## Response: Sepal_interaction
+##              Sum Sq Df F value    Pr(&gt;F)    
+## (Intercept)   7.076  1  9.2676  0.005758 ** 
+## Petal_Length 38.452  1 50.3604 3.144e-07 ***
+## Residuals    17.561 23                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>summary(lm(Sepal_interaction ~ Petal_Length, 
+           iris_example_species[iris_example_species$Species == &quot;hunter&quot;,]))</code></pre>
 <pre><code>## 
 ## Call:
-## lm(formula = Petal_interaction ~ Sepal_Length, data = iris_example_species[iris_example_species$Species == 
-##     &quot;y&quot;, ])
+## lm(formula = Sepal_interaction ~ Petal_Length, data = iris_example_species[iris_example_species$Species == 
+##     &quot;hunter&quot;, ])
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -2.4904 -0.7587  0.2401  0.8115  1.3829 
+##      Min       1Q   Median       3Q      Max 
+## -1.89221 -0.58055  0.00876  0.47006  2.49756 
 ## 
 ## Coefficients:
-##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)    3.7147     1.2584   2.952  0.00715 ** 
-## Sepal_Length   1.8307     0.4127   4.436  0.00019 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+##              Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)    1.2564     1.1463   1.096    0.284
+## Petal_Length   0.4962     0.3895   1.274    0.215
 ## 
-## Residual standard error: 1.142 on 23 degrees of freedom
-## Multiple R-squared:  0.4611, Adjusted R-squared:  0.4376 
-## F-statistic: 19.68 on 1 and 23 DF,  p-value: 0.00019</code></pre>
-<p>Positive relationship for species y</p>
-<pre class="r"><code>summary(lm(Petal_interaction ~ Sepal_Length, 
-           iris_example_species[iris_example_species$Species == &quot;z&quot;,]))</code></pre>
+## Residual standard error: 0.9902 on 23 degrees of freedom
+## Multiple R-squared:  0.06589,    Adjusted R-squared:  0.02528 
+## F-statistic: 1.622 on 1 and 23 DF,  p-value: 0.2155</code></pre>
+<pre class="r"><code>Anova(lm(Sepal_interaction ~ Petal_Length, 
+         iris_example_species[iris_example_species$Species == &quot;hunter&quot;,]), 
+      type=&quot;III&quot;)</code></pre>
+<pre><code>## Anova Table (Type III tests)
+## 
+## Response: Sepal_interaction
+##               Sum Sq Df F value Pr(&gt;F)
+## (Intercept)   1.1779  1  1.2014 0.2844
+## Petal_Length  1.5907  1  1.6224 0.2155
+## Residuals    22.5503 23</code></pre>
+<pre class="r"><code>summary(lm(Sepal_interaction ~ Petal_Length, 
+           iris_example_species[iris_example_species$Species == &quot;york&quot;,]))</code></pre>
 <pre><code>## 
 ## Call:
-## lm(formula = Petal_interaction ~ Sepal_Length, data = iris_example_species[iris_example_species$Species == 
-##     &quot;z&quot;, ])
+## lm(formula = Sepal_interaction ~ Petal_Length, data = iris_example_species[iris_example_species$Species == 
+##     &quot;york&quot;, ])
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -2.4143 -0.5861 -0.1689  0.7747  3.1415 
+##      Min       1Q   Median       3Q      Max 
+## -1.45150 -0.69660  0.02717  0.83006  1.64698 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)    4.0916     1.5034   2.722   0.0122 *  
-## Sepal_Length   5.1553     0.5402   9.543 1.83e-09 ***
+## (Intercept)    4.0617     0.9550   4.253    3e-04 ***
+## Petal_Length   4.9642     0.3024  16.417  3.4e-14 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 1.213 on 23 degrees of freedom
-## Multiple R-squared:  0.7984, Adjusted R-squared:  0.7896 
-## F-statistic: 91.07 on 1 and 23 DF,  p-value: 1.834e-09</code></pre>
-<p>and z!</p>
+## Residual standard error: 0.9491 on 23 degrees of freedom
+## Multiple R-squared:  0.9214, Adjusted R-squared:  0.918 
+## F-statistic: 269.5 on 1 and 23 DF,  p-value: 3.401e-14</code></pre>
+<pre class="r"><code>Anova(lm(Sepal_interaction ~ Petal_Length, 
+         iris_example_species[iris_example_species$Species == &quot;york&quot;,]), 
+      type=&quot;III&quot;)</code></pre>
+<pre><code>## Anova Table (Type III tests)
+## 
+## Response: Sepal_interaction
+##               Sum Sq Df F value    Pr(&gt;F)    
+## (Intercept)   16.292  1  18.087 0.0002998 ***
+## Petal_Length 242.770  1 269.527 3.401e-14 ***
+## Residuals     20.717 23                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Here we see that there is a significant negative relationship
+(F<sub>1,23</sub> = 50.36, p&lt;0.001) between sepal and petal length
+for <em>I. baruch</em>, a significant positive relationship
+(F<sub>1,23</sub> = 269.53, p&lt;0.001) between sepal and petal length
+for <em>I. york</em>,and no relationship (F<sub>1,23</sub> = 1.63,
+p&lt;-0.21) between sepal and petal length for <em>I. hunter</em>.</p>
 </div>
 <div id="practice" class="section level2">
 <h2>Practice</h2>
 <div id="section" class="section level3">
 <h3>1</h3>
-<ol style="list-style-type: decimal">
-<li>Data on FEV (forced expiratory volume), a measure of lung function,
-can be found at</li>
-</ol>
+<p>Data on FEV (forced expiratory volume), a measure of lung function,
+can be found at</p>
 <p><a href="http://www.statsci.org/data/general/fev.txt" class="uri">http://www.statsci.org/data/general/fev.txt</a></p>
 <p>More information on the dataset is available at</p>
 <p><a href="http://www.statsci.org/data/general/fev.html" class="uri">http://www.statsci.org/data/general/fev.html</a>.</p>
@@ -1648,10 +1666,8 @@ answer to this differs from the previous assignment!</p>
 </div>
 <div id="section-1" class="section level3">
 <h3>2</h3>
-<ol start="2" style="list-style-type: decimal">
-<li>Data on home gas consumption at various temperatures before and
-after new insulation was installed has been collected @</li>
-</ol>
+<p>Data on home gas consumption at various temperatures before and after
+new insulation was installed has been collected @</p>
 <p><a href="http://www.statsci.org/data/general/insulgas.txt" class="uri">http://www.statsci.org/data/general/insulgas.txt</a></p>
 <p>More information on the data is available @</p>
 <p><a href="http://www.statsci.org/data/general/insulgas.html" class="uri">http://www.statsci.org/data/general/insulgas.html</a></p>
@@ -1661,23 +1677,19 @@ analysis?</p>
 </div>
 <div id="section-2" class="section level3">
 <h3>3</h3>
-<ol start="3" style="list-style-type: decimal">
-<li>Data on the height, diameter, and volume of cherry trees was
+<p>Data on the height, diameter, and volume of cherry trees was
 collected for use in developing an optimal model to predict timber
-volume. Data is available @</li>
-</ol>
+volume. Data is available @</p>
 <p><a href="http://www.statsci.org/data/general/cherry.txt" class="uri">http://www.statsci.org/data/general/cherry.txt</a></p>
 <p>Use the data to justify an optimal model.</p>
 </div>
 <div id="section-3" class="section level3">
 <h3>4</h3>
-<ol start="4" style="list-style-type: decimal">
-<li>Over the course of five years, a professor asked students in his
+<p>Over the course of five years, a professor asked students in his
 stats class to carry out a simple experiment. Students were asked to
 measure their pulse rate, run for one minute, then measure their pulse
 rate again. The students also filled out a questionnaire. Data
-include:</li>
-</ol>
+include:</p>
 <table>
 <colgroup>
 <col width="50%" />
@@ -1738,6 +1750,20 @@ used to predict change pulse rate (Change) (focusing on main effects
 only, no interactions) and explain your choice of methods. Interpret
 your results. Make sure you can explain any changes you needed to make
 to the dataset or steps you used in your analysis.</p>
+</div>
+<div id="section-4" class="section level3">
+<h3>5</h3>
+<p>Find one example of model selection from a paper in your field. It
+may be more complicated (see next question!) than what we have done, but
+try to identify the approach (F/AIC, top-down/bottom-up/not nested) they
+used. Review how they explained their approach (methods) and reported
+outcomes (results). Be prepared to discuss in class next week.</p>
+</div>
+<div id="section-5" class="section level3">
+<h3>6</h3>
+<p>Find one example of a linear model selection (e.g., generalized
+linear models, mixed-effects models, beta regression) from a paper in
+your field. Be prepared to name the technique in class next week.</p>
 </div>
 </div>
 

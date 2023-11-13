@@ -32,82 +32,71 @@ pressing *Ctrl+Alt+I* to answer the questions!
 Following the iris example from class
 
 ```{r}
-set.seed(13)
+set.seed(3)
 iris_example_species <-data.frame(
-  Species = c(rep("x",25), rep("y", 25), rep("z", 25)),
-  Sepal_Length = runif(75,2,4 ),
-  #no difference based on species or sepal length
-  Petal_no_impacts = runif (75, 4, 6))
-#no difference based on species
-iris_example_species$Petal_no_impact_species <- 
-  iris_example_species$Sepal_Length * 2 + rnorm(75)
-#no impact of petal length
-iris_example_species$Petal_no_relationship <-rnorm(75) +
-  c(rep(2,25), rep(3,25), rep(4,25))
-#impact of species and petal length but no interaction
-iris_example_species$Petal_no_interaction <- 
-  iris_example_species$Sepal_Length * 2 + rnorm(75) +
-  c(rep(2,25), rep(3,25), rep(4,25))
-#impact of species and petal length with interaction
-iris_example_species$Petal_interaction <- 
-  iris_example_species$Sepal_Length * c(rep(-2, 25),rep(2,25), rep(5,25)) + 
+  Species = c(rep("baruch",25), rep("hunter", 25), rep("york", 25)),
+  Petal_Length = runif(75,2,4 ))
+set.seed(31)
+iris_example_species$Sepal_interaction <- 
+  iris_example_species$Petal_Length * c(rep(-2, 25),rep(0,25), rep(5,25)) + 
   c(rep(2,25), rep(3,25), rep(4,25)) + rnorm(75)
 ```
-
 
 Plot the data
 
 ```{r}
 library(ggplot2)
-ggplot(iris_example_species, aes(x= Sepal_Length, y = Petal_interaction, color = Species)) +
-  geom_point(size = 3)+
-  xlab("Sepal Length") +
-  ylab("Petal Length") +
-  ggtitle("Impact of Sepal Length and Species on Petal Length") +
-  theme(axis.title.x = element_text(face="bold", size=28), 
-        axis.title.y = element_text(face="bold", size=28), 
-        axis.text.y  = element_text(size=20),
-        axis.text.x  = element_text(size=20), 
-        legend.text =element_text(size=20),
-        legend.title = element_text(size=20, face="bold"),
-        plot.title = element_text(hjust = 0.5, face="bold", size=32))
+ggplot(iris_example_species, aes(x= Petal_Length, y = Sepal_interaction, color = Species)) +
+  geom_point()+
+  ylab("Sepal Length") +
+  xlab("Petal Length") +
+  ggtitle("Impact of petal length and species on sepal length") +
+    geom_smooth(method = "lm", se = F)
 ```
 
-Note the impact of sepal length appears to depend on species.
+Analysis would indicate (assumption plots not shown here to allow focus
+on interpreting interactions)
 
 ```{r}
 library(car)
-Anova(lm(Petal_interaction ~ Sepal_Length * Species, iris_example_species), 
+Anova(lm( Sepal_interaction~ Petal_Length * Species, iris_example_species), 
       type = "III")
 ```
 
-Interaction is significant, so follow up for each species. this ends in regression!
-```{r}
-summary(lm(Petal_interaction ~ Sepal_Length, 
-         iris_example_species[iris_example_species$Species == "x",]))
-```
-Significant negative relationship for species x.
-
+interactions do exist. This means we can't interpret the "general"
+relationship, so we need to look for each species using regression.
 
 ```{r}
-summary(lm(Petal_interaction ~ Sepal_Length, 
-           iris_example_species[iris_example_species$Species == "y",]))
+summary(lm(Sepal_interaction ~ Petal_Length, 
+         iris_example_species[iris_example_species$Species == "baruch",]))
+Anova(lm(Sepal_interaction ~ Petal_Length, 
+         iris_example_species[iris_example_species$Species == "baruch",]), 
+      type="III")
+summary(lm(Sepal_interaction ~ Petal_Length, 
+           iris_example_species[iris_example_species$Species == "hunter",]))
+Anova(lm(Sepal_interaction ~ Petal_Length, 
+         iris_example_species[iris_example_species$Species == "hunter",]), 
+      type="III")
+summary(lm(Sepal_interaction ~ Petal_Length, 
+           iris_example_species[iris_example_species$Species == "york",]))
+Anova(lm(Sepal_interaction ~ Petal_Length, 
+         iris_example_species[iris_example_species$Species == "york",]), 
+      type="III")
 ```
-Positive relationship for species y
 
-```{r}
-summary(lm(Petal_interaction ~ Sepal_Length, 
-           iris_example_species[iris_example_species$Species == "z",]))
-```
+Here we see that there is a significant negative relationship (F~1,23~ =
+50.36, p<0.001) between sepal and petal length for *I. baruch*, a
+significant positive relationship (F~1,23~ = 269.53, p<0.001) between
+sepal and petal length for *I. york*,and no relationship (F~1,23~ =
+1.63, p<-0.21) between sepal and petal length for *I. hunter*.
 
-and z!  
 
 ## Practice
 
 ### 1
   
 
-1.  Data on FEV (forced expiratory volume), a measure of lung function, can
+Data on FEV (forced expiratory volume), a measure of lung function, can
 be found at 
 
 http://www.statsci.org/data/general/fev.txt
@@ -121,7 +110,7 @@ this differs from the previous assignment!
 
 ### 2
 
-2. Data on home gas consumption at various temperatures before and after new insulation was installed has been collected @ 
+Data on home gas consumption at various temperatures before and after new insulation was installed has been collected @ 
 
 http://www.statsci.org/data/general/insulgas.txt
 
@@ -134,7 +123,7 @@ and what type of plot would you produce to accompany your analysis?
 
 ### 3
 
-3.  Data on the height, diameter, and volume of cherry trees was collected for
+Data on the height, diameter, and volume of cherry trees was collected for
 use in developing an optimal model to predict timber volume.  Data is available @ 
 
 http://www.statsci.org/data/general/cherry.txt
@@ -143,7 +132,7 @@ Use the data to justify an optimal model.
 
 ### 4
 
-4.  Over the course of five years, a professor asked students in his stats class 
+Over the course of five years, a professor asked students in his stats class 
 to carry out a simple experiment.  Students were asked to measure their pulse 
 rate, run for one minute, then measure their pulse rate again.  The students 
 also filled out a questionnaire.  Data  include:
@@ -170,3 +159,16 @@ interactions) and explain your choice of methods.  Interpret your results. Make
 sure you can explain any changes you needed to make to the dataset or steps you 
 used in your analysis.
 
+### 5
+
+Find one example of model selection from a paper in your field. It may be more
+complicated (see next question!) than what we have done, but try to identify the 
+approach (F/AIC, top-down/bottom-up/not nested) they used. Review how they 
+explained their approach (methods) and reported outcomes (results). Be prepared
+to discuss in class next week.
+
+### 6 
+
+Find one example of a linear model selection (e.g., generalized linear models, 
+mixed-effects models, beta regression) from a paper in your field. Be prepared
+to name the technique in class next week.
