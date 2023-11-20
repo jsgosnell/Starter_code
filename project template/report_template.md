@@ -1,7 +1,7 @@
 ---
 title: "REPORT/PROJECT TEMPLATE"
 author: "jsg"
-date: "Last compiled on 22 November, 2022 09:20"
+date: "Last compiled on 20 November, 2023 11:52"
 output:
   html_document:
     toc: true
@@ -86,6 +86,10 @@ library(car)
 ```
 
 ```
+## Warning: package 'car' was built under R version 4.3.1
+```
+
+```
 ## Loading required package: carData
 ```
 
@@ -155,16 +159,16 @@ summary(comparison)
 ## 
 ## Linear Hypotheses:
 ##            Estimate Std. Error t value Pr(>|t|)   
-## 2 - 1 == 0  -1.0643     0.4670  -2.279   0.1626   
-## 3 - 1 == 0  -1.7793     0.6679  -2.664   0.0715 . 
-## 4 - 1 == 0  -1.5543     0.6679  -2.327   0.1478   
-## 5 - 1 == 0  -1.9599     0.4847  -4.043   0.0017 **
-## 3 - 2 == 0  -0.7150     0.7293  -0.980   0.8560   
-## 4 - 2 == 0  -0.4900     0.7293  -0.672   0.9592   
-## 5 - 2 == 0  -0.8956     0.5664  -1.581   0.5038   
-## 4 - 3 == 0   0.2250     0.8717   0.258   0.9989   
-## 5 - 3 == 0  -0.1806     0.7408  -0.244   0.9991   
-## 5 - 4 == 0  -0.4056     0.7408  -0.547   0.9806   
+## 2 - 1 == 0  -1.0643     0.4670  -2.279  0.16262   
+## 3 - 1 == 0  -1.7793     0.6679  -2.664  0.07150 . 
+## 4 - 1 == 0  -1.5543     0.6679  -2.327  0.14777   
+## 5 - 1 == 0  -1.9599     0.4847  -4.043  0.00169 **
+## 3 - 2 == 0  -0.7150     0.7293  -0.980  0.85600   
+## 4 - 2 == 0  -0.4900     0.7293  -0.672  0.95921   
+## 5 - 2 == 0  -0.8956     0.5664  -1.581  0.50379   
+## 4 - 3 == 0   0.2250     0.8717   0.258  0.99892   
+## 5 - 3 == 0  -0.1806     0.7408  -0.244  0.99914   
+## 5 - 4 == 0  -0.4056     0.7408  -0.547  0.98058   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## (Adjusted p values reported -- single-step method)
@@ -271,6 +275,14 @@ ggplot(iris, aes(Sepal.Length)) +
 ```
 
 ```
+## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+```
+
+```
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
@@ -281,6 +293,10 @@ or group data
 
 ```r
 library(Rmisc)
+```
+
+```
+## Warning: package 'Rmisc' was built under R version 4.3.1
 ```
 
 ```
